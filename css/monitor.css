@@ -1,0 +1,306 @@
+
+body {
+  font: 12px sans-serif;
+}
+
+.trackData a {
+ 	color: #76ede9;
+	background: #3c3c3b;
+	margin: 2; 
+	padding: 4px 12px 4px 12px;
+	position: absolute; 
+	top: 0px;
+	right: 0px;
+	text-decoration: none;
+}
+
+.trackData a:hover{
+ 	background: #76ede9;
+	color: #3c3c3b;
+ }
+
+.trackData .active {
+ 	background: orangered !important;
+	color: #3c3c3b;
+ }
+ .trackData a:before {
+	font-size: 1.2em;
+	content: "\2665  ";
+	color: orangered;
+ }
+
+
+span.filter:before {
+	content: "\2716  ";
+	color: white;
+}
+span.filter {
+	background-color: rgba(50,50,50,0.8);
+	color: white;
+	margin: 2; 
+	padding: 2; 	
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+.grid path {
+          stroke-width: 0;
+}
+@media(max-width:1200px) {
+ 	.burger-menu {
+		z-index: 99;
+ 		position: absolute;
+ 		right: 4%;
+ 		top: 3%;
+ 		background-color: #3c3c3b;
+ 		padding: 4px 12px 4px 12px;
+ 		width: 42px;
+		-webkit-border-radius: 10px;
+ 		-moz-border-radius: 10px;
+ 		border-radius: 10px;
+ 	}
+
+ 	.burger-menu span {
+ 		display: block;
+ 		width: 42px;
+ 		height: 5px;
+ 		margin: 5px 0px;
+ 		background: #76ede9;
+ 		-webkit-border-radius: 3px;
+ 		-moz-border-radius: 3px;
+ 		border-radius: 3px;
+ 	}
+
+ 	.responsive-menu {
+ 		text-align: right;
+ 		position: absolute;
+ 		z-index: 99;
+ 		right: 4%;
+ 		top: 77px;
+ 	}
+
+ 	.menu input[type=checkbox]:checked ~ .responsive-menu {
+ 		display: block;
+ 		position: absolute;
+ 		max-width: 130px;
+ 		right: 4%;
+ 		transition-property: right;
+ 		transition-duration: .2s;
+ 		transition-timing-function: cubic-bezier(0, 2.5, 1.5, 2.5);
+ 	}
+
+ 	.menu input[type=checkbox]:not(:checked) ~ .responsive-menu {
+ 		display: block;
+ 		right: -130px;
+ 		max-width: 130px;
+ 		transition-property: right;
+ 		transition-duration: .2s;
+ 		transition-timing-function: cubic-bezier(0, 2.5, 1.5, 2.5);
+		position: fixed;
+ 	}
+}
+
+ .responsive-menu {
+ 	display: table;
+ 	width: 100%;
+ 	table-layout: fixed;    /* For cells of equal size */
+ }
+
+ .responsive-menu a,
+ .responsive-menu a:visited,
+ .responsive-menu a:link  {
+ 	font-size: 12px;
+ 	border: solid 1px #3c3c3b;
+ 	background: #3c3c3b;
+ 	color: #76ede9;
+ 	padding: 4px 12px 2px 12px;
+ 	text-decoration: none;
+ 	line-height:32px;
+ }
+
+ .responsive-menu a:hover {
+ 	background: #76ede9;
+	color: #3c3c3b;
+ }
+
+ .responsive-menu a:selected {
+ 	background: #76ede9;
+	color: #3c3c3b;
+ }
+
+ .responsive-menu span:first-child {
+ 	text-align: right;
+ }
+
+ .responsive-menu span:last-child {
+ 	text-align: right;
+ }
+
+
+ .menu {
+ }
+
+ .menu input {
+ 	display: none;
+ }
+
+ .responsive-menu.closed {
+ 	max-height: 0;
+ 	background-color: #76ede9;
+ }
+
+   .tick line{
+    opacity: 0.1;
+  }
+
+
+
+  /* table styles */
+  * { 
+	  margin: 0; 
+	  padding: 0; 
+     }
+    #page-wrap {
+	  margin: 1	0px;
+    }
+    p {
+	 margin: 5px 0; 
+    }
+
+	/* 
+	Generic Styling, for Desktops/Laptops 
+	*/
+	table { 
+		width: 100%; 
+		border-collapse: collapse; 
+	}
+	/* new stuff */
+	tr:nth-of-type(odd).new { 
+		background: #fdd; 
+	}
+	tr.new { 
+		background: #fee; 
+	}	
+	/* Zebra striping */
+	tr:nth-of-type(odd) { 
+		background: #eee; 
+	}
+	th { 
+		background: #333; 
+		color: white; 
+		font-weight: bold; 
+		cursor: s-resize;
+		background-repeat: no-repeat;
+        background-position: 3% center;
+	}
+	td, th { 
+		padding: 6px; 
+		border: 1px solid #ccc; 
+		text-align: left; 
+		white-space:pre;
+	}
+	
+	th.des:after {
+      content: "\21E9";
+    }
+    
+    th.aes:after {
+      content: "\21E7";
+    }
+
+	td.filter {
+		background-color: rgba(20,200,200,0.7);
+	}
+	td.filter:before {
+		font-size: 1em;
+		content: " \2704";
+	}
+	/* 
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+	@media 
+	only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  {
+	
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		
+		tr { border: 1px solid #ccc; }
+		
+		td { 
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee; 
+			position: relative;
+			padding-left: 50%; 
+		}
+		
+		td:before { 
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+		}
+		
+		/*
+		Label the data
+		*/
+		td:before {
+		  content: attr(data-th) ": ";
+          font-weight: bold;
+          width: 6.5em;
+          display: inline-block;
+		}
+	}
+	
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 480px) {
+		body { 
+			padding: 0; 
+			margin: 0; 
+			width: 320px; }
+		}
+	
+	/* iPads (portrait and landscape) ----------- */
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+		body { 
+			width: 495px; 
+		}
+	}

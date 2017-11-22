@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>fairShair</title>
+  <meta name="description" content="The fair share of kommitment">
+  <meta name="Johannes Mainusch" content="fairShair">
+  <script src="./js/d3.v4.min.js"></script>
+  <script src="./js/fairShair.js"></script>  
+  <script src="./data/szenario03.js"></script>  
+  <link rel="stylesheet" href="css/kommitment.css">
+  <link rel="stylesheet" href="css/monitor.css">
+
+</head>
+
+<body onload="trigger_calculateShairs(document.forms['kparams'] )">
+  <h1>fairShair</h1>
+<p>
+Input parameters of fairShair is a set of revenue related data per persiod (e.g. per year). FairShair will calculate the share of every partner of the company and show the change of his/her share per period. So the plan.
+Find details in <a href="./Readme.md">./Readme.md</a>  
+</p>
+
+<form name="kparams" action="#" onsubmit="trigger_calculateShairs(this);">
+    vesting duration[years]: <input value="4" type="text" name="vestingDuration" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);" ><br>
+    vesting is the numer of years that someone new has to wait, until he/she gets the same 
+    distribution as someone, who has been in the company longer. Each year a newcomer will get 1/vestingDuration
+    more shares (until 100%). So, if vestingduration is 4, then each year the newcomer gets 25% more
+    shares at the end of the year...
+    <br>
+    companyValueFactor[years]: <input value="5" type="text" name="companyValueFactor" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);"><br>
+    founders keep [%] shares: <input value="5" type="text" name="foundersShares" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);"><br>
+    This is the share, that a founder will not give up in the distribution process.
+    <br>
+    domain: <input value="develop" type="text" name="switch" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);"><br>
+    <input type="submit" value="recalculate">
+  </form> 
+  <div id="filterDiv"></div>  
+  <div id="page-wrap"></div>
+</body>
+
+</html>

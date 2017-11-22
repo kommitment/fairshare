@@ -1,0 +1,18 @@
+
+body {
+  background: #fff;
+  background-color: #fff; 
+  font-family: "Rajdhani script=all rev=1, Source Sans Pro", Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  color: #3c3c3b; 
+  margin: 10px;
+}
+
+
+  form {
+    background: #ddd;
+    width:300px;
+    margin: 10px 30px 10px 30px;
+  }
+
