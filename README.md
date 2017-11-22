@@ -32,14 +32,31 @@ Hier einmal die ersten Regeln.
 - neue Kommanditisten werden über einen Zeitraum von *Vesting* Jahren (#VJ) aufgenommen, d.h. sie haben #VJ Jahre lang die Möglichkeit, einen Teil von 1/#VJ Arbeitsanteilen an der Firma zu bekommen (TODO: das führte ohne Gehaltsanpassung u.U. zu sehr gut verdienenden Fachkräften im normalerweise niedrigeren Lohnbereich). #VJ, die Anzahl der Vestingjahre sollte bei 3,4 oder 5 Jahren liegen (TODO: Das müssen wir einmal durchsimulieren).
 - ?? (5) % Firma bleiben bei den Gründern
 
+# getting started
+Fairshare ist ein Programm, dass komplett im Browser läuft (js + d3). Einfach auschecken und fairShare.html öffnen.
 
 #  der Input
 
 In der ersten Version ist Folgender:
 
-- Wertfaktor = Der Wertfaktor sind die Anzahl Jahre, nach denen sich bei gleicher Wirtschaftslage der Firmenwert im Vergleich zu heute verdoppelt hat.
+auf der Webseite (fairShare.html) im Formular:
+vesting duration[years]: 
+4
+
+vesting is the numer of years that someone new has to wait, until he/she gets the same distribution as someone, who has been in the company longer. Each year a newcomer will get 1/vestingDuration more shares (until 100%). So, if vestingduration is 4, then each year the newcomer gets 25% more shares at the end of the year... 
+companyValueFactor[years]: 
+5
+
+founders keep [%] shares: 
+5
+
+This is the share, that a founder will not give up in the distribution process. 
+
+
+
+In data/szenario3.js:
 - Periode/Zeitpunkt der Einzahlung / Abrechnung [Datum]
-- Betrag der erwirtschaftet wurde
+- Betrag der erwirtschaftet wurde (Eintrag)
 - Personen (die mitgemacht haben und zu welchem Anteil]
 	
 Beispiel:
