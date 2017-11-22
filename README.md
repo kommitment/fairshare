@@ -61,61 +61,162 @@ In data/szenario3.js:
 	
 Beispiel:
 
-	[
-	{ 
-	Abrechenzeitpunkt : 2016-04-13,
-	Eintrag : "1500€",
-	Beteiligte : [
-		{ Name : "Anke Nehrenberg", Arbeit : "100%" },
-		{ Name : "Ralf Wirdemann", Arbeit : "100%" },
-		{ Name : "Johannes Mainusch", Arbeit : "100%" }]
+	var data = [
+		{
+		Abrechenzeitpunkt: "2016-12-31",
+		Contribution: "97000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "100%" }]
 	},
-	{ 
-	Abrechenzeitpunkt : 2016-12-31,
-	Eintrag : "99.999€",
-	Beteiligte : [
-		{ Name : "Anke Nehrenberg", Arbeit : "100%" },
-		{ Name : "Ralf Wirdemann", Arbeit : "100%" },
-		{ Name : "Johannes Mainusch", Arbeit : "100%" }]
+	{
+		Abrechenzeitpunkt: "2017-12-31",
+		Contribution: "120000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "100%" }]
 	},
-	{ 
-	Abrechenzeitpunkt : 2017-12-31, 
-	Eintrag : "120.000€",
-	Beteiligte : [
-		{ Name : "Anke Nehrenberg", Arbeit : "100%" },
-		{ Name : "Ralf Wirdemann", Arbeit : "100%" },
-		{ Name : "Johannes Mainusch", Arbeit : "100%" }]
-	},
-	{ 
-	Abrechenzeitpunkt : 2018,
-	Eintrag : "140.000€",
-	Beteiligte : [
-		{ Name : "Anke Nehrenberg", Arbeit : "100%" },
-		{ Name : "Ralf Wirdemann", Arbeit : "100%" },
-		{ Name : "Ben Wiedenmann", Arbeit : "50%" },
-		{ Name : "Johannes Mainusch", Arbeit : "100%" }]
-	},
-	{ 
-	Abrechenzeitpunkt : 2018,
-	Eintrag : "150.000€",
-	Beteiligte : [
-		{ Name : "Anke Nehrenberg", Arbeit : "100%" },
-		{ Name : "Ralf Wirdemann", Arbeit : "100%" },
-		{ Name : "Ben Wiedenmann", Arbeit : "100%" },
-		{ Name : "Johannes Mainusch", Arbeit : "100%" }]
+	{
+		Abrechenzeitpunkt: "2018",
+		Contribution: "140000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "100%" }]
 	}
+	, {
+		Abrechenzeitpunkt: "2019",
+		Contribution: "170000	",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "100%" }]
+		}
+	, {
+		Abrechenzeitpunkt: "2020",
+		Contribution: "100000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+	, {
+		Abrechenzeitpunkt: "2021",
+		Contribution: "100000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+	, {
+		Abrechenzeitpunkt: "2022",
+		Contribution: "100000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+	, {
+		Abrechenzeitpunkt: "2023",
+		Contribution: "100000	",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+	, {
+		Abrechenzeitpunkt: "2024",
+		Contribution: "100000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+	, {
+		Abrechenzeitpunkt: "2025",
+		Contribution: "100000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+	, {
+		Abrechenzeitpunkt: "2026",
+		Contribution: "100000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+	, {
+		Abrechenzeitpunkt: "2027",
+		Contribution: "100000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+	, {
+		Abrechenzeitpunkt: "2028",
+		Contribution: "100000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+	, {
+		Abrechenzeitpunkt: "2029",
+		Contribution: "100000",
+		kommanditisten: [
+			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Johannes M.", Arbeit: "0%" }]
+	}
+
 	]
 
 	
 #  der Output
-Das Programm spuckt folgnde Daten aus:
+Das Programm spuckt folgende Daten aus:
 
--  Perionde
--  Firmenwert = Eintrag * Wertfaktor 
--  k-Anteilssumme = seit Gründung erbrachte kommitment-Anteile
+- Abrechenzeitpunkt: ein Zeitpunkt	
+- k-Contribution / Ausschüttung: Erlös der Firma
+- k-value: Wert der Firma (und ein paar Checksummen)
+- k-ContributionSum: die Summe aller Anteilspunkte
+- vestedKapa: wie viele Personen haben in dieser Periode mitgemacht
 -  je Person:
+	- bei Gründern der Anteil der Firma, die nicht umverteilt wird
+	- Vesting: 
+	- Arbeit: zu wieviel Prozent hat die Person in diesem Jahr gearbeitet.
+	- Contribution: Der Anteil in dieser Periode am Firmenerlös.
 	-  Anteilssumme = die seit der Gründung erbrachten kommitment-Anteile (Summe|Perioden (Eintrag*Arbeit))
 	-  ProzAnteil = der prozentuale Anteil an kommitment = Anteilssumme / k-Anteilssumme
 	-  AnteilAbsolut = der absolute Anteil in € =  ProzAnteil * Firmenwert
+	- die sich in dieser Periode ergebende Ausschüttung
 
 	
