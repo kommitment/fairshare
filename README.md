@@ -1,4 +1,7 @@
 # Warum
+
+![](img/fairShare.png)
+
 FairShair entsteht aus der Idee, ein Simulationsspiel für Firmen und Teilhaber mit möglichst einfachen Regeln zu haben. Dabei sollen folgende Ziele erreicht werden: 
 
 	- die Firma überlebt möglichst lange
@@ -6,10 +9,9 @@ FairShair entsteht aus der Idee, ein Simulationsspiel für Firmen und Teilhaber 
 	- Gründen und Aufbauen lohnt sich 
 	- auch für Späteinsteiger lohnt sich der Einstieg
 
-Be a strong dwarf, so that future giants may stay on your shoulders
+Be a strong dwarf, so that future giants may stay on your shoulders.
 
 # Regeln
-Hier einmal die ersten Regeln.
 
 - Anteilseigner müssen zunächst einmal zu 100% mitmachen. Wenn Du mitmachst, dann ganz. Dann sollte es also keine Erlöse außerhalb kommtiment geben. Zumindest keine solchen die in Konkurrenz zu kommitment stehen könnten. Später können sie auch einmal ein Sabattical machen und dann wiederkommen, oder sie können in Rente gehen.
 - Die Anteile sollen nur bei Menschen liegen, die bei kommtiment mitmachen
