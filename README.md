@@ -1,4 +1,4 @@
-# Warum
+# fairShare - einfach fair teilen
 
 ![](img/fairShare.png)
 
@@ -13,13 +13,19 @@ Be a strong dwarf, so that future giants may stay on your shoulders.
 
 # Regeln
 
-- Anteilseigner müssen zunächst einmal zu 100% mitmachen. Wenn Du mitmachst, dann ganz. Dann sollte es also keine Erlöse außerhalb kommtiment geben. Zumindest keine solchen die in Konkurrenz zu kommitment stehen könnten. Später können sie auch einmal ein Sabattical machen und dann wiederkommen, oder sie können in Rente gehen.
-- Die Anteile sollen nur bei Menschen liegen, die bei kommtiment mitmachen
-- Jeder Anteilseigner hat gleiches Stimmrecht, Anteile ohne Arbeit in der Firma verlieren Strimmrecht.
-- Der Wert der Firma ermittelt sich aus dem kommtiment-Anteil des letzten Jahres mal dem Wertfaktur (derzeit 5). 
-- die Verteilung des Firmenwertes erfolgt nach den tatsächlich seit Firmengründung eingebrachten kommitment-Anteilen. (Eventuell kommt hier noch ein Entropiefaktor hinzu).
-- neue Kommanditisten werden über einen Zeitraum von *Vesting* Jahren (#VJ) aufgenommen, d.h. sie haben #VJ Jahre lang die Möglichkeit, einen Teil von 1/#VJ Arbeitsanteilen an der Firma zu bekommen (TODO: das führte ohne Gehaltsanpassung u.U. zu sehr gut verdienenden Fachkräften im normalerweise niedrigeren Lohnbereich). #VJ, die Anzahl der Vestingjahre sollte bei 3,4 oder 5 Jahren liegen (TODO: Das müssen wir einmal durchsimulieren).
-- ?? (5) % Firma bleiben bei den Gründern und werden nie verteilt --> *founderShares*
+1. Anteilseigner sollen zunächst einmal zu 100% mitmachen. Wenn Du mitmachst, dann ganz. Dann sollte es also keine Erlöse außerhalb kommtiment geben. Zumindest keine solchen die in Konkurrenz zu kommitment stehen könnten. Später können sie auch einmal ein Sabattical machen und dann wiederkommen, oder sie können in Rente gehen.
+
+2. Die Anteile sollen nur bei Menschen liegen, die bei kommtiment mitmachen
+
+3. Jeder Anteilseigner hat gleiches Stimmrecht, Anteile ohne Arbeit in der Firma verlieren Strimmrecht.
+
+4. Der Wert der Firma ermittelt sich aus dem kommtiment-Anteil des letzten Jahres mal dem Wertfaktur (derzeit 5). 
+
+5. die Verteilung des Firmenwertes erfolgt nach den tatsächlich seit Firmengründung eingebrachten kommitment-Anteilen. 
+
+6. *Vesting*: neue Kommanditisten werden über einen Zeitraum von *Vesting* Jahren (#VJ) aufgenommen, d.h. sie haben #VJ Jahre lang die Möglichkeit, einen Teil von 1/#VJ Arbeitsanteilen an der Firma zu bekommen (TODO: das führte ohne Gehaltsanpassung u.U. zu sehr gut verdienenden Fachkräften im normalerweise niedrigeren Lohnbereich). #VJ, die Anzahl der Vestingjahre sollte bei 3,4 oder 5 Jahren liegen (TODO: Das müssen wir einmal durchsimulieren).
+
+7. *founderShares*: ??%(5) der Firma bleiben bei den Gründern und werden nie verteilt.
 
 # Ablauf
 1. Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Für Personen, die noch im Vesting sind, wird der Vesting*Arbeits-Prozentsatz  ermittelt. Die Summe der Personen * Arbeitsanteil * Vesting ergibt die gesamte in diesem Jahr gevestete Arbeitskraft (*VestedKapa*).
