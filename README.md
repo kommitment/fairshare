@@ -21,11 +21,15 @@ Be a strong dwarf, so that future giants may stay on your shoulders.
 
 4. Der Wert der Firma ermittelt sich aus dem kommtiment-Anteil des letzten Jahres mal dem Wertfaktur (derzeit 5). 
 
-5. die Verteilung des Firmenwertes erfolgt nach den tatsächlich seit Firmengründung eingebrachten kommitment-Anteilen. 
+5. *fairShares*: Die Verteilung des Firmenwertes erfolgt nach den tatsächlich seit Firmengründung eingebrachten fairShares. Dazu werden in jeder Periode so viele fairShares ausgegeben und unter den arbeitenden Gesellschaftern verteilt, wie der Unternhmensgewinn in der Periode war. Angenommen, im letzten Jahr hat die Firma einen Gewinn von 230042€ erwirtschaftet, so werden 230042 fairShares unter den beteiligten Mitarbeitern verteilt. Personen, die in dieser Periode ein Sabbatical gemacht habe oder in Rente waren, also nicht gearbeitet haben, bekommen  keine fairShares. 
+Jeder Beteiligte, der mitgearbeitet hat, bekommt einen Anteil der ausgegebenen fairShares, der mit seinem Faktor *Vesting*  und mit seinem Faktor *Arbeit* gewichtet wird.
 
-6. *Vesting*: neue Kommanditisten werden über einen Zeitraum von *Vesting* Jahren (#VJ) aufgenommen, d.h. sie haben #VJ Jahre lang die Möglichkeit, einen Teil von 1/#VJ Arbeitsanteilen an der Firma zu bekommen (TODO: das führte ohne Gehaltsanpassung u.U. zu sehr gut verdienenden Fachkräften im normalerweise niedrigeren Lohnbereich). #VJ, die Anzahl der Vestingjahre sollte bei 3,4 oder 5 Jahren liegen (TODO: Das müssen wir einmal durchsimulieren).
+6. Faktor *Vesting*: sagt aus, zu wie viel Prozent der Teilhaber gevestet ist. Neue Kommanditisten werden über einen Zeitraum von *Vesting* Jahren (#VJ) aufgenommen, d.h. sie haben #VJ Jahre lang die Möglichkeit, einen Teil von 1/#VJ Arbeitsanteilen an der Firma zu bekommen #VJ, die Anzahl der Vestingjahre könnte bei 2,3,4 oder 5 Jahren liegen. Der Faktor Vesting wird am Anfang unter allen Beteiligten im Konsent beschlossen. Beispiel: *Vesting* = 3 Jahre. Somit sind neue Kommandisten im ersten JAhr zu 33,3% gevestet, im zweiten Jahr zu 66,6% und ab dem dritten Jahr zu 100%. Das Vesting beschützt die bestehenden Kommandististen etwas vor den Newcomern. Wird *Vesting" auf 1 gesetzt, so starten neue Kommanditisten immer zu 100% und der Faktor wird unwirksam.
 
-7. *founderShares*: ??%(5) der Firma bleiben bei den Gründern und werden nie verteilt.
+7. Faktor *Arbeit*: sagt aus, zu wie viel Prozent die Person in diesem JAhr mitgearbeitet hat.
+
+8. *founderShares*: ??%(5) der Firma bleiben bei den Gründern und werden nie verteilt.
+
 
 # Ablauf
 1. Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Für Personen, die noch im Vesting sind, wird der Vesting*Arbeits-Prozentsatz  ermittelt. Die Summe der Personen * Arbeitsanteil * Vesting ergibt die gesamte in diesem Jahr gevestete Arbeitskraft (*VestedKapa*).
