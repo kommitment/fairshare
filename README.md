@@ -13,28 +13,28 @@ Be a strong dwarf, so that future giants may stay on your shoulders.
 
 # Regeln
 
-1. Anteilseigner sollen zunächst einmal zu 100% mitmachen. Wenn Du mitmachst, dann ganz. Dann sollte es also keine Erlöse außerhalb kommtiment geben. Zumindest keine solchen die in Konkurrenz zu kommitment stehen könnten. Später können sie auch einmal ein Sabattical machen und dann wiederkommen, oder sie können in Rente gehen.
+1. ___Anteilseigner___ sollen zunächst einmal zu 100% mitmachen. Wenn Du mitmachst, dann ganz. Dann sollte es also keine Erlöse außerhalb kommtiment geben. Zumindest keine solchen die in Konkurrenz zu kommitment stehen könnten. Später können sie auch einmal ein Sabattical machen und dann wiederkommen, oder sie können in Rente gehen.
 
-2. Die Anteile sollen nur bei Menschen liegen, die bei kommtiment mitmachen
+2. ___Partizipativ___ bedeutet, die Firma gehört denen, die mitmachen. Die Anteile sollen nur bei Menschen liegen, die bei kommtiment mitmachen oder einmal mitgemacht haben. Damit das so ist, hat kommitment das Vorkaufsrecht, falls Anteilseigner aussteigen udn ihren Anteil verkaufen möchten.
 
-3. Jeder Anteilseigner hat gleiches Stimmrecht, Anteile ohne Arbeit in der Firma verlieren Strimmrecht.
+3. ___Demokratisch___ bedeutet, jeder der mitmacht, stimmt mit ab. Jeder Anteilseigner hat gleiches Stimmrecht, Anteile ohne Arbeit in der Firma verlieren Strimmrecht, werden aber in der Ausschüttung der Gewinne weiter mit be3rücksichtigt. Wer also in Rente ist oder ein Sabbbatical mach, der verliert in der Zeit sein Stimmrecht.
 
-4. Der Wert der Firma ermittelt sich aus dem kommtiment-Anteil des letzten Jahres mal dem Wertfaktur (derzeit 5). 
+4. (möglichst geringer) ___Firmenwert___. Der Wert der Firma ermittelt sich aus dem kommtiment-Anteil des letzten Jahres mal dem Wertfaktur (derzeit 5). Dazu kommen eventuell vorhandene Rücklagen, die allerdings möglichst gering sein sollten. Das ist für den Rückkauf von Anteilen wichtig. Damit das funktioniert, sollte die Firma keine weiteren Werte anhäufen, also keine Immobilien besitzen o.ä. Auch würde ein hoher Firmenwert zu Spekulation verleiten...
 
-5. *fairShares*: Die Verteilung des Firmenwertes erfolgt nach den tatsächlich seit Firmengründung eingebrachten fairShares. Dazu werden in jeder Periode so viele fairShares ausgegeben und unter den arbeitenden Gesellschaftern verteilt, wie der Unternhmensgewinn in der Periode war. Angenommen, im letzten Jahr hat die Firma einen Gewinn von 230042€ erwirtschaftet, so werden 230042 fairShares unter den beteiligten Mitarbeitern verteilt. Personen, die in dieser Periode ein Sabbatical gemacht habe oder in Rente waren, also nicht gearbeitet haben, bekommen  keine fairShares. 
-Jeder Beteiligte, der mitgearbeitet hat, bekommt einen Anteil der ausgegebenen fairShares, der mit seinem Faktor *Vesting*  und mit seinem Faktor *Arbeit* gewichtet wird.
+5. ___fairShares___: Die Verteilung des Firmenwertes erfolgt nach den tatsächlich seit Firmengründung eingebrachten fairShares. Dazu werden in jeder Periode so viele fairShares ausgegeben und unter den arbeitenden Gesellschaftern verteilt, wie der Unternhmensgewinn in der Periode war. Angenommen, im letzten Jahr hat die Firma einen Gewinn von 230042€ erwirtschaftet, so werden 230042 fairShares unter den beteiligten Mitarbeitern verteilt. Personen, die in dieser Periode ein Sabbatical gemacht habe oder in Rente waren, also nicht gearbeitet haben, bekommen  keine fairShares. 
+Jeder Beteiligte, der mitgearbeitet hat, bekommt einen Anteil der ausgegebenen fairShares, der mit seinem Faktor ___Vesting___  und mit seinem Faktor ___Arbeit___ gewichtet wird.
 
-6. Faktor *Vesting*: sagt aus, zu wie viel Prozent der Teilhaber gevestet ist. Neue Kommanditisten werden über einen Zeitraum von *Vesting* Jahren (#VJ) aufgenommen, d.h. sie haben #VJ Jahre lang die Möglichkeit, einen Teil von 1/#VJ Arbeitsanteilen an der Firma zu bekommen #VJ, die Anzahl der Vestingjahre könnte bei 2,3,4 oder 5 Jahren liegen. Der Faktor Vesting wird am Anfang unter allen Beteiligten im Konsent beschlossen. Beispiel: *Vesting* = 3 Jahre. Somit sind neue Kommandisten im ersten JAhr zu 33,3% gevestet, im zweiten Jahr zu 66,6% und ab dem dritten Jahr zu 100%. Das Vesting beschützt die bestehenden Kommandististen etwas vor den Newcomern. Wird *Vesting" auf 1 gesetzt, so starten neue Kommanditisten immer zu 100% und der Faktor wird unwirksam.
+6. Faktor ___Vesting___: sagt aus, zu wie viel Prozent der Teilhaber gevestet ist. Neue Kommanditisten werden über einen Zeitraum von ___Vesting___ Jahren (#VJ) aufgenommen, d.h. sie haben #VJ Jahre lang die Möglichkeit, einen Teil von 1/#VJ Arbeitsanteilen an der Firma zu bekommen #VJ, die Anzahl der Vestingjahre könnte bei 2,3,4 oder 5 Jahren liegen. Der Faktor Vesting wird am Anfang unter allen Beteiligten im Konsent beschlossen. Beispiel: ___Vesting___ = 3 Jahre. Somit sind neue Kommandisten im ersten JAhr zu 33,3% gevestet, im zweiten Jahr zu 66,6% und ab dem dritten Jahr zu 100%. Das Vesting beschützt die bestehenden Kommandististen etwas vor den Newcomern. Wird ___Vesting" auf 1 gesetzt, so starten neue Kommanditisten immer zu 100% und der Faktor wird unwirksam.
 
-7. Faktor *Arbeit*: sagt aus, zu wie viel Prozent die Person in diesem JAhr mitgearbeitet hat.
+7. Faktor ___Arbeit___: sagt aus, zu wie viel Prozent die Person in diesem Jahr mitgearbeitet hat.
 
-8. *founderShares*: ??%(5) der Firma bleiben bei den Gründern und werden nie verteilt.
+8. ___founderShares___: ??%(5) der Firma bleiben bei den Gründern und werden nie verteilt.
 
 
 # Ablauf
-1. Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Für Personen, die noch im Vesting sind, wird der Vesting*Arbeits-Prozentsatz  ermittelt. Die Summe der Personen * Arbeitsanteil * Vesting ergibt die gesamte in diesem Jahr gevestete Arbeitskraft (*VestedKapa*).
+1. Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Für Personen, die noch im Vesting sind, wird der Vesting___Arbeits-Prozentsatz  ermittelt. Die Summe der Personen ___ Arbeitsanteil ___ Vesting ergibt die gesamte in diesem Jahr gevestete Arbeitskraft (___VestedKapa___).
 2. Der Gewinn der Firma wird ermittelt.
-3. Die neue Anteilsverteilung wird ermittelt. Dazu erhält jeder, der in der Periode mitgearbeitet hat, eine Anzahl von Punkten, die dem Gewinn der Firma mal seinem  Vesting*Arbeits-Prozentsatz geteilt durch *VestedKapa*. Diese Punkte werden zu den Punkten aus vergangenen Perioden hinzugezählt.
+3. Die neue Anteilsverteilung wird ermittelt. Dazu erhält jeder, der in der Periode mitgearbeitet hat, eine Anzahl von Punkten, die dem Gewinn der Firma mal seinem  Vesting___Arbeits-Prozentsatz geteilt durch ___VestedKapa___. Diese Punkte werden zu den Punkten aus vergangenen Perioden hinzugezählt.
 4. Daraus ergibt sich für alle Personen der neuen Anteil an der Firma, abzüglich eventuell einbehaltener founderShares.
 5. Der Jahresgewinn der Firma wird entsprechend der Anteile verteilt. 
 
@@ -116,9 +116,9 @@ Das Programm spuckt folgende Daten aus:
 	- Vesting: 
 	- Arbeit: zu wieviel Prozent hat die Person in diesem Jahr gearbeitet.
 	- Contribution: Der Anteil in dieser Periode am Firmenerlös.
-	-  Anteilssumme = die seit der Gründung erbrachten kommitment-Anteile (Summe|Perioden (Eintrag*Arbeit))
+	-  Anteilssumme = die seit der Gründung erbrachten kommitment-Anteile (Summe|Perioden (Eintrag___Arbeit))
 	-  ProzAnteil = der prozentuale Anteil an kommitment = Anteilssumme / k-Anteilssumme
-	-  AnteilAbsolut = der absolute Anteil in € =  ProzAnteil * Firmenwert
+	-  AnteilAbsolut = der absolute Anteil in € =  ProzAnteil ___ Firmenwert
 	- die sich in dieser Periode ergebende Ausschüttung
 
 	
