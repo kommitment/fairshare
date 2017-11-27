@@ -83,12 +83,12 @@ function calculateShairs(input, theForm) {
             "Abrechenzeitpunkt": input[entry].Abrechenzeitpunkt,
             "k-Contribution\nAusschüttung": input[entry].Contribution,
             "k-value": k_value,
-            "k-ContributionSum" : kContributionSum
+            "sum fairShares" : kContributionSum
         }
-        // find the vestedKapa (sum of Arbeit)
-        var vestedKapa = 0.0;
+        // find the SumVestingArbeit (sum of Arbeit)
+        var SumVestingArbeit = 0.0;
         var sharesInDistribution = 1;
-        // loop through kommanditisten to find the "vestedKapa"  of this year
+        // loop through kommanditisten to find the "SumVesting*Arbeit"  of this year
         for (i in input[entry].kommanditisten) {
             var kommanditist = input[entry].kommanditisten[i].Name;
             var vesting = 0.0;
@@ -99,28 +99,29 @@ function calculateShairs(input, theForm) {
             kShare[kommanditist].foundersShares += ( entry < 1) ? foundersShares : 0;            
             kShare[kommanditist].versting += ( entry < 1) ? 1 : 0;            
             kShare[kommanditist].versting += ( kShare[kommanditist].versting < 1) ? 1/vestingDuration : 0;
-            // vesting per kommanditist is now determined, so now factor it into vestedKapa
-            vestedKapa += kShare[kommanditist].versting * parseFloat(input[entry].kommanditisten[i].Arbeit) / 100;
+            // vesting per kommanditist is now determined, so now factor it into SumVesting*Arbeit
+            SumVestingArbeit += kShare[kommanditist].versting * parseFloat(input[entry].kommanditisten[i].Arbeit) / 100;
             // sharesInDistribution, the shares to be ditributed...
             sharesInDistribution -= kShare[kommanditist].foundersShares;
         }
-        output[entry]["vestedKapa"] = vestedKapa;
+        output[entry]["SumVestingArbeit"] = Math.round (100*SumVestingArbeit)/100;
         // loop through kommanditisten to calculate shares
         for (i in input[entry].kommanditisten) {
             var kommanditist = input[entry].kommanditisten[i].Name;
             kShare[kommanditist].owner = kommanditist;
             kShare[kommanditist].contribution = input[entry].Contribution 
-                * parseFloat(input[entry].kommanditisten[i].Arbeit)/100 / output[entry]["vestedKapa"]
+                * parseFloat(input[entry].kommanditisten[i].Arbeit)/100 / output[entry]["SumVestingArbeit"]
                 * kShare[kommanditist].versting;
             kShare[kommanditist].contributionSum = kShare[kommanditist].contributionSum || 0;
             kShare[kommanditist].contributionSum += kShare[kommanditist].contribution;
 
             anteil = ""
             anteil += "foundersShares: " + kShare[kommanditist].foundersShares*100+"%"  ;
-            anteil += "\nVesting: " + kShare[kommanditist].versting;
+            anteil += "\nVesting: " + Math.round (100*kShare[kommanditist].versting)/100;
             anteil += " - Arbeit: " + input[entry].kommanditisten[i].Arbeit;
             anteil += "\nContribution: " +  Math.round (kShare[kommanditist].contribution)+"€";
-            anteil += "\nEintragssumme: " +  Math.round (kShare[kommanditist].contributionSum)+"€";
+            anteil += "\nfairShares: " +  Math.round (kShare[kommanditist].contributionSum)
+                    + " / " + kContributionSum;
             // here it comes
             kShare[kommanditist].anteil = 
                 kShare[kommanditist].foundersShares +

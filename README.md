@@ -110,13 +110,13 @@ Das Programm spuckt folgende Daten aus:
 - k-Contribution / Ausschüttung: Erlös der Firma
 - k-value: Wert der Firma (und ein paar Checksummen)
 - k-ContributionSum: die Summe aller Anteilspunkte
-- vestedKapa: wie viele Personen haben in dieser Periode mitgemacht
+- SumVesting*Arbeit: wie viele Personen haben in dieser Periode mit welchem Vesing mitgemacht
 -  je Person:
 	- bei Gründern der Anteil der Firma, die nicht umverteilt wird
 	- Vesting: 
 	- Arbeit: zu wieviel Prozent hat die Person in diesem Jahr gearbeitet.
 	- Contribution: Der Anteil in dieser Periode am Firmenerlös.
-	-  Anteilssumme = die seit der Gründung erbrachten kommitment-Anteile (Summe|Perioden (Eintrag___Arbeit))
+	-  fairShares = die seit der Gründung erbrachten kommitment-Anteile (Summe|Perioden (Eintrag___Arbeit))
 	-  ProzAnteil = der prozentuale Anteil an kommitment = Anteilssumme / k-Anteilssumme
 	-  AnteilAbsolut = der absolute Anteil in € =  ProzAnteil ___ Firmenwert
 	- die sich in dieser Periode ergebende Ausschüttung
