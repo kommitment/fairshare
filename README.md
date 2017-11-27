@@ -22,7 +22,8 @@ Be a strong dwarf, so that future giants may stay on your shoulders.
 4. (möglichst geringer) ___Firmenwert___. Der Wert der Firma ermittelt sich aus dem kommtiment-Anteil des letzten Jahres mal dem Wertfaktur (derzeit 5). Dazu kommen eventuell vorhandene Rücklagen, die allerdings möglichst gering sein sollten. Das ist für den Rückkauf von Anteilen wichtig. Damit das funktioniert, sollte die Firma keine weiteren Werte anhäufen, also keine Immobilien besitzen o.ä. Auch würde ein hoher Firmenwert zu Spekulation verleiten...
 
 5. ___fairShares___: Die Verteilung des Firmenwertes erfolgt nach den tatsächlich seit Firmengründung eingebrachten fairShares. Dazu werden in jeder Periode so viele fairShares ausgegeben und unter den arbeitenden Gesellschaftern verteilt, wie der Unternhmensgewinn in der Periode war. Angenommen, im letzten Jahr hat die Firma einen Gewinn von 230042€ erwirtschaftet, so werden 230042 fairShares unter den beteiligten Mitarbeitern verteilt. Personen, die in dieser Periode ein Sabbatical gemacht habe oder in Rente waren, also nicht gearbeitet haben, bekommen  keine fairShares. 
-Jeder Beteiligte, der mitgearbeitet hat, bekommt einen Anteil der ausgegebenen fairShares, der mit seinem Faktor ___Vesting___  und mit seinem Faktor ___Arbeit___ gewichtet wird.
+Jeder Beteiligte, der mitgearbeitet hat, bekommt einen Anteil der ausgegebenen fairShares, der mit seinem Faktor ___Vesting___  und mit seinem Faktor ___Arbeit___ gewichtet wird. Weil jedes Jahr neue fairShares ausgegeben werden, gibt es in Summe immer mehr fairShares. Daher haben fairShares keinen Wert, sondern nur eine relastive Bedeutung in Bezug auf die Summe aller ausgegebenen fairShares.
+
 
 6. Faktor ___Vesting___: sagt aus, zu wie viel Prozent der Teilhaber gevestet ist. Neue Kommanditisten werden über einen Zeitraum von ___Vesting___ Jahren (#VJ) aufgenommen, d.h. sie haben #VJ Jahre lang die Möglichkeit, einen Teil von 1/#VJ Arbeitsanteilen an der Firma zu bekommen #VJ, die Anzahl der Vestingjahre könnte bei 2,3,4 oder 5 Jahren liegen. Der Faktor Vesting wird am Anfang unter allen Beteiligten im Konsent beschlossen. Beispiel: ___Vesting___ = 3 Jahre. Somit sind neue Kommandisten im ersten JAhr zu 33,3% gevestet, im zweiten Jahr zu 66,6% und ab dem dritten Jahr zu 100%. Das Vesting beschützt die bestehenden Kommandististen etwas vor den Newcomern. Wird ___Vesting" auf 1 gesetzt, so starten neue Kommanditisten immer zu 100% und der Faktor wird unwirksam.
 
@@ -32,9 +33,9 @@ Jeder Beteiligte, der mitgearbeitet hat, bekommt einen Anteil der ausgegebenen f
 
 
 # Ablauf
-1. Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Für Personen, die noch im Vesting sind, wird der Vesting___Arbeits-Prozentsatz  ermittelt. Die Summe der Personen ___ Arbeitsanteil ___ Vesting ergibt die gesamte in diesem Jahr gevestete Arbeitskraft (___VestedKapa___).
+1. Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Für Personen, die noch im Vesting sind, wird der Vesting___Arbeits-Prozentsatz  ermittelt. Die Summe der Personen ___ Arbeitsanteil ___ Vesting ergibt die gesamte in diesem Jahr gevestete Arbeitskraft (___SumVestingArbeit___).
 2. Der Gewinn der Firma wird ermittelt.
-3. Die neue Anteilsverteilung wird ermittelt. Dazu erhält jeder, der in der Periode mitgearbeitet hat, eine Anzahl von Punkten, die dem Gewinn der Firma mal seinem  Vesting___Arbeits-Prozentsatz geteilt durch ___VestedKapa___. Diese Punkte werden zu den Punkten aus vergangenen Perioden hinzugezählt.
+3. Die neue Anteilsverteilung wird ermittelt. Dazu erhält jeder, der in der Periode mitgearbeitet hat, eine Anzahl von Punkten, die dem Gewinn der Firma mal seinem  Vesting___Arbeits-Prozentsatz geteilt durch ___SumVestingArbeit___. Diese Punkte werden zu den Punkten aus vergangenen Perioden hinzugezählt.
 4. Daraus ergibt sich für alle Personen der neuen Anteil an der Firma, abzüglich eventuell einbehaltener founderShares.
 5. Der Jahresgewinn der Firma wird entsprechend der Anteile verteilt. 
 
