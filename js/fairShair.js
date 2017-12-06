@@ -26,7 +26,7 @@ var filters = new Array();
 // ****************
 function trigger_calculateShairs(theForm) {
     console.clear();
-    log.debug("in trigger_calculateShairs: " + theForm.vestingDuration.value);
+    log.debug("in trigger_calculateShairs: ", theForm);
     loadData(function (data) { alert("callback got called") },theForm);
 }
 
@@ -116,7 +116,7 @@ function calculateShairs(input, theForm) {
             kShare[kommanditist].contributionSum += kShare[kommanditist].contribution;
 
             anteil = ""
-            anteil += "foundersShares: " + kShare[kommanditist].foundersShares*100+"%"  ;
+            anteil += "foundersShares: " + round100(kShare[kommanditist].foundersShares*100)+"%"  ;
             anteil += "\nVesting: " + Math.round (100*kShare[kommanditist].versting)/100;
             anteil += " - Arbeit: " + input[entry].kommanditisten[i].Arbeit;
             anteil += "\nContribution: " +  Math.round (kShare[kommanditist].contribution)+"€";
@@ -280,4 +280,9 @@ function renderFilters(error, data, filters) {
             this.remove();
             renderData(error, data, filters);
         });
+}
+
+// ****************
+function round100 (value) {
+    return Math.round (100.0*value)/100;
 }
