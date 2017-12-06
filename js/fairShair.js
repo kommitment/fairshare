@@ -32,8 +32,8 @@ function trigger_calculateShairs(theForm) {
 
 // ****************
 function loadData(callback, theForm) {
-    var dataFile = theForm.dataFile.value || "szenario03.js";
-    var domain = getQueryVariable("switch");
+    var dataFile = theForm.dataFile.value || "szenario04.js";
+    var domain = getQueryVariable("switch") || "develop";
     log.debug("in loadData... " + domain);
     // remove all tables in element with id #page-wrap
     d3.select('#page-wrap').selectAll("table").remove();

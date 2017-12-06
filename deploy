@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# export TARGETUSER=kommitment
+# export TARGETSERVER=94.130.79.196
 export TARGETUSER=pi
 export TARGETSERVER=krukas.dyn.amicdns.de
 export TARGETPORT=22

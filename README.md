@@ -105,6 +105,8 @@ Beispiel:
 
 	
 #  der Output
+Beispiel hier: https://krukas.dyn.amicdns.de/fairShare/fairShair.html?vestingDuration=3&companyValueFactor=5&foundersShares=7&switch=develop&dataFile=szenario04.js#
+
 Das Programm spuckt folgende Daten aus:
 
 - Abrechenzeitpunkt: ein Zeitpunkt	
@@ -127,3 +129,4 @@ Das Programm spuckt folgende Daten aus:
 - es gibt Spielrunden (etwa durch Simulation von Jahren)
 - es gibt persönliche Zielvereinbarungen (etwa: jährlich: Einkünfte, Firmenziele, Urlaub/Freizeit, persönliche Horizonterweiterungen --> Avatar ausbauen / Profilschärfung)
 - möglichst viele Mitspieler finden
+p
