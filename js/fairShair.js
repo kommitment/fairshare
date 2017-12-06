@@ -9,7 +9,7 @@ var global = {
         url: "data/szenario01.json"
     },
     test: {
-        url: "data/szenario01.json"
+        url: "data/szenario03.json"
     },
     production: {
         url: "https://krukas.dynamicns.de/kommitment-fairshair/getData"
@@ -32,13 +32,22 @@ function trigger_calculateShairs(theForm) {
 
 // ****************
 function loadData(callback, theForm) {
+    var dataFile = theForm.dataFile.value || "szenario03.js";
     var domain = getQueryVariable("switch");
     log.debug("in loadData... " + domain);
     // remove all tables in element with id #page-wrap
     d3.select('#page-wrap').selectAll("table").remove();
     if (domain == "develop") {
         log.debug("in loadData: Development Mode, Data comes from file...");
-        renderData("", calculateShairs(data, theForm));
+        // read dataFile
+        var script = document.createElement('script');
+        script.onload = function () {
+            log.debug ("new script loaded...");
+            renderData("", calculateShairs(data, theForm));
+        };
+        script.src = "./data/"+dataFile;
+        document.head.appendChild(script);
+        
     }
     else {
         global.targetServer = eval("global." + domain)
