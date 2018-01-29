@@ -127,4 +127,4 @@ Das Programm spuckt folgende Daten aus:
 - es gibt Spielrunden (etwa durch Simulation von Jahren)
 - es gibt persönliche Zielvereinbarungen (etwa: jährlich: Einkünfte, Firmenziele, Urlaub/Freizeit, persönliche Horizonterweiterungen --> Avatar ausbauen / Profilschärfung)
 - möglichst viele Mitspieler finden
-p
+pp
