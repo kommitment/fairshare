@@ -20,7 +20,7 @@ Be a strong dwarf, so that future giants may stay on your shoulders.
 
 3. ___Demokratisch___ bedeutet, jeder der mitmacht, stimmt mit ab. Jeder Anteilseigner hat gleiches Stimmrecht: one person, one voice. Wenn jemand Anteile hat, aber im entsprechend aktuellen Zeitraum nicht für *die Firma* gearbeitet hat, verliert er das Stimmrecht; wird aber in der Ausschüttung der Gewinne weiter mit berücksichtigt. Wer also in Rente ist oder ein Sabbatical macht, der verliert in der Zeit sein Stimmrecht.
 
-4. (möglichst geringer) ___Firmenwert___. Der Wert der Firma ermittelt sich aus dem durchschnittlichen Gewinn *der Firma* der letzten drei Jahre mal dem Wertfaktor (derzeit 0,8). Das ist für den Rückkauf von Anteilen wichtig. Damit das funktioniert, sollte *die Firma* keine weiteren Werte anhäufen, also keine Immobilien besitzen o.ä. Hier würde ein hoher Firmenwert zu Spekulation verleiten.
+4. (möglichst geringer) ___Firmenwert___. Der Wert der Firma ermittelt sich aus dem durchschnittlichen Gewinn *der Firma* der letzten drei Jahre mal dem Wertfaktor (derzeit 0.8). Das ist für den Rückkauf von Anteilen wichtig. Damit das funktioniert, sollte *die Firma* keine weiteren Werte anhäufen, also keine Immobilien besitzen o.ä. Hier würde ein hoher Firmenwert zu Spekulation verleiten.
 2018-05-11: --> das ist derzeit in der Überarbeitung. S. Richter wird uns dazu einen neuen Vorschlag machen.
 
 5. ___fairShares___: Die Verteilung des Firmenwertes erfolgt nach den tatsächlich seit Firmengründung eingebrachten fairShares. Dazu werden in jeder Periode so viele fairShares ausgegeben und unter den arbeitenden Gesellschaftern verteilt, wie der Unternehmensgewinn in der Periode war. Angenommen, im letzten Jahr hat *die Firma* einen Gewinn von 23.0042€ erwirtschaftet, so werden 23.0042 fairShares unter den beteiligten Mitarbeitern verteilt. Personen, die in dieser Periode ein Sabbatical gemacht haben oder in Rente waren, also nicht gearbeitet haben, bekommen keine fairShares.
@@ -71,7 +71,7 @@ Beispiel:
 	var data = [
 		{
 		Abrechenzeitpunkt: "2016-12-31",
-		Contribution: "324149,68",
+		Contribution: "324149.68",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
 			{ Name: "Ralf W.", Arbeit: "100%" },
@@ -79,7 +79,7 @@ Beispiel:
 	},
 	{
 		Abrechenzeitpunkt: "2017-12-31",
-		Contribution: "547152,82",
+		Contribution: "547152.82",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
 			{ Name: "Ralf W.", Arbeit: "100%" },

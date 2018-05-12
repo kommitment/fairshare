@@ -13,7 +13,6 @@
   <script src="./data/szenario03.js"></script>
   <link rel="stylesheet" href="css/kommitment.css">
   <link rel="stylesheet" href="css/monitor.css">
-
 </head>
 
 <body onload="document.forms['kparams'].submit; trigger_calculateShairs(document.forms['kparams'] )">
@@ -32,7 +31,7 @@
     vesting duration:
     <input value="3" type="text" name="vestingDuration" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
     <br> companyValueFactor[years]:
-    <input value="5" type="text" name="companyValueFactor" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
+    <input value="0.8" type="text" name="companyValueFactor" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
     <br> founders keep [%] shares:
     <input value="7" type="text" name="foundersShares" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
     <br> domain:

@@ -45,16 +45,16 @@ function loadData(callback, theForm) {
             log.debug ("new script loaded...");
             renderData("", calculateShairs(data, theForm));
         };
-        script.src = "./data/"+dataFile;
-        document.head.appendChild(script);
-        
+        script.src = "./data/"+dataFile+ "?thisdoes=cachebusting"+Math.random();;
+        document.head.appendChild(script)
+
     }
     else {
         global.targetServer = eval("global." + domain)
 
         // construct query url
         var url = global.targetServer.url
-            + "?thisdoes=nothing";
+            + "?thisdoes=cachebusting"+Math.random();
         log.debug("in loadData, url = '" + url + "'");
 
         d3.json(url)
@@ -68,7 +68,7 @@ function loadData(callback, theForm) {
 function calculateShairs(input, theForm) {
     var output = [];
     /*
-      [  { 
+      [  {
         Abrechenzeitpunkt : 2016-04-13,
         Contribution : "1500€",
         Beteiligte : [
@@ -82,7 +82,7 @@ function calculateShairs(input, theForm) {
     var companyValueFactor = theForm.companyValueFactor.value;
     var foundersShares = theForm.foundersShares.value/100;
     var kShare = [];
-    
+
     var kContributionSum = 0;
     for (var entry in input) {
         console.log("in calculateShairs, entry", entry, input[entry]);
@@ -105,8 +105,8 @@ function calculateShairs(input, theForm) {
             kShare[kommanditist].versting = kShare[kommanditist].versting|| 0;
             kShare[kommanditist].foundersShares = kShare[kommanditist].foundersShares|| 0;
             // founders 100% vesting and founders shares
-            kShare[kommanditist].foundersShares += ( entry < 1) ? foundersShares : 0;            
-            kShare[kommanditist].versting += ( entry < 1) ? 1 : 0;            
+            kShare[kommanditist].foundersShares += ( entry < 1) ? foundersShares : 0;
+            kShare[kommanditist].versting += ( entry < 1) ? 1 : 0;
             kShare[kommanditist].versting += ( kShare[kommanditist].versting < 1) ? 1/vestingDuration : 0;
             // vesting per kommanditist is now determined, so now factor it into SumVesting*Arbeit
             SumVestingArbeit += kShare[kommanditist].versting * parseFloat(input[entry].kommanditisten[i].Arbeit) / 100;
@@ -118,7 +118,7 @@ function calculateShairs(input, theForm) {
         for (i in input[entry].kommanditisten) {
             var kommanditist = input[entry].kommanditisten[i].Name;
             kShare[kommanditist].owner = kommanditist;
-            kShare[kommanditist].contribution = input[entry].Contribution 
+            kShare[kommanditist].contribution = input[entry].Contribution
                 * parseFloat(input[entry].kommanditisten[i].Arbeit)/100 / output[entry]["SumVestingArbeit"]
                 * kShare[kommanditist].versting;
             kShare[kommanditist].contributionSum = kShare[kommanditist].contributionSum || 0;
@@ -132,7 +132,7 @@ function calculateShairs(input, theForm) {
             anteil += "\nfairShares: " +  Math.round (kShare[kommanditist].contributionSum)
                     + " / " + kContributionSum;
             // here it comes
-            kShare[kommanditist].anteil = 
+            kShare[kommanditist].anteil =
                 kShare[kommanditist].foundersShares +
                 sharesInDistribution * kShare[kommanditist].contributionSum / kContributionSum;
             anteil += "\nAnteil: " + Math.round (10000*kShare[kommanditist].anteil ) / 100 +"%";
