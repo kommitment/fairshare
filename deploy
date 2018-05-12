@@ -4,7 +4,7 @@
 # export TARGETSERVER=94.130.79.196
 export TARGETUSER=pi
 export TARGETSERVER=krukas.dyn.amicdns.de
-export TARGETPORT=22
+export TARGETPORT=65040
 
 export TARGETDIR=/home/pi/public-html/`echo ${PWD##*/}`
 export DEPLOYMENTTARGET=$TARGETUSER@$TARGETSERVER:$TARGETDIR
@@ -18,3 +18,5 @@ ssh -p $TARGETPORT $TARGETUSER@$TARGETSERVER "mkdir -p $TARGETDIR"
 rsync --stats --copy-links -avRe  "ssh -p "$TARGETPORT --exclude '.git' ./ $DEPLOYMENTTARGET
 #rsync --stats -avRe "ssh -p 43022" ./ $DEPLOYMENTTARGET
 
+echo "open http://krukas.dyn.amicdns.de/fairShare/fairShair.html"
+open http://krukas.dyn.amicdns.de/fairShare/fairShair.html

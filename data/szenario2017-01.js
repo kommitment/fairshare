@@ -30,7 +30,7 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2019",
-		Contribution: "800000	",
+		Contribution: "800000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
@@ -43,7 +43,7 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2020",
-		Contribution: "800000	",
+		Contribution: "800000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
