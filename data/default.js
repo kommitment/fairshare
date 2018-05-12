@@ -20,7 +20,7 @@ var data = [
 	Contribution: "600000",
 	kommanditisten: [
 		{ Name: "Anke N.", Arbeit: "100%" },
-		{ Name: "Ralf W.", Arbeit: "100%", returning: "100%" },
+		{ Name: "Ralf W.", Arbeit: "100%", returnedFairShares: "100%" },
 		{ Name: "Ben W.", Arbeit: "100%" },
 		{ Name: "Katja R.", Arbeit: "25%" },
 		{ Name: "Johannes M.", Arbeit: "100%" }]

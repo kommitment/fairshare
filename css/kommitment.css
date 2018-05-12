@@ -10,12 +10,17 @@ body {
 }
 
 
-  form {
+form {
     background: #ddd;
     width:300px;
     margin: 10px 30px 10px 30px;
-  }
+}
 
-  .uncertain {
-    color: rgba(255,0,0,0.3); 
-  }
+.uncertain {
+    color: rgba(255,0,0,0.3);
+}
+
+.returnedFairShares {
+    background-color: #f00;
+    color: white;
+}
