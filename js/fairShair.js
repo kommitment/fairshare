@@ -66,79 +66,80 @@ function loadData(callback, theForm) {
 
 // ****************
 function calculateShairs(input, theForm) {
-    var output = [];
-    /*
+    /* input is of this format...
       [  {
         Abrechenzeitpunkt : 2016-04-13,
         Contribution : "1500€",
         Beteiligte : [
             { Name : "Anke Nehrenberg", Arbeit : "100%" },
-            { Name : "Ralf Wirdemann", Arbeit : "100%" },
+            { Name : "Ralf Wirdemann", Arbeit : "100%", returning: "0%" },
             { Name : "Johannes Mainusch", Arbeit : "100%" }]
         }, ...]
     */
+    var output = []; /* output[] is the array for rendering the output table */
     var k_value = 0.0;
     var vestingDuration = theForm.vestingDuration.value;
     var companyValueFactor = theForm.companyValueFactor.value;
     var foundersShares = theForm.foundersShares.value/100;
     var kShare = [];
 
-    var kContributionSum = 0;
-    for (var entry in input) {
-        console.log("in calculateShairs, entry", entry, input[entry]);
-        k_value = parseFloat(input[entry].Contribution) * companyValueFactor;
-        kContributionSum += parseFloat(input[entry].Contribution);
-        output[entry] = {
-            "Abrechenzeitpunkt": input[entry].Abrechenzeitpunkt,
-            "k-Contribution\nAusschüttung": input[entry].Contribution,
-            "k-value": k_value,
-            "sum fairShares" : kContributionSum
+    var totalSumFairShares = 0;
+    for (var periode in input) {
+        console.log("in calculateShairs, periode", periode, input[periode]);
+        k_value = parseFloat(input[periode].Contribution) * companyValueFactor;
+        totalSumFairShares += parseFloat(input[periode].Contribution);
+        output[periode] = {
+            "Period" : periode+"<br>"+input[periode].Abrechenzeitpunkt,
+            "revenue": input[periode].Contribution,
+            "k-value": "",
+            "sum fairShares" : totalSumFairShares
         }
         // find the SumVestingArbeit (sum of Arbeit)
         var SumVestingArbeit = 0.0;
         var sharesInDistribution = 1;
         // loop through kommanditisten to find the "SumVesting*Arbeit"  of this year
-        for (i in input[entry].kommanditisten) {
-            var kommanditist = input[entry].kommanditisten[i].Name;
+        for (i in input[periode].kommanditisten) {
             var vesting = 0.0;
+            var kommanditist = input[periode].kommanditisten[i].Name;
             kShare[kommanditist] = kShare[kommanditist] || {};
-            kShare[kommanditist].versting = kShare[kommanditist].versting|| 0;
-            kShare[kommanditist].foundersShares = kShare[kommanditist].foundersShares|| 0;
-            // founders 100% vesting and founders shares
-            kShare[kommanditist].foundersShares += ( entry < 1) ? foundersShares : 0;
-            kShare[kommanditist].versting += ( entry < 1) ? 1 : 0;
+            kShare[kommanditist].versting = kShare[kommanditist].versting || 0;
+            kShare[kommanditist].foundersShares = kShare[kommanditist].foundersShares || 0;
+            if (periode < 1) {
+              // this is the first round, i.e. all kommanditisten in this periode are founders...
+              // founders get vesting = 1 and founders shares, if periode<1 then these are founders...
+              kShare[kommanditist].foundersShares = foundersShares;
+              kShare[kommanditist].versting = 1;
+            }
+            // now handle the vesting...
             kShare[kommanditist].versting += ( kShare[kommanditist].versting < 1) ? 1/vestingDuration : 0;
-            // vesting per kommanditist is now determined, so now factor it into SumVesting*Arbeit
-            SumVestingArbeit += kShare[kommanditist].versting * parseFloat(input[entry].kommanditisten[i].Arbeit) / 100;
+            // now calculate vesting*Arbeit
+            SumVestingArbeit += kShare[kommanditist].versting * parseFloat(input[periode].kommanditisten[i].Arbeit) / 100;
             // sharesInDistribution, the shares to be ditributed...
             sharesInDistribution -= kShare[kommanditist].foundersShares;
         }
-        output[entry]["SumVestingArbeit"] = Math.round (100*SumVestingArbeit)/100;
+        output[periode]["Sum\nVesting\n*Arbeit"] = Math.round (100*SumVestingArbeit)/100;
+        //
         // loop through kommanditisten to calculate shares
-        for (i in input[entry].kommanditisten) {
-            var kommanditist = input[entry].kommanditisten[i].Name;
-            kShare[kommanditist].owner = kommanditist;
-            kShare[kommanditist].contribution = input[entry].Contribution
-                * parseFloat(input[entry].kommanditisten[i].Arbeit)/100 / output[entry]["SumVestingArbeit"]
+        for (i in input[periode].kommanditisten) {
+            var kommanditist = input[periode].kommanditisten[i].Name;
+            kShare[kommanditist].sumOfFairShares = kShare[kommanditist].sumOfFairShares || 0;
+            kShare[kommanditist].fairShares = input[periode].Contribution
+                * parseFloat(input[periode].kommanditisten[i].Arbeit)/100 / SumVestingArbeit
                 * kShare[kommanditist].versting;
-            kShare[kommanditist].contributionSum = kShare[kommanditist].contributionSum || 0;
-            kShare[kommanditist].contributionSum += kShare[kommanditist].contribution;
+            kShare[kommanditist].sumOfFairShares += kShare[kommanditist].fairShares;
 
             anteil = ""
             anteil += "foundersShares: " + round100(kShare[kommanditist].foundersShares*100)+"%"  ;
             anteil += "\nVesting: " + Math.round (100*kShare[kommanditist].versting)/100;
-            anteil += " - Arbeit: " + input[entry].kommanditisten[i].Arbeit;
-            anteil += "\nContribution: " +  Math.round (kShare[kommanditist].contribution)+"€";
-            anteil += "\nfairShares: " +  Math.round (kShare[kommanditist].contributionSum)
-                    + " / " + kContributionSum;
-            // here it comes
+            anteil += " - Arbeit: " + input[periode].kommanditisten[i].Arbeit;
+            anteil += "\nfairShares: " +  Math.round (kShare[kommanditist].fairShares);
+            anteil += "\nsumOfFairShares: " +  Math.round (kShare[kommanditist].sumOfFairShares);
             kShare[kommanditist].anteil =
                 kShare[kommanditist].foundersShares +
-                sharesInDistribution * kShare[kommanditist].contributionSum / kContributionSum;
-            anteil += "\nAnteil: " + Math.round (10000*kShare[kommanditist].anteil ) / 100 +"%";
-            anteil += "  = " + Math.round (k_value*kShare[kommanditist].contributionSum / kContributionSum ) +"€";
-            anteil += "\nAusschüttung: " + Math.round (100*kShare[kommanditist].anteil * input[entry].Contribution)/100 +"€";
-            output[entry][kommanditist] = anteil;
+                sharesInDistribution * kShare[kommanditist].sumOfFairShares / totalSumFairShares;
+            anteil += "\nAnteil: " + Math.round (kShare[kommanditist].sumOfFairShares) + " / " + totalSumFairShares + " <br> = "+ Math.round (10000*kShare[kommanditist].anteil ) / 100 +"%";
+            anteil += "<span class='uncertain'>  = " + Math.round (k_value*kShare[kommanditist].sumOfFairShares / totalSumFairShares ) +"€</span>";
+            output[periode][kommanditist] = anteil;
             // if there is a yet new person, add it to output[0]
             output[0][kommanditist] = output[0][kommanditist] || "";
         }
@@ -147,11 +148,12 @@ function calculateShairs(input, theForm) {
         var checkSumAnteile = 0;
         for (kommanditist in kShare) {
             checkSumAnteilePercent += kShare[kommanditist].anteil;
-            checkSumAnteile += Math.round (100*kShare[kommanditist].anteil * input[entry].Contribution)/100;
+            checkSumAnteile += Math.round (100*kShare[kommanditist].anteil * input[periode].Contribution)/100;
         }
-        output[entry]["k-value"] += "\nCheck: "+Math.round (100000* checkSumAnteilePercent)/1000 + "%";
-        output[entry]["k-value"] += "\nCheck: "+Math.round (checkSumAnteile)+ "€";
-        output[entry]["k-value"] += "\nsharesInDistribution: "+Math.round (10000*sharesInDistribution)/100+ "%";
+        output[periode]["k-value"]  = "<span class='uncertain'>"+k_value+"</span>";
+        output[periode]["k-value"] += "\nCheck: "+Math.round (100000* checkSumAnteilePercent)/1000 + "%";
+        output[periode]["k-value"] += "\nCheck: "+Math.round (checkSumAnteile)+ "€";
+        output[periode]["k-value"] += "\nsharesInDistribution: "+Math.round (10000*sharesInDistribution)/100+ "%";
     }
     return output;
 }
@@ -217,7 +219,7 @@ function renderData(error, data) {
         .enter()
         .append('td')
         .attr('data-th', function (d) { return d.name; })
-        .text(function (d) { return d.value })
+        .html(function (d) { return d.value })
         .on('mouseover', function (d) {
             this.className = 'filter';
         })
