@@ -130,6 +130,9 @@ function calculateShairs(input, theForm) {
             var reduceBy = 1.0 - returnedFairShares;
             var sunkenShares = kShare[kommanditist].sumOfFairShares * returnedFairShares;
             anteil[kommanditist] += "<span class='returnedFairShares'> returnedFairShares: "+input[period].kommanditisten[i].returnedFairShares+"</span><br>";
+            // return founderShares to sharesInDistribution...
+            sharesInDistribution += kShare[kommanditist].foundersShares;
+            // reset shares of kommanditist
             kShare[kommanditist].sumOfFairShares *= reduceBy;
             kShare[kommanditist].foundersShares  *= reduceBy;
             // now remove the returned shareds from the
@@ -146,20 +149,6 @@ function calculateShairs(input, theForm) {
                 * parseFloat(input[period].kommanditisten[i].Arbeit)/100 / SumVestingArbeit
                 * kShare[kommanditist].versting;
             kShare[kommanditist].sumOfFairShares += kShare[kommanditist].fairShares;
-            //
-            // handle returnedFairShares
-      /*      if (input[period].kommanditisten[i].returnedFairShares) {
-              var returnedFairShares = parseFloat(input[period].kommanditisten[i].returnedFairShares)/100;
-              var reduceBy = 1.0 - returnedFairShares;
-              var sunkenShares = kShare[kommanditist].sumOfFairShares * returnedFairShares;
-              anteil += "<span class='returnedFairShares'> returnedFairShares: "+input[period].kommanditisten[i].returnedFairShares+"</span><br>";
-              kShare[kommanditist].sumOfFairShares *= reduceBy;
-              kShare[kommanditist].foundersShares  *= reduceBy;
-              // now remove the returned shareds from the
-              totalSumFairShares -= sunkenShares;
-              output[period]["total\nsum\nfairShares"] = Math.round(totalSumFairShares);
-            }
-            */
             //
             anteil[kommanditist] += "foundersShares: " + round100(kShare[kommanditist].foundersShares*100)+"%"  ;
             anteil[kommanditist] += "\nVesting: " + Math.round (100*kShare[kommanditist].versting)/100;
