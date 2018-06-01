@@ -47,7 +47,7 @@ Sollte *die Firma* Anteile eines Anteilseigners zurückkaufen, so gehen die zuge
 # getting started
 fairShare ist ein Programm, dass komplett im Browser läuft (js + d3). Einfach auschecken und fairShare.html öffnen.
 
-#  der Input
+# der Input
 
 In der ersten Version ist Folgender:
 
