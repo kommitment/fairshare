@@ -89,7 +89,8 @@ function calculateShairs(input, theForm) {
         k_value = parseFloat(input[period].Contribution) * companyValueFactor;
         totalSumFairShares += parseFloat(input[period].Contribution);
         output[period] = {
-            "Period" : period+"<br>"+input[period].Abrechenzeitpunkt,
+            "#" : pad(period,4),
+            "Period":  input[period].Abrechenzeitpunkt,
             "revenue": input[period].Contribution + "€",
             "k-value": "",
             "total\nsum\nfairShares" : Math.round(totalSumFairShares)
@@ -323,4 +324,9 @@ function renderFilters(error, data, filters) {
 // ****************
 function round100 (value) {
     return Math.round (100.0*value)/100;
+}
+
+function pad(num, size) {
+    var s = "000000000" + num;
+    return s.substr(s.length-size);
 }
