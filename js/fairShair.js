@@ -17,7 +17,7 @@ var global = {
     targetServer: "empty"
 };
 
-var DEBUG = true;
+var DEBUG = false;
 var log = {
     debug: function (data) { if (DEBUG) console.log(data) }
 };
@@ -77,6 +77,7 @@ function calculateShairs(input, theForm) {
         }, ...]
     */
     var output = []; /* output[] is the array for rendering the output table */
+    var outputplot = []; /* output[] is the array for rendering the output plot */
     var k_value = 0.0;
     var vestingDuration = theForm.vestingDuration.value;
     var companyValueFactor = theForm.companyValueFactor.value;
@@ -85,12 +86,14 @@ function calculateShairs(input, theForm) {
 
     var totalSumFairShares = 0;
     for (var period in input) {
-        console.log("in calculateShairs, period", period, input[period]);
         k_value = parseFloat(input[period].Contribution) * companyValueFactor;
         totalSumFairShares += parseFloat(input[period].Contribution);
+        outputplot[period] = {
+            "date":  Date.parse(input[period].Abrechenzeitpunkt)
+        }
         output[period] = {
-            "#" : pad(period,4),
-            "Period":  input[period].Abrechenzeitpunkt,
+            "period" : pad(period,4),
+            "date":  input[period].Abrechenzeitpunkt,
             "revenue": input[period].Contribution + "€",
             "k-value": "",
             "total\nsum\nfairShares" : Math.round(totalSumFairShares)
@@ -167,6 +170,7 @@ function calculateShairs(input, theForm) {
                 + " / " + Math.round (totalSumFairShares)  + " <br> = "
                 + Math.round (10000*kShare[kommanditist].anteil ) / 100 +"%";
             anteil[kommanditist] += "<span class='uncertain'>  = " + Math.round (k_value*kShare[kommanditist].sumOfFairShares / totalSumFairShares ) +"€</span>";
+            outputplot[period][kommanditist] = Math.round (10000*kShare[kommanditist].anteil ) / 100;
             output[period][kommanditist] = anteil[kommanditist];
             // if there is a yet new person, add it to output[0]
             output[0][kommanditist] = output[0][kommanditist] || "";
@@ -183,6 +187,7 @@ function calculateShairs(input, theForm) {
         output[period]["k-value"] += "\nCheck: "+Math.round (checkSumAnteile);
         output[period]["k-value"] += "\nsharesInDistribution: "+Math.round (10000*sharesInDistribution)/100+ "%";
     }
+    plotFairShares("", outputplot);
     return output;
 }
 

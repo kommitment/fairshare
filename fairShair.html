@@ -10,12 +10,13 @@
   <meta name="Johannes Mainusch" content="fairShair">
   <script src="./js/d3.v4.min.js"></script>
   <script src="./js/fairShair.js"></script>
+  <script src="./js/plotFairShares.js"></script>
   <script src="./data/szenario03.js"></script>
   <link rel="stylesheet" href="css/kommitment.css">
   <link rel="stylesheet" href="css/monitor.css">
 </head>
 
-<body onload="document.forms['kparams'].submit; trigger_calculateShairs(document.forms['kparams'] )">
+<body onload="document.forms['kparams'].submit; trigger_calculateShairs(document.forms['kparams'] );">
   <h1>fairShair</h1>
   <p>
     Input parameters of fairShair is a set of revenue related data per persiod (e.g. per year). FairShair will calculate the
@@ -39,8 +40,8 @@
     <br> data file:
     <input value="szenario2017-01.js" type="text" name="dataFile" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
     <br>
-    <input type="submit" value="recalculate">
   </form>
+  <div id="chartId"><svg  class="chart" width="1200" height="300"></svg></div>
   <div id="filterDiv"></div>
   <div id="page-wrap"></div>
 
