@@ -5,8 +5,8 @@ function plotFairShares (error, data) {
 
   var svg = d3.select("svg"),
   margin = {top: 20, right: 20, bottom: 30, left: 50},
-  width = window.innerWidth - margin.left - margin.right,
-  height = 300 - margin.top - margin.bottom;
+  width = svg.attr("width") - margin.left - margin.right,
+  height = svg.attr("height") - margin.top - margin.bottom;
 
   var x = d3.scaleTime().range([0, width]),
   y = d3.scaleLinear().range([height, 0]),
