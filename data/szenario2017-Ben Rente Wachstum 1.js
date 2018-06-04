@@ -116,7 +116,14 @@ var data = [
 			{ Name: "Johannes M.", Arbeit: "100%" },
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
-			{ Name: "Marcel B.", Arbeit: "100%" }
+			{ Name: "Marcel B.", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
+			
 		]
 	}
 	, {
@@ -129,7 +136,13 @@ var data = [
 			{ Name: "Johannes M.", Arbeit: "100%" },
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
-			{ Name: "Marcel B.", Arbeit: "100%" }
+			{ Name: "Marcel B.", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -142,7 +155,13 @@ var data = [
 			{ Name: "Johannes M.", Arbeit: "100%" },
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
-			{ Name: "Marcel B.", Arbeit: "100%" }
+			{ Name: "Marcel B.", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -155,7 +174,13 @@ var data = [
 			{ Name: "Johannes M.", Arbeit: "100%" },
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
-			{ Name: "Marcel B.", Arbeit: "100%" }
+			{ Name: "Marcel B.", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -169,7 +194,13 @@ var data = [
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" },
-			{ Name: "mitmacher 1", Arbeit: "100%" }
+			{ Name: "mitmacher 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -183,7 +214,13 @@ var data = [
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" },
-			{ Name: "mitmacher 1", Arbeit: "100%" }
+			{ Name: "mitmacher 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -197,7 +234,13 @@ var data = [
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" },
-			{ Name: "mitmacher 1", Arbeit: "100%" }
+			{ Name: "mitmacher 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -211,7 +254,13 @@ var data = [
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" },
-			{ Name: "mitmacher 1", Arbeit: "100%" }
+			{ Name: "mitmacher 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -225,7 +274,13 @@ var data = [
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" },
-			{ Name: "mitmacher 1", Arbeit: "100%" }
+			{ Name: "mitmacher 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -239,7 +294,13 @@ var data = [
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" },
-			{ Name: "mitmacher 1", Arbeit: "100%" }
+			{ Name: "mitmacher 1", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -254,7 +315,13 @@ var data = [
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
-			{ Name: "mitmacher 2", Arbeit: "100%" }
+			{ Name: "mitmacher 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -270,7 +337,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -286,7 +359,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -302,7 +381,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -318,7 +403,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -334,7 +425,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -350,7 +447,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -366,7 +469,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -382,7 +491,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -398,7 +513,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -414,7 +535,13 @@ var data = [
 			{ Name: "Marcel B.", Arbeit: "100%" },
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
-			{ Name: "mitmacher 3", Arbeit: "100%" }
+			{ Name: "mitmacher 3", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -431,7 +558,13 @@ var data = [
 			{ Name: "mitmacher 1", Arbeit: "100%" },
 			{ Name: "mitmacher 2", Arbeit: "100%" },
 			{ Name: "mitmacher 3", Arbeit: "100%" },
-			{ Name: "mitmacher 4", Arbeit: "100%" }
+			{ Name: "mitmacher 4", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -449,7 +582,13 @@ var data = [
 			{ Name: "mitmacher 2", Arbeit: "100%" },
 			{ Name: "mitmacher 3", Arbeit: "100%" },
 			{ Name: "mitmacher 4", Arbeit: "100%" },
-			{ Name: "mitmacher 5", Arbeit: "100%" }
+			{ Name: "mitmacher 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -467,7 +606,13 @@ var data = [
 			{ Name: "mitmacher 2", Arbeit: "100%" },
 			{ Name: "mitmacher 3", Arbeit: "100%" },
 			{ Name: "mitmacher 4", Arbeit: "100%" },
-			{ Name: "mitmacher 5", Arbeit: "100%" }
+			{ Name: "mitmacher 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 			
 		]
 	}
@@ -486,7 +631,13 @@ var data = [
 			{ Name: "mitmacher 2", Arbeit: "100%" },
 			{ Name: "mitmacher 3", Arbeit: "100%" },
 			{ Name: "mitmacher 4", Arbeit: "100%" },
-			{ Name: "mitmacher 5", Arbeit: "100%" }
+			{ Name: "mitmacher 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -504,7 +655,13 @@ var data = [
 			{ Name: "mitmacher 2", Arbeit: "100%" },
 			{ Name: "mitmacher 3", Arbeit: "100%" },
 			{ Name: "mitmacher 4", Arbeit: "100%" },
-			{ Name: "mitmacher 5", Arbeit: "100%" }
+			{ Name: "mitmacher 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -522,7 +679,13 @@ var data = [
 			{ Name: "mitmacher 2", Arbeit: "100%" },
 			{ Name: "mitmacher 3", Arbeit: "100%" },
 			{ Name: "mitmacher 4", Arbeit: "100%" },
-			{ Name: "mitmacher 5", Arbeit: "100%" }
+			{ Name: "mitmacher 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -540,7 +703,13 @@ var data = [
 			{ Name: "mitmacher 2", Arbeit: "100%" },
 			{ Name: "mitmacher 3", Arbeit: "100%" },
 			{ Name: "mitmacher 4", Arbeit: "100%" },
-			{ Name: "mitmacher 5", Arbeit: "100%" }
+			{ Name: "mitmacher 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -558,7 +727,13 @@ var data = [
 			{ Name: "mitmacher 2", Arbeit: "100%" },
 			{ Name: "mitmacher 3", Arbeit: "100%" },
 			{ Name: "mitmacher 4", Arbeit: "100%" },
-			{ Name: "mitmacher 5", Arbeit: "100%" }
+			{ Name: "mitmacher 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -576,7 +751,13 @@ var data = [
 			{ Name: "mitmacher 2", Arbeit: "100%" },
 			{ Name: "mitmacher 3", Arbeit: "100%" },
 			{ Name: "mitmacher 4", Arbeit: "100%" },
-			{ Name: "mitmacher 5", Arbeit: "100%" }
+			{ Name: "mitmacher 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 1", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 2", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 3", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 4", Arbeit: "0%" },
+			{ Name: "Mitmacher_eingekauft 5", Arbeit: "100%" },
+			{ Name: "Mitmacher_eingekauft 6", Arbeit: "100%" }
 		]
 	}
 ]
