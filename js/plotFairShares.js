@@ -29,9 +29,7 @@ function plotFairShares (error, data) {
 
   x.domain(d3.extent(data, function(d) { return d.date; }));
   z.domain(keys);
-  stack.keys(keys.slice(1)) // get rid of the first date column
-
-  console.log ("data: ", data );
+  stack.keys(keys.slice(1)) // get rid of the first "date" column
 
   var layer = g.selectAll(".layer")
   .data(stack(data))
@@ -45,22 +43,23 @@ function plotFairShares (error, data) {
 
   layer.filter(function(d) { return d[d.length - 1][1] - d[d.length - 1][0] > 0.01; })
   .append("text")
-  .attr("class", function(d) {console.log (">>>", d.key); return d.key})
+  .attr("class", function(d) { return d.key})
   .attr("x", width - 6)
   .attr("y", function(d) { return y((d[d.length - 1][0] + d[d.length - 1][1]) / 200); })
   .attr("dy", ".35em")
   .attr("fill", "white")
   .style("font", "10px sans-serif")
   .style("text-anchor", "end")
-  .text(function(d) {
-    return d.key;
+  .text(function(d,i) {
+    console.log ("<>",i, d[i], d);
+    return d.key+": "+Math.round(10*(d[d.length - 1][1]-d[d.length - 1][0]))/10;
   });
 
   // handle mouse and touch events
   var chart = d3.selectAll(".chart");
-  chart.on("mousemove", function () { plotRedCrosshair(x, y, width, height, margin, chart)} );
-  chart.on("touchstart", function () { plotRedCrosshair(x, y, width, height, margin, chart)} );
-  chart.on("touchmove", function () { plotRedCrosshair(x, y, width, height, margin, chart)} );
+  chart.on("mousemove", function () { plotLine(x, y, width, height, margin, chart)} );
+  chart.on("touchstart", function () { plotLine(x, y, width, height, margin, chart)} );
+  chart.on("touchmove", function () { plotLine(x, y, width, height, margin, chart)} );
 
   g.append("g")
   .attr("class", "axis axis--x")
@@ -97,21 +96,21 @@ function normalizeData (data) {
 }
 
 
-function plotRedCrosshair(x, y, width, height, margin, chart) {
+function plotLine(x, y, width, height, margin, chart) {
   //
   // draw a red crosshair at the mouse position
   //
   var svg = d3.select("svg");
   var mx = d3.mouse(d3.event.currentTarget)[0];
   var my = d3.mouse(d3.event.currentTarget)[1];
-  chart.selectAll(".redLine").remove();
-  chart.append("path").attr("class", "redLine").attr("stroke", "white")
+  chart.selectAll(".indexLine").remove();
+  chart.append("path").attr("class", "indexLine").attr("stroke", "white")
   .attr("d", "M " + (mx) + "," + (margin.top) + ",L " + (mx) + "," + (my ) + " Z");
-  chart.append("path").attr("class", "redLine").attr("stroke", "white")
+  chart.append("path").attr("class", "indexLine").attr("stroke", "white")
   .attr("d", "M " + (mx) + "," + (height + margin.top) + ",L " + (mx) + "," + (my ) + " Z");
   chart
   .append("text")
-  .attr("class", "redLine")
+  .attr("class", "indexLine")
   .text(x.invert(mx - margin.left).getFullYear() + ":" + x.invert(mx - margin.left).getMonth())
   .attr("x", mx - 2)
   .attr("y", my - 15)
@@ -121,7 +120,7 @@ function plotRedCrosshair(x, y, width, height, margin, chart) {
   .style("font", "12px sans-serif");
   chart
   .append("text")
-  .attr("class", "redLine")
+  .attr("class", "indexLine")
   .text(Math.round(100 * y.invert(my - margin.top))  + "%")
   .attr("x", mx - 2)
   .attr("y", my - 5)
