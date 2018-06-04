@@ -85,7 +85,7 @@ var data = [
 		Contribution: "800000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "0%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
 			{ Name: "Ingo K.", Arbeit: "100%" },
