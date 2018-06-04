@@ -1,4 +1,4 @@
-# fairShare - einfach fair teilen
+# fairShare - einfach fairteilen
 
 ![](img/fairShare.png)
 
