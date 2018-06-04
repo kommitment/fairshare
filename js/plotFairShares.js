@@ -10,7 +10,7 @@ function plotFairShares (error, data) {
 
   var x = d3.scaleTime().range([0, width]),
   y = d3.scaleLinear().range([height, 0]),
-  z = d3.scaleOrdinal(d3.schemeCategory10);
+  z = d3.scaleOrdinal(d3.schemeCategory20b);
 
   var stack = d3.stack();
 
@@ -39,27 +39,11 @@ function plotFairShares (error, data) {
   layer.append("path")
   .attr("class", "area")
   .style("fill", function(d) { return z(d.key); })
+  .attr("opacity", "1")
   .attr("d", area);
 
-  layer.filter(function(d) { return d[d.length - 1][1] - d[d.length - 1][0] > 0.01; })
-  .append("text")
-  .attr("class", function(d) { return d.key})
-  .attr("x", width - 6)
-  .attr("y", function(d) { return y((d[d.length - 1][0] + d[d.length - 1][1]) / 200); })
-  .attr("dy", ".35em")
-  .attr("fill", "white")
-  .style("font", "10px sans-serif")
-  .style("text-anchor", "end")
-  .text(function(d,i) {
-    console.log ("<>",i, d[i], d);
-    return d.key+": "+Math.round(10*(d[d.length - 1][1]-d[d.length - 1][0]))/10;
-  });
-
   // handle mouse and touch events
-  var chart = d3.selectAll(".chart");
-  chart.on("mousemove", function () { plotLine(x, y, width, height, margin, chart)} );
-  chart.on("touchstart", function () { plotLine(x, y, width, height, margin, chart)} );
-  chart.on("touchmove", function () { plotLine(x, y, width, height, margin, chart)} );
+  layer.on("mousemove"||"touchstart"||"touchmove", function (d) { plotLine(x, y, height, width, layer,d)} );
 
   g.append("g")
   .attr("class", "axis axis--x")
@@ -96,34 +80,32 @@ function normalizeData (data) {
 }
 
 
-function plotLine(x, y, width, height, margin, chart) {
+function plotLine(x, y, height, width, chart,d) {
   //
   // draw a red crosshair at the mouse position
   //
-  var svg = d3.select("svg");
   var mx = d3.mouse(d3.event.currentTarget)[0];
   var my = d3.mouse(d3.event.currentTarget)[1];
-  chart.selectAll(".indexLine").remove();
+  getXind = function  (x, width,  intervals) { return Math.trunc(x*(intervals-1)/(width) ); }
+
+  chart.selectAll(".indexLine")
+  .remove();
+
   chart.append("path").attr("class", "indexLine").attr("stroke", "white")
-  .attr("d", "M " + (mx) + "," + (margin.top) + ",L " + (mx) + "," + (my ) + " Z");
+  .attr("d", "M " + (mx) + "," + 0 + ",L " + (mx) + "," + (my ) + " Z");
   chart.append("path").attr("class", "indexLine").attr("stroke", "white")
-  .attr("d", "M " + (mx) + "," + (height + margin.top) + ",L " + (mx) + "," + (my ) + " Z");
-  chart
+  .attr("d", "M " + (mx) + "," + height + ",L " + (mx) + "," + (my ) + " Z");
+
+  chart.filter(function(d) { return d[getXind (mx, width, d.length)][1] - d[getXind (mx, width, d.length)][0] > 0.01; })
   .append("text")
   .attr("class", "indexLine")
-  .text(x.invert(mx - margin.left).getFullYear() + ":" + x.invert(mx - margin.left).getMonth())
-  .attr("x", mx - 2)
-  .attr("y", my - 15)
-  .attr("dy", ".75em")
-  .attr("fill", "white")
-  .attr("text-anchor", "end")
-  .style("font", "12px sans-serif");
-  chart
-  .append("text")
-  .attr("class", "indexLine")
-  .text(Math.round(100 * y.invert(my - margin.top))  + "%")
-  .attr("x", mx - 2)
-  .attr("y", my - 5)
+  .text( function (d) {
+    return d.key+": "
+    +Math.round(10*(d[getXind (mx, width, d.length)][1]-d[getXind (mx, width, d.length)][0]))/10;
+  })
+    //Math.round(100 * y.invert(my))  + "%" + d.key)
+  .attr("x", mx + 28)
+  .attr("y", function(d) { return y((d[getXind (mx, width, d.length)][0] + d[getXind (mx, width, d.length)][1]) / 200); })
   .attr("dy", ".75em")
   .attr("fill", "white")
   .attr("text-anchor", "end")
