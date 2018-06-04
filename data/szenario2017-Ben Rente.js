@@ -165,7 +165,7 @@ var data = [
 			{ Name: "Anke N.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
-			{ Name: "Johannes M.", Arbeit: "0%" },
+			{ Name: "Johannes M.", Arbeit: "100%" },
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
@@ -178,7 +178,7 @@ var data = [
 			{ Name: "Anke N.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
-			{ Name: "Johannes M.", Arbeit: "0%" },
+			{ Name: "Johannes M.", Arbeit: "100%" },
 			{ Name: "Ingo K.", Arbeit: "100%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
@@ -244,7 +244,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "50%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -255,9 +255,9 @@ var data = [
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
-			{ Name: "Katja R.", Arbeit: "100%" },
+			{ Name: "Katja R.", Arbeit: "66%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -270,7 +270,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -283,7 +283,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -296,7 +296,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -309,7 +309,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -322,7 +322,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -335,7 +335,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -348,7 +348,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -361,7 +361,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -374,7 +374,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -383,11 +383,11 @@ var data = [
 		Abrechenzeitpunkt: "2047",
 		Contribution: "800000",
 		kommanditisten: [
-			{ Name: "Anke N.", Arbeit: "100%" },
+			{ Name: "Anke N.", Arbeit: "25%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -397,10 +397,10 @@ var data = [
 		Contribution: "800000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "0%" },
-			{ Name: "Ben W.", Arbeit: "100%" },
+			{ Name: "Ben W.", Arbeit: "91%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -413,7 +413,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "0%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -426,7 +426,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "0%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -439,7 +439,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "0%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -452,7 +452,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "0%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -465,7 +465,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "0%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -478,7 +478,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "0%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
@@ -491,7 +491,7 @@ var data = [
 			{ Name: "Ben W.", Arbeit: "0%" },
 			{ Name: "Katja R.", Arbeit: "0%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
-			{ Name: "Ingo K.", Arbeit: "100%" },
+			{ Name: "Ingo K.", Arbeit: "0%" },
 			{ Name: "Joris S.", Arbeit: "100%" },
 			{ Name: "Marcel B.", Arbeit: "100%" }
 		]
