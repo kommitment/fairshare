@@ -59,7 +59,8 @@ function plotFairShares (error, data) {
   .attr("d", area);
 
   // handle mouse and touch events
-  layer.on("mousemove"||"touchstart"||"touchmove", function (d) { plotLine(x, y, height, width, layer,d)} );
+  layer.on("mousemove"||"touchstart"||"touchmove", function (d) { plotLine(x, y, height, width, layer, d)} );
+  layer.call( function (d) { plotLine(x, y, height, width, layer, d)} );
 
   g.append("g")
   .attr("class", "axis axis--x")
@@ -96,12 +97,17 @@ function normalizeData (data) {
 }
 
 
-function plotLine(x, y, height, width, chart,d) {
+function plotLine(x, y, height, width, chart, d) {
   //
   // draw a red crosshair at the mouse position
   //
-  var mx = d3.mouse(d3.event.currentTarget)[0];
-  var my = d3.mouse(d3.event.currentTarget)[1];
+  if (d3.event && d3.mouse(d3.event.currentTarget) ) {
+    var mx = d3.mouse(d3.event.currentTarget)[0] ;
+    var my = d3.mouse(d3.event.currentTarget)[1]  ;
+  } else {
+    var mx = width;
+    var my = 0;
+  }
   getXind = function  (x, width,  intervals) { return Math.trunc(x*(intervals-1)/(width) ); }
 
   chart.selectAll(".indexLine")
@@ -120,7 +126,7 @@ function plotLine(x, y, height, width, chart,d) {
     +Math.round(10*(d[getXind (mx, width, d.length)][1]-d[getXind (mx, width, d.length)][0]))/10;
   })
     //Math.round(100 * y.invert(my))  + "%" + d.key)
-  .attr("x", mx + 28)
+  .attr("x", mx - 2)
   .attr("y", function(d) { return y((d[getXind (mx, width, d.length)][0] + d[getXind (mx, width, d.length)][1]) / 200); })
   .attr("dy", ".75em")
   .attr("fill", "white")
