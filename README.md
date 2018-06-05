@@ -13,7 +13,7 @@ FairShair entsteht aus der Idee, ein Simulationsspiel zur Verteilung der Anteile
 Be a strong dwarf, so that future giants may stay on your shoulders.
 
 # Demo
-[](./fairshare.html)
+[see how it works: fairShare.html](./fairShare.html)
 
 # Regeln
 
