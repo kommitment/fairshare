@@ -12,6 +12,9 @@ FairShair entsteht aus der Idee, ein Simulationsspiel zur Verteilung der Anteile
 
 Be a strong dwarf, so that future giants may stay on your shoulders.
 
+# Demo
+[](./fairshare.html)
+
 # Regeln
 
 1. ___Anteilseigner___ sollen zu 100% mitmachen. Wenn Du mitmachst, dann ganz. So sollte es keine Erlöse außerhalb der Firma geben. Zumindest keine solchen die in Konkurrenz zur Firma stehen könnten. Später können ___Anteilseigner___  auch einmal ein Sabbatical machen und dann wiederkommen, oder sie können in Rente gehen.
