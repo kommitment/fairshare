@@ -128,5 +128,5 @@ Das Programm spuckt folgende Daten aus:
 	- Contribution: Der Anteil in dieser Periode am Firmenerlös.
 	-  fairShares = die seit der Gründung erbrachten *die Firma*-Anteile (Summe|Perioden (Eintrag___Arbeit))
 	-  ProzAnteil = der prozentuale Anteil an *die Firma* = Anteilssumme / k-Anteilssumme
-	-  AnteilAbsolut = der absolute Anteil in € =  ProzAnteil ___ Firmenwert
+	-  AnteilAbsolut = der absolute Anteil in € = ProzAnteil ___ Firmenwert
 	- die sich in dieser Periode ergebende Ausschüttung

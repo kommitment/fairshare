@@ -6,6 +6,7 @@
   <meta charset="utf-8">
 
   <title>fairShair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <meta name="description" content="The fair share of kommitment">
   <meta name="Johannes Mainusch" content="fairShair">
   <script src="./js/d3.v4.min.js"></script>
@@ -27,23 +28,23 @@
     <a href="./data">here:</a>
 
   <form name="kparams" action="#" onsubmit="trigger_calculateShairs(this);">
-    vesting duration:
-    <input value="3" type="text" name="vestingDuration" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
+    vesting duration: <span id="text01">3</span>
+    <input value="3" type="range" min="1" max="10" name="vestingDuration" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);" onchange="document.getElementById('text01').innerHTML=this.value;">
     <br> companyValueFactor:
     <input value="0.8" type="text" name="companyValueFactor" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
-    <br> founders keep [%] shares:
-    <input value="6.5" type="text" name="foundersShares" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
-    <br> domain:
-    <input value="develop" type="text" name="switch" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
+    <br> founders keep [%] shares: <span id="text02">6.5</span>
+    <input value="6.5" type="range" min="0" max="50"  name="foundersShares" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);"
+    onchange="document.getElementById('text02').innerHTML=this.value;">
     <br> data file:
     <input value="szenario2017-Ben Rente plus.js" type="text" name="dataFile" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
     <br>
   </form>
-  <div id="chartId"><svg  class="chart" width="1200" height="300"></svg></div>
+  <div id="chartId"></div>
   <div id="filterDiv"></div>
   <div id="page-wrap"></div>
 
   <div onload="alert('loaded')"></div>
 </body>
+
 
 </html>

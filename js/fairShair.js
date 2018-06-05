@@ -37,7 +37,7 @@ function loadData(callback, theForm) {
     log.debug("in loadData... " + domain);
     // remove all tables in element with id #page-wrap
     d3.select('#page-wrap').selectAll("table").remove();
-    if (domain == "develop") {
+    if (domain == "github" || domain == "develop") {
         log.debug("in loadData: Development Mode, Data comes from file...");
         // read dataFile
         var script = document.createElement('script');
@@ -47,7 +47,6 @@ function loadData(callback, theForm) {
         };
         script.src = "./data/"+dataFile+ "?thisdoes=cachebusting"+Math.random();;
         document.head.appendChild(script)
-
     }
     else {
         global.targetServer = eval("global." + domain)

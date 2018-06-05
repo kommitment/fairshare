@@ -1,12 +1,28 @@
 var d3 = d3 || alert("d3 ist not loaded, thus you are doomed to fail...");
 
+window.onorientationchange = function () { window.location.reload(); };
+window.onresize = function () { window.location.reload(); };
+
+var log = {
+  DEBUG: true,
+  debug: function (d) {if (this.DEBUG) { console.log(d)} }
+}
 
 function plotFairShares (error, data) {
 
-  var svg = d3.select("svg"),
-  margin = {top: 20, right: 20, bottom: 30, left: 50},
-  width = svg.attr("width") - margin.left - margin.right,
-  height = svg.attr("height") - margin.top - margin.bottom;
+  var settings = {
+  	width: document.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth || 900,
+  	height: 350
+  }
+
+  var
+  margin = {top: 10, right: 50, bottom: 30, left: 20},
+  width = settings.width - margin.left - margin.right,
+  height = settings.height  - margin.top - margin.bottom;
+
+  // plotting the canvas
+  var svg = plotCanvas(width, height, margin, "#chartId");
+  log.debug (">>> ",svg)
 
   var x = d3.scaleTime().range([0, width]),
   y = d3.scaleLinear().range([height, 0]),
@@ -110,4 +126,17 @@ function plotLine(x, y, height, width, chart,d) {
   .attr("fill", "white")
   .attr("text-anchor", "end")
   .style("font", "12px sans-serif");
+}
+
+function plotCanvas(width, height, margin, targetDiv) {
+  var targetDiv = targetDiv || "body";
+	log.debug("defining svg canvas...");
+  d3.select(targetDiv).selectAll("svg").remove();
+	var svg = d3.select(targetDiv).append("svg")
+		.attr("class", "chart")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom)
+		.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	return svg;
 }
