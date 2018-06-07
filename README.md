@@ -130,3 +130,6 @@ Das Programm spuckt folgende Daten aus:
 	-  ProzAnteil = der prozentuale Anteil an *die Firma* = Anteilssumme / k-Anteilssumme
 	-  AnteilAbsolut = der absolute Anteil in € = ProzAnteil ___ Firmenwert
 	- die sich in dieser Periode ergebende Ausschüttung
+
+# QR-Code to share
+![](img/QR-code-fairshare.jpg)
