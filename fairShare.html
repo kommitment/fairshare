@@ -28,8 +28,13 @@
     <a href="./data">here:</a>
 
   <form name="kparams" action="#" onsubmit="trigger_calculateShairs(this);">
-    vesting duration: <span id="text01">3</span>
-    <input value="3" type="range" min="1" max="10" name="vestingDuration" onFocus="this.select()" oninput="document.getElementById('text01').innerHTML=this.value; trigger_calculateShairs(document.forms['kparams']);" >
+
+    <div class="slidecontainer">
+    vesting duration:
+    <span id="text01">3</span>
+    <input class="slider"  value="3" type="range" min="1" max="10" name="vestingDuration" onFocus="this.select()" oninput="document.getElementById('text01').innerHTML=this.value; trigger_calculateShairs(document.forms['kparams']);" >
+  </div>
+
     <br> companyValueFactor:
     <input value="0.8" type="text" name="companyValueFactor" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
     <br> founders keep [%] shares: <span id="text02">6.5</span>
