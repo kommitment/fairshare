@@ -59,8 +59,8 @@ function plotFairShares (error, data) {
   .attr("d", area);
 
   // handle mouse and touch events
-  layer.on("mousemove"||"touchstart"||"touchmove", function (d) { plotLine(x, y, height, width, layer, d)} );
-  layer.call( function (d) { plotLine(x, y, height, width, layer, d)} );
+  layer.on("mousemove"||"touchstart"||"touchmove", function (d) { plotLine(x, y, height, width, layer, d, margin)} );
+  layer.call( function (d) { plotLine(x, y, height, width, layer, d, margin)} );
 
   g.append("g")
   .attr("class", "axis axis--x")
@@ -97,7 +97,7 @@ function normalizeData (data) {
 }
 
 
-function plotLine(x, y, height, width, chart, d) {
+function plotLine(x, y, height, width, chart, d, margin) {
   //
   // draw a red crosshair at the mouse position
   //
@@ -123,15 +123,21 @@ function plotLine(x, y, height, width, chart, d) {
   .attr("class", "indexLine")
   .text( function (d) {
     return d.key+": "
-    +Math.round(10*(d[getXind (mx, width, d.length)][1]-d[getXind (mx, width, d.length)][0]))/10;
+    +Math.round(10*(d[getXind (mx+20, width, d.length)][1]-d[getXind (mx+20, width, d.length)][0]))/10 + "%";
   })
-    //Math.round(100 * y.invert(my))  + "%" + d.key)
   .attr("x", mx - 2)
   .attr("y", function(d) { return y((d[getXind (mx, width, d.length)][0] + d[getXind (mx, width, d.length)][1]) / 200); })
   .attr("dy", ".75em")
   .attr("fill", "white")
   .attr("text-anchor", "end")
   .style("font", "12px sans-serif");
+
+  chart.append("text")
+  .attr("class", "indexLine")
+  .attr("x", mx + 2)
+  .attr("y", height-2)
+  .attr("fill", "white")
+  .text( x.invert(mx ).getFullYear() + "-" +  (x.invert(mx ).getMonth()+1) ) ;
 }
 
 function plotCanvas(width, height, margin, targetDiv) {
