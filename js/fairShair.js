@@ -127,7 +127,7 @@ function calculateShairs(input, theForm) {
             "date":  input[period].Abrechenzeitpunkt,
             "revenue": input[period].Contribution + "€",
             "k-value": "",
-            "total\nsum\nfairShares" : Math.round(totalSumFairShares)
+            "total\nsum\nfairShares" : totalSumFairShares
         }
         output[period]["Sum\nVesting\n*Arbeit"] = Math.round (100*SumVestingArbeit)/100;
         //
@@ -152,7 +152,7 @@ function calculateShairs(input, theForm) {
             kShare[kommanditist].foundersSharesPercent  *= reduceBy;
             // now remove the returned shareds from the
             totalSumFairShares -= sunkenShares;
-            output[period]["total\nsum\nfairShares"] = Math.round(totalSumFairShares);
+            output[period]["total\nsum\nfairShares"] = Math.round(100*totalSumFairShares)/100;
           }
         }
         //
@@ -177,8 +177,8 @@ function calculateShairs(input, theForm) {
             anteil[kommanditist] += "foundersSharesPercent: " + round100(kShare[kommanditist].foundersSharesPercent*100)+"%"  ;
             anteil[kommanditist] += "\nVesting: " + Math.round (100*kShare[kommanditist].versting)/100;
             anteil[kommanditist] += " - Arbeit: " + input[period].kommanditisten[i].Arbeit;
-            anteil[kommanditist] += "\nfairShares: " +  Math.round (kShare[kommanditist].fairShares);
-            anteil[kommanditist] += "\nsumOfFairShares: " +  Math.round (kShare[kommanditist].sumOfFairShares);
+            anteil[kommanditist] += "\nfairShares: " +  Math.round (100*kShare[kommanditist].fairShares)/100;
+            anteil[kommanditist] += "\nsumOfFairShares: " +  Math.round (100*kShare[kommanditist].sumOfFairShares)/100;
             kShare[kommanditist].anteil =
                 kShare[kommanditist].foundersSharesPercent +
                 sharesInDistribution * kShare[kommanditist].sumOfFairShares / totalSumFairShares;
