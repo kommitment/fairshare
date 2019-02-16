@@ -1,7 +1,6 @@
 var data = [
 	{
 	Abrechenzeitpunkt: "2016-12-31",
-	Contribution: "324149.68",
 	kommanditisten: [
 		{ Name: "Anke N.", Arbeit: "100%" },
 		{ Name: "Ralf W.", Arbeit: "100%" },
@@ -9,7 +8,6 @@ var data = [
 },
 {
 	Abrechenzeitpunkt: "2017-12-31",
-	Contribution: "547152.82",
 	kommanditisten: [
 		{ Name: "Anke N.", Arbeit: "100%" },
 		{ Name: "Ralf W.", Arbeit: "100%" },
@@ -17,7 +15,6 @@ var data = [
 },
 {
 	Abrechenzeitpunkt: "2018",
-	Contribution: "600000",
 	kommanditisten: [
 		{ Name: "Anke N.", Arbeit: "100%" },
 		{ Name: "Ralf W.", Arbeit: "0%", returnedFairShares: "100%" },
@@ -27,7 +24,6 @@ var data = [
 }
 , {
 	Abrechenzeitpunkt: "2019",
-	Contribution: "600000	",
 	kommanditisten: [
 		{ Name: "Anke N.", Arbeit: "100%" },
 		{ Name: "Ben W.", Arbeit: "100%" },

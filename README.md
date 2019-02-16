@@ -1,50 +1,47 @@
 # fairShare - einfach fairteilen
+(Zur Vereinfachung wurde im Vergleich zu vorhergehenden Versionen  das *Vesting* ausgebaut und ebenso die Kopplung der ausgegebenen fairShares and den jährlichen Umsatz)
 
 ![](img/fairShare.png)
 
-FairShair entsteht aus der Idee, ein Simulationsspiel zur Verteilung der Anteile einer Firma (im weiteren *die Firma* genannt) mit möglichst einfachen Regeln zu haben. Dabei sollen folgende Ziele erreicht werden:
+FairShare entsteht aus der Idee, eine Simulations zur Verteilung der Anteile einer Firma (im weiteren *die Firma* genannt) mit möglichst einfachen Regeln zu haben. Dabei sollen folgende Ziele erreicht werden:
 
-	- Anteile der Firma verteilen sich mit der Zeit auf Alle, die mitmachen
-	- überlebt möglichst lange
+	- Anteile der Firma verteilen sich mit der Zeit auf alle, die mitmachen
+	- die Firma überlebt möglichst lange
 	- Unternehmergeist lohnt sich
 	- Gründen und Aufbauen lohnt sich
 	- auch für Späteinsteiger lohnt sich der Einstieg
 
-Be a strong dwarf, so that future giants may stay on your shoulders.
 
 # Demo
 [see how it works: fairShare.html](./fairShare.html)
 
 # Regeln
 
-1. ___Anteilseigner___ sollen zu 100% mitmachen. Wenn Du mitmachst, dann ganz. So sollte es keine Erlöse außerhalb der Firma geben. Zumindest keine solchen die in Konkurrenz zur Firma stehen könnten. Später können ___Anteilseigner___  auch einmal ein Sabbatical machen und dann wiederkommen, oder sie können in Rente gehen.
+1. ___fairShares___: Jede Jahr wird jeder Person, die mitgemacht haben ein Anteil ausgegeben. Hat jemand nur Teilzeit mitgemacht, so wird nur der entsprechende Teil eines fairShares ausgegeben.
 
-2. ___Partizipativ___ bedeutet, *die Firma* gehört denen, die mitmachen. Die Anteile sollen nur bei Menschen liegen, die bei ihr mitmachen oder einmal mitgemacht haben. Damit das so ist, hat *die Firma* das Vorkaufsrecht, falls Anteilseigner aussteigen und ihren Anteil verkaufen möchten.
+2. Faktor ___Arbeit___: sagt aus, zu wie viel Prozent die Person in diesem Jahr mitgearbeitet hat. Wenn jemand in einem Jahr nicht mitmacht oder in Rente gegangen ist, so wird sein Faktor *Arbeit* auf Null gesetzt, d.h. sie/er bekommt in dem laufenden Jahr keine neuen Anteile, bvehält jedoch die Anteile aus dem Vorjahr.
 
-3. ___Demokratisch___ bedeutet, jeder der mitmacht, stimmt mit ab. Jeder Anteilseigner hat gleiches Stimmrecht: one person, one voice. Wenn jemand Anteile hat, aber im entsprechend aktuellen Zeitraum nicht für *die Firma* gearbeitet hat, verliert er das Stimmrecht; wird aber in der Ausschüttung der Gewinne weiter mit berücksichtigt. Wer also in Rente ist oder ein Sabbatical macht, der verliert in der Zeit sein Stimmrecht.
+3. ___founderShares___: Insgesamt xx% der Firma bleiben zu jeweils gleichen Teilen bei den Gründern und werden nie verteilt.
 
-4. (möglichst geringer) ___Firmenwert___. Der Wert der Firma ermittelt sich aus dem durchschnittlichen Gewinn *der Firma* der letzten drei Jahre mal dem Wertfaktor (derzeit 0.8). Das ist für den Rückkauf von Anteilen wichtig. Damit das funktioniert, sollte *die Firma* keine weiteren Werte anhäufen, also keine Immobilien besitzen o.ä. Hier würde ein hoher Firmenwert zu Spekulation verleiten.
-2018-05-11: --> das ist derzeit in der Überarbeitung. S. Richter wird uns dazu einen neuen Vorschlag machen.
-
-5. ___fairShares___: Die Verteilung des Firmenwertes erfolgt nach den tatsächlich seit Firmengründung eingebrachten fairShares. Dazu werden in jeder Periode so viele fairShares ausgegeben und unter den arbeitenden Gesellschaftern verteilt, wie der Unternehmensgewinn in der Periode war. Angenommen, im letzten Jahr hat *die Firma* einen Gewinn von 23.0042€ erwirtschaftet, so werden 23.0042 fairShares unter den beteiligten Mitarbeitern verteilt. Personen, die in dieser Periode ein Sabbatical gemacht haben oder in Rente waren, also nicht gearbeitet haben, bekommen keine fairShares.
-Jeder Beteiligte, der mitgearbeitet hat, bekommt einen Anteil der ausgegebenen fairShares, der mit seinem Faktor ___Vesting___  und mit seinem Faktor ___Arbeit___ gewichtet wird. Weil jedes Jahr neue fairShares ausgegeben werden, gibt es in Summe immer mehr fairShares. Daher haben fairShares keinen Wert, sondern nur eine relative Bedeutung in Bezug auf die Summe aller ausgegebenen fairShares.
-
-6. ___Rückkauf___ von Anteilen:
+4. ___Rückkauf___ von Anteilen:
 Sollte *die Firma* Anteile eines Anteilseigners zurückkaufen, so gehen die zugehörigen Fairshares nach dem Rückkauf unter.
-
-6. Faktor ___Vesting___: sagt aus, zu wie viel Prozent ein neuer Anteilseigner gevestet ist. Neue Anteilseigner werden über einen Zeitraum von ___Vesting___ Jahren (#VJ) aufgenommen, d.h. sie haben #VJ Jahre lang die Möglichkeit, einen Teil von 1/#VJ Arbeitsanteilen an der Firma zu bekommen. #VJ, die Zahl der Vestingjahre könnte bei 2,3,4 oder 5 Jahren liegen. Der Faktor Vesting wird am Anfang unter allen Beteiligten im Konsent beschlossen. Beispiel: ___Vesting___ = 3 Jahre. Somit sind neue Anteilseigner im ersten Jahr zu 33,3% gevestet, im zweiten Jahr zu 66,6% und ab dem dritten Jahr zu 100%. Das Vesting beschützt die bestehenden Kommandististen etwas vor den Newcomern. Wird ___Vesting___ auf 1 gesetzt, so starten neue Kommanditisten immer zu 100% und der Faktor wird unwirksam.
-
-7. Faktor ___Arbeit___: sagt aus, zu wie viel Prozent die Person in diesem Jahr mitgearbeitet hat.
-
-8. ___founderShares___: Insgesamt xx% der Firma bleiben zu jeweils gleichen Teilen bei den Gründern und werden nie verteilt.
 
 
 # Ablauf
-1. Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Für Personen, die noch im Vesting sind, wird der Vesting___Arbeits-Prozentsatz  ermittelt. Die Summe der Personen ___ Arbeitsanteil ___ Vesting ergibt die gesamte in diesem Jahr gevestete Arbeitskraft (___SumVestingArbeit___).
-2. Der Gewinn der Firma wird ermittelt.
-3. Die neue Anteilsverteilung wird ermittelt. Dazu erhält jeder, der in der Periode mitgearbeitet hat, eine Anzahl von Punkten, die dem Gewinn der Firma mal seinem  Vesting___Arbeits-Prozentsatz geteilt durch ___SumVestingArbeit___. Diese Punkte werden zu den Punkten aus vergangenen Perioden hinzugezählt.
-4. Daraus ergibt sich für alle Personen der neuen Anteil an der Firma, abzüglich eventuell einbehaltener founderShares.
-5. Der Jahresgewinn der Firma wird entsprechend der Anteile unter allen Kommanditisten verteilt.
+Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Jeder Teilhaber, der mitgearbeitet hat bekommt einen Anteil entsprechend seiner Mitarbeit. Jemand der nur eine halbe Stelle hat, bekommt so beispielsweise nur eine halben Anteil
+
+Beispiel (ohne founderShares = 0% founderShares):
+2016: Bob, Alice, und Fred haben zu 100% mitgearbeitet. Jeder bekommt einen Anteil. Insgesamt gibt es am Jahresende 3 Anteile in der Firma. Die Anteile verteilen sich so:
+- Bob: 1/3 Anteil = 33%
+- Alice: 1/3 Anteil = 33%
+- Fred: 1/3 Anteil = 33%
+2017: zusätzlich startet nun Ellen mit einer 50% Stelle und Nancy in Vollzeit. Bob, Alice und Fred sind auch weiterhin dabei.
+Anteile am Jahresende gesamt: 3 (aus 2016) + 4,5 aus 2017 ergibt 7,5 Anteile. Die Anteile verteilen sich nun so:
+- Bob: 2/7,5 Anteile = 26,6%
+- Alice: 2/7,5 Anteile = 26,6%
+- Fred: 2/7,5 Anteile = 26,6%
+- Ellen (50%): 0,5/7,5 Anteile = 13,3%
+- Nancy: 1/7,5 Anteile = 6,6%
 
 
 # getting started
@@ -52,17 +49,10 @@ fairShare ist ein Programm, dass komplett im Browser läuft (js + d3). Einfach a
 
 # der Input
 
-In der ersten Version ist Folgender:
-
 Auf der Webseite (fairShare.html) im Formular:
-vesting duration[years]: 4
 
-vesting is the numer of years that someone new has to wait, until he/she gets the same distribution as someone, who has been in the company longer. Each year a newcomer will get 1/vestingDuration more shares (until 100%). So, if vestingduration is 4, then each year the newcomer gets 25% more shares at the end of the year...
-companyValueFactor[years]: 5?
-
-founders keep [%] shares(5?):
-This is the share, that a founder will not give up in the distribution process.
-
+founderShares [%] shares(6,5?):
+Das ist der Prozentsatz der Anteile, den die Gründer der ersten Periode behalten und nicht in die Verteilung geben.
 
 In data/szenario2017-01.js:
 - Periode/Zeitpunkt der Einzahlung / Abrechnung [Datum]

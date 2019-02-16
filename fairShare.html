@@ -29,22 +29,10 @@
 
     <form name="kparams" action="#" onsubmit="trigger_calculateShairs(this);">
 
-      <div>use profit: <input type="checkbox" value="true" name="useProfit" onchange="trigger_calculateShairs(document.forms['kparams']);"> </div>
-
-      <div class="slidecontainer">
-        vesting duration:
-        <span id="text01">3</span>
-        <input class="slider"  value="1" type="range" min="1" max="10" name="vestingDuration" onFocus="this.select()" oninput="document.getElementById('text01').innerHTML=this.value; trigger_calculateShairs(document.forms['kparams']);" >
-      </div>
       <div class="slidecontainer">
         founders keep [%] shares: <span id="text02">6.5</span>
         <input class="slider" value="6.5" type="range" min="0" max="50" step="0.1" name="foundersShares" onFocus="this.select()" oninput="document.getElementById('text02').innerHTML=this.value;trigger_calculateShairs(document.forms['kparams']);">
       </div>
-
-      companyValueFactor:
-      <input value="0.8" type="text" name="companyValueFactor" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
-
-
 
       <br> data file:
       <input value="default.js" type="text" name="dataFile" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
