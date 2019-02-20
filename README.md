@@ -3,7 +3,7 @@
 
 ![](img/fairShare.png)
 
-FairShare entsteht aus der Idee, eine Simulations zur Verteilung der Anteile einer Firma (im weiteren *die Firma* genannt) mit möglichst einfachen Regeln zu haben. Dabei sollen folgende Ziele erreicht werden:
+FairShare entsteht aus der Idee, eine Simulation zur Verteilung der Anteile einer Firma (im weiteren *die Firma* genannt) mit möglichst einfachen Regeln zu haben. Dabei sollen folgende Ziele erreicht werden:
 
 	- Anteile der Firma verteilen sich mit der Zeit auf alle, die mitmachen
 	- die Firma überlebt möglichst lange
@@ -11,9 +11,10 @@ FairShare entsteht aus der Idee, eine Simulations zur Verteilung der Anteile ein
 	- Gründen und Aufbauen lohnt sich
 	- auch für Späteinsteiger lohnt sich der Einstieg
 
+Bei fairShare geht es um die Verteilung der Anteile eines Unternehmens. Wie am Jahresende Gewinne verteilt werden, beantwortet fairshare nicht, das gehört in einen Gesellschaftervertrag.
 
 # Demo
-[see how it works: fairShare.html](./fairShare.html)
+[see how it works: fairShare.html](https://kommitment.github.io/fairshare/fairShare.html)
 
 # Regeln
 
@@ -108,18 +109,14 @@ Das Programm spuckt folgende Daten aus:
 
 - Abrechenzeitpunkt: ein Zeitpunkt
 - k-Contribution / Ausschüttung: Erlös der Firma
-- k-value: Wert der Firma (und ein paar Checksummen)
 - k-ContributionSum: die Summe aller Anteilspunkte
-- SumVesting*Arbeit: wie viele Personen haben in dieser Periode mit welchem Vesing mitgemacht
+- Sum*Arbeit: wie viele Personen haben in dieser Periode  mitgemacht
 -  je Person:
 	- bei Gründern der Anteil der Firma, die nicht umverteilt wird
-	- Vesting:
 	- Arbeit: zu wieviel Prozent hat die Person in diesem Jahr gearbeitet.
 	- Contribution: Der Anteil in dieser Periode am Firmenerlös.
 	-  fairShares = die seit der Gründung erbrachten *die Firma*-Anteile (Summe|Perioden (Eintrag___Arbeit))
 	-  ProzAnteil = der prozentuale Anteil an *die Firma* = Anteilssumme / k-Anteilssumme
-	-  AnteilAbsolut = der absolute Anteil in € = ProzAnteil ___ Firmenwert
-	- die sich in dieser Periode ergebende Ausschüttung
 
 # QR-Code to share
 ![](img/QR-code-fairshare.jpg)
