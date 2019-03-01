@@ -20,7 +20,7 @@ Bei fairShare geht es um die Verteilung der Anteile eines Unternehmens. Wie am J
 
 1. ___fairShares___: Jede Jahr wird jeder Person, die mitgemacht haben ein Anteil ausgegeben. Hat jemand nur Teilzeit mitgemacht, so wird nur der entsprechende Teil eines fairShares ausgegeben.
 
-2. Faktor ___Arbeit___: sagt aus, zu wie viel Prozent die Person in diesem Jahr mitgearbeitet hat. Wenn jemand in einem Jahr nicht mitmacht oder in Rente gegangen ist, so wird sein Faktor *Arbeit* auf Null gesetzt, d.h. sie/er bekommt in dem laufenden Jahr keine neuen Anteile, bvehält jedoch die Anteile aus dem Vorjahr.
+2. Faktor ___Arbeit___: sagt aus, zu wie viel Prozent die Person in diesem Jahr mitgearbeitet hat. Wenn jemand in einem Jahr nicht mitmacht oder in Rente gegangen ist, so wird sein Faktor *Arbeit* auf Null gesetzt, d.h. sie/er bekommt in dem laufenden Jahr keine neuen Anteile, behält jedoch die Anteile aus dem Vorjahr.
 
 3. ___founderShares___: Insgesamt xx% der Firma bleiben zu jeweils gleichen Teilen bei den Gründern und werden nie verteilt.
 
@@ -29,7 +29,7 @@ Sollte *die Firma* Anteile eines Anteilseigners zurückkaufen, so gehen die zuge
 
 
 # Ablauf
-Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Jeder Teilhaber, der mitgearbeitet hat bekommt einen Anteil entsprechend seiner Mitarbeit. Jemand der nur eine halbe Stelle hat, bekommt so beispielsweise nur eine halben Anteil
+Am Ende einer Periode (eines Geschäftsjahres) wird ermittelt, wer zu wie vielen Teilen mitgearbeitet hat (und wer in Rente ist oder ein Sabbatical gemacht hat). Jeder Teilhaber, der mitgearbeitet hat bekommt einen Anteil entsprechend seiner Mitarbeit. Jemand der nur eine halbe Stelle hat, bekommt so beispielsweise nur einen halben Anteil
 
 Beispiel (ohne founderShares = 0% founderShares):
 2016: Bob, Alice, und Fred haben zu 100% mitgearbeitet. Jeder bekommt einen Anteil. Insgesamt gibt es am Jahresende 3 Anteile in der Firma. Die Anteile verteilen sich so:
