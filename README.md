@@ -108,15 +108,15 @@ Beispiel hier: https://krukas.dyn.amicdns.de/fairShare/fairShair.html?vestingDur
 Das Programm spuckt folgende Daten aus:
 
 - Abrechenzeitpunkt: ein Zeitpunkt
-- k-Contribution / Ausschüttung: Erlös der Firma
-- k-ContributionSum: die Summe aller Anteilspunkte
+- totalsumfairShares: die Summe aller Anteilspunkte
 - Sum*Arbeit: wie viele Personen haben in dieser Periode  mitgemacht
 -  je Person:
-	- bei Gründern der Anteil der Firma, die nicht umverteilt wird
+	- founderShares Percent: bei Gründern der Anteil der Firma, die nicht umverteilt wird
 	- Arbeit: zu wieviel Prozent hat die Person in diesem Jahr gearbeitet.
-	- Contribution: Der Anteil in dieser Periode am Firmenerlös.
-	-  fairShares = die seit der Gründung erbrachten *die Firma*-Anteile (Summe|Perioden (Eintrag___Arbeit))
-	-  ProzAnteil = der prozentuale Anteil an *die Firma* = Anteilssumme / k-Anteilssumme
+	- fairShares: Summe der fairshares die eine Person in diesem Jahr erworben hat 
+	- sumOfFairShares: Gesamtsumme der fairshares die eine Person erworben hat
+	- Anteil: Anteil einer Person im Verhältnis zu den seit der Gründung verteilten fairshares (Summe|Perioden (Eintrag___Arbeit)
+	- ProzAnteil: der prozentuale Anteil an *die Firma* = Anteilssumme / k-Anteilssumme
 
 # QR-Code to share
 ![](img/QR-code-fairshare.jpg)
