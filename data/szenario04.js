@@ -1,7 +1,6 @@
 var data = [
 	{
 		Abrechenzeitpunkt: "2016-12-31",
-		Contribution: "97000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
 			{ Name: "Ralf W.", Arbeit: "100%" },
@@ -9,7 +8,6 @@ var data = [
 	},
 	{
 		Abrechenzeitpunkt: "2017-12-31",
-		Contribution: "120000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
 			{ Name: "Ralf W.", Arbeit: "100%" },
@@ -17,29 +15,24 @@ var data = [
 	},
 	{
 		Abrechenzeitpunkt: "2018",
-		Contribution: "140000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
+			{ Name: "Ralf W.", Arbeit: "0%", returnedFairShares: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" }]
 	}
 	, {
 		Abrechenzeitpunkt: "2019",
-		Contribution: "170000	",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" }]
 	}
 	, {
 		Abrechenzeitpunkt: "2020",
-		Contribution: "240000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -49,10 +42,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2021",
-		Contribution: "300000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -64,10 +55,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2022",
-		Contribution: "360000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -81,10 +70,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2023",
-		Contribution: "420000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -100,10 +87,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2024",
-		Contribution: "480000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -121,10 +106,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2025",
-		Contribution: "540000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -144,10 +127,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2026",
-		Contribution: "600000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -169,10 +150,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2027",
-		Contribution: "660000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -196,10 +175,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2028",
-		Contribution: "720000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -225,10 +202,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2029",
-		Contribution: "780000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -256,10 +231,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2030",
-		Contribution: "840000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -289,10 +262,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2031",
-		Contribution: "900000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -324,10 +295,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2032",
-		Contribution: "960000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -361,10 +330,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2033",
-		Contribution: "1010000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -400,10 +367,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2034",
-		Contribution: "1070000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
@@ -441,10 +406,8 @@ var data = [
 	}
 	, {
 		Abrechenzeitpunkt: "2035",
-		Contribution: "1130000",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "Ralf W.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
