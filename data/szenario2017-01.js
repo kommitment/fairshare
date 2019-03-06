@@ -32,8 +32,8 @@ var data = [
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" },
 			{ Name: "Ingo K.", Arbeit: "100%" },
-			{ Name: "Joris S.", Arbeit: "100%" },
-			{ Name: "Marcel B.", Arbeit: "100%" }
+			{ Name: "Egon01", Arbeit: "100%" },
+			{ Name: "Egon02", Arbeit: "100%" }
 		]
 	}
 	, {
@@ -44,8 +44,8 @@ var data = [
 			{ Name: "Katja R.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "0%" },
 			{ Name: "Ingo K.", Arbeit: "100%" },
-			{ Name: "Joris S.", Arbeit: "100%" },
-			{ Name: "Marcel B.", Arbeit: "100%" }
+			{ Name: "Egon01", Arbeit: "100%" },
+			{ Name: "Egon02", Arbeit: "100%" }
 		]
 	}
 ]
