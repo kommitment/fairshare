@@ -29,5 +29,13 @@ var data = [
 		{ Name: "Ben W.", Arbeit: "100%" },
 		{ Name: "Katja R.", Arbeit: "100%" },
 		{ Name: "Johannes M.", Arbeit: "100%" }]
-	}
+}
+, {
+	Abrechenzeitpunkt: "2020",
+	kommanditisten: [
+		{ Name: "Anke N.", Arbeit: "100%" },
+		{ Name: "Ben W.", Arbeit: "100%" },
+		{ Name: "Katja R.", Arbeit: "100%" },
+		{ Name: "Johannes M.", Arbeit: "100%" }]
+}
 ]
