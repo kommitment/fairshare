@@ -109,7 +109,7 @@ Das Programm spuckt folgende Daten aus:
 
 - Abrechenzeitpunkt: ein Zeitpunkt
 - totalsumfairShares: die Summe aller Anteilspunkte
-- Sum*Arbeit: wie viele Personen haben in dieser Periode  mitgemacht
+- Sum*Arbeit: wie viele Personen haben anteilig in dieser Periode mitgemacht
 -  je Person:
 	- founderShares Percent: bei Gründern der Anteil der Firma, die nicht umverteilt wird
 	- Arbeit: zu wieviel Prozent hat die Person in diesem Jahr gearbeitet.
