@@ -2,11 +2,16 @@
 
 # export TARGETUSER=kommitment
 # export TARGETSERVER=94.130.79.196
-export TARGETUSER=pi
-export TARGETSERVER=krukas.dyn.amicdns.de
-export TARGETPORT=65040
+# export TARGETUSER=pi
+# export TARGETSERVER=krukas.dyn.amicdns.de
+# export TARGETPORT=65040
 
-export TARGETDIR=/home/pi/public-html/`echo ${PWD##*/}`
+export TARGETUSER=kommitment
+export TARGETSERVER=kommitment@kontrol.kommitment.biz
+export TARGETPORT=22
+
+# export TARGETDIR=/home/pi/public-html/`echo ${PWD##*/}`
+export TARGETDIR=`echo ${PWD##*/}`
 export DEPLOYMENTTARGET=$TARGETUSER@$TARGETSERVER:$TARGETDIR
 
 clear
@@ -18,5 +23,5 @@ ssh -p $TARGETPORT $TARGETUSER@$TARGETSERVER "mkdir -p $TARGETDIR"
 rsync --stats --copy-links -avRe  "ssh -p "$TARGETPORT --exclude '.git' ./ $DEPLOYMENTTARGET
 #rsync --stats -avRe "ssh -p 43022" ./ $DEPLOYMENTTARGET
 
-echo "open http://krukas.dyn.amicdns.de/fairShare/fairShair.html"
-open http://krukas.dyn.amicdns.de/fairShare/fairShair.html
+echo "open http://$TARGETSERVER/fairShare/fairShair.html"
+open http://$TARGETSERVER/fairShare/fairShair.html
