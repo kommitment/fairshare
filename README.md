@@ -1,6 +1,6 @@
 # FairShare - einfach "fairteilen"
 
-<img src="img/Fairshare-pie.png" width="250"/>
+<img src="img/fairshare-pie.png" width="250"/>
 
 FairShare entsteht aus der Idee, eine Simulation zur Verteilung der Anteile einer Firma (im weiteren *die Firma* genannt) mit möglichst einfachen Regeln zu haben. Dabei sollen folgende Ziele erreicht werden:
 
