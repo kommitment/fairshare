@@ -123,4 +123,4 @@ Das Programm gibt folgende Daten aus:
 	-  ProzAnteil = der prozentuale Anteil an *die Firma* = Anteilssumme / k-Anteilssumme
 
 # QR-Code to share
-<img src="img/qrcode-fairshare.jpg" width="100"/>
+<img src="img/fairshare-qrcode.jpg" width="100"/>
