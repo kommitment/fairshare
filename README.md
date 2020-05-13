@@ -46,11 +46,11 @@ Anteile am Jahresende gesamt: 3 (aus 2016) + 4,5 aus 2017 ergibt 7,5 Anteile. Di
 
 
 # Getting started
-FairShare ist ein Programm, dass komplett im Browser läuft. Einfach auschecken und fairShare.html öffnen.
+FairShare ist ein Programm, dass komplett im Browser läuft. Einfach auschecken und fairshare.html öffnen.
 
 # Der Input
 
-Auf der Webseite (fairShare.html) im Formular:
+Auf der Webseite (fairshare.html) im Formular:
 
 founderShares [%] shares(6,5?):
 Das ist der Prozentsatz der Anteile, den die Gründer der ersten Periode behalten und nicht in die Verteilung geben.
@@ -107,7 +107,7 @@ var data = [
 ```
 
 #  Der Output
-Beispiel hier: https://kommitment.github.io/fairshare/fairShare.html?vestingDuration=3&companyValueFactor=5&foundersShares=7&switch=develop&dataFile=szenario04.js#
+Beispiel hier: https://kommitment.github.io/fairshare/fairshare.html?vestingDuration=3&companyValueFactor=5&foundersShares=7&switch=develop&dataFile=szenario04.js#
 
 Das Programm gibt folgende Daten aus:
 
