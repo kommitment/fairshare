@@ -5,44 +5,42 @@
 <head>
   <meta charset="utf-8">
 
-  <title>fairShair</title>
+  <title>FairShare Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <meta name="description" content="The fair share of kommitment">
-  <meta name="Johannes Mainusch" content="fairShair">
+  <meta name="description" content="Bei FairShare geht es um die faire Verteilung der Anteile eines Unternehmens.">
+  <meta name="Johannes Mainusch" content="FairShare">
   <script src="./js/d3.v4.min.js"></script>
-  <script src="./js/fairShair.js"></script>
+  <script src="./js/FairShare.js"></script>
   <script src="./js/plotFairShares.js"></script>
   <script src="./data/default.js"></script>
   <link rel="stylesheet" href="css/kommitment.css">
   <link rel="stylesheet" href="css/monitor.css">
 </head>
 
-<body onload="document.forms['kparams'].submit; trigger_calculateShairs(document.forms['kparams'] );">
-  <h1>fairShair</h1>
+<body onload="document.forms['kparams'].submit; trigger_calculateShares(document.forms['kparams'] );">
+  <h1>FairShare</h1>
   <p>
-    Input parameters of fairShair is a set of revenue related data per persiod (e.g. per year). FairShair will calculate the
+    Input parameters of FairShare is a set of revenue related data per persiod (e.g. per year). FairShare will calculate the
     share of every partner of the company and show the change of his/her share per period. So the plan. Find details in
     <a href="https://kommitment.github.io/fairshare/">https://kommitment.github.io/fairshare/</a>
 
     Choose from the input files
     <a href="./data">here:</a>
 
-    <form name="kparams" action="#" onsubmit="trigger_calculateShairs(this);">
+    <form name="kparams" action="#" onsubmit="trigger_calculateShares(this);">
 
       <div class="slidecontainer">
-        founders keep [%] shares: <span id="text02">6.5</span>
-        <input class="slider" value="6.5" type="range" min="0" max="50" step="0.1" name="foundersShares" onFocus="this.select()" oninput="document.getElementById('text02').innerHTML=this.value;trigger_calculateShairs(document.forms['kparams']);">
+        Founders keep [%] shares: <span id="text02">6.5</span>
+        <input class="slider" value="6.5" type="range" min="0" max="50" step="0.1" name="foundersShares" onFocus="this.select()" oninput="document.getElementById('text02').innerHTML=this.value;trigger_calculateShares(document.forms['kparams']);">
       </div>
 
-      <br> data file:
-      <input value="default.js" type="text" name="dataFile" onFocus="this.select()" oninput="trigger_calculateShairs(document.forms['kparams']);">
+      <br>Data file:
+      <input value="default.js" type="text" name="dataFile" onFocus="this.select()" oninput="trigger_calculateShares(document.forms['kparams']);">
       <br>
     </form>
     <div id="chartId"></div>
     <div id="filterDiv"></div>
     <div id="page-wrap"></div>
-
-    <div onload="alert('loaded')"></div>
   </body>
 
 

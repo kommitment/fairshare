@@ -12,7 +12,7 @@ var global = {
         url: "data/szenario03.json"
     },
     production: {
-        url: "https://krukas.dynamicns.de/kommitment-fairshair/getData"
+        url: "https://krukas.dynamicns.de/kommitment-FairShare/getData"
     },
     targetServer: "empty"
 };
@@ -24,9 +24,9 @@ var log = {
 var filters = new Array();
 
 // ****************
-function trigger_calculateShairs(theForm) {
+function trigger_calculateShares(theForm) {
     console.clear();
-    log.debug("in trigger_calculateShairs: ", theForm);
+    log.debug("in trigger_calculateShares: ", theForm);
     loadData(function (data) { alert("callback got called") },theForm);
 }
 
@@ -43,7 +43,7 @@ function loadData(callback, theForm) {
         var script = document.createElement('script');
         script.onload = function () {
             log.debug ("new script loaded...");
-            renderData("", calculateShairs(data, theForm));
+            renderData("", calculateShares(data, theForm));
         };
         script.src = "./data/"+dataFile+ "?thisdoes=cachebusting"+Math.random();;
         document.head.appendChild(script)
@@ -64,7 +64,7 @@ function loadData(callback, theForm) {
 }
 
 // ****************
-function calculateShairs(input, theForm) {
+function calculateShares(input, theForm) {
     /* input is of this format...
       [  {
         Abrechenzeitpunkt : 2016-04-13,
