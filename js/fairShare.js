@@ -24,9 +24,9 @@ var log = {
 var filters = new Array();
 
 // ****************
-function trigger_calculateShares(theForm) {
+function update(theForm) {
     console.clear();
-    log.debug("in trigger_calculateShares: ", theForm);
+    log.debug("in update: ", theForm);
     loadData(function (data) { alert("callback got called") },theForm);
 }
 
@@ -196,7 +196,8 @@ function renderData(error, data) {
     var sortAscending = true;
     var titles = d3.keys(data[0]);
     var table = d3.select('#page-wrap').append('table');
-    var headers = table.append('thead').append('tr')
+    var head = table.append('thead')
+    var headers = head.append('tr')
         .selectAll('th')
         .data(titles).enter()
         .append('th')
@@ -216,7 +217,11 @@ function renderData(error, data) {
                 sortAscending = true;
                 this.className = 'des';
             }
-        });
+        }
+    );
+
+    table.attr("class", "table table-hover")
+    head.attr("class", "thead-dark")
 
     // render the table
     var tnow = new Date();

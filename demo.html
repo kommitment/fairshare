@@ -6,42 +6,71 @@
   <meta charset="utf-8">
 
   <title>FairShare Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Bei FairShare geht es um die faire Verteilung der Anteile eines Unternehmens.">
   <meta name="Johannes Mainusch" content="FairShare">
   <script src="./js/d3.v4.min.js"></script>
-  <script src="./js/FairShare.js"></script>
+  <script src="./js/fairShare.js"></script>
   <script src="./js/plotFairShares.js"></script>
   <script src="./data/default.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="css/kommitment.css">
   <link rel="stylesheet" href="css/monitor.css">
 </head>
 
-<body onload="document.forms['kparams'].submit; trigger_calculateShares(document.forms['kparams'] );">
-  <h1>FairShare</h1>
-  <p>
-    Input parameters of FairShare is a set of revenue related data per persiod (e.g. per year). FairShare will calculate the
-    share of every partner of the company and show the change of his/her share per period. So the plan. Find details in
-    <a href="https://kommitment.github.io/fairshare/">https://kommitment.github.io/fairshare/</a>
-
-    Choose from the input files
-    <a href="./data">here:</a>
-
-    <form name="kparams" action="#" onsubmit="trigger_calculateShares(this);">
-
-      <div class="slidecontainer">
-        Founders keep [%] shares: <span id="text02">6.5</span>
-        <input class="slider" value="6.5" type="range" min="0" max="50" step="0.1" name="foundersShares" onFocus="this.select()" oninput="document.getElementById('text02').innerHTML=this.value;trigger_calculateShares(document.forms['kparams']);">
+<body onload="document.forms['kparams'].submit; update(document.forms['kparams'] );">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h1 class="display-4 pt-3">FairShare</h1>
+        <p class="lead">
+          Input parameters of FairShare is a set of revenue related data per persiod (e.g. per year). <br/>FairShare will calculate the
+          share of every partner of the company and show the change of his/her share per period. So the plan.<br/>Find details in
+          <a href="https://kommitment.github.io/fairshare/">https://kommitment.github.io/fairshare/</a>
+        </p>
+        
+        <form name="kparams" action="#" onsubmit="update(this);" class="my-4">
+          <div class="row">
+            <div class="col col-sm-6 col-md-3">
+              <div class="form-group">
+                <label>Founders keep [%] shares: <span id="text02">6.5</span></label>
+                <input class="slider" value="6.5" type="range" min="0" max="50" step="0.1" name="foundersShares" onFocus="this.select()" oninput="document.getElementById('text02').innerHTML=this.value;update(document.forms['kparams']);">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-6 col-md-3">
+              <div class="form-group">
+                <label>Data file</label>
+                <input value="default.js" type="text" name="dataFile" onFocus="this.select()" oninput="update(document.forms['kparams']);">
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
-
-      <br>Data file:
-      <input value="default.js" type="text" name="dataFile" onFocus="this.select()" oninput="trigger_calculateShares(document.forms['kparams']);">
-      <br>
-    </form>
-    <div id="chartId"></div>
-    <div id="filterDiv"></div>
-    <div id="page-wrap"></div>
+        
+      <div class="row">
+        <div class="col">
+          <div class="p-3">
+            <div id="chartId"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="p-3">
+            <div id="filterDiv"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="p-3">
+            <div id="page-wrap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
-
-
   </html>
