@@ -13,7 +13,7 @@ FairShare entsteht aus der Idee, eine Simulation zur Verteilung der Anteile eine
 Bei FairShare geht es um die Verteilung der Anteile eines Unternehmens. Wie am Jahresende Gewinne verteilt werden, beantwortet Fairshare nicht. Das gehört in einen Gesellschaftervertrag.
 
 # Demo
-[See how it works in the demo](https://kommitment.github.io/fairshare/demo.html)
+[Probier aus, wie es funktioniert](demo.html)
 
 # Regeln
 
@@ -121,6 +121,3 @@ Das Programm gibt folgende Daten aus:
 	- Contribution: Der Anteil in dieser Periode am Firmenerlös.
 	-  FairShares = die seit der Gründung erbrachten *die Firma*-Anteile (Summe|Perioden (Eintrag___Arbeit))
 	-  ProzAnteil = der prozentuale Anteil an *die Firma* = Anteilssumme / k-Anteilssumme
-
-# QR-Code to share
-<img src="img/fairshare-qrcode.jpg" width="100"/>
