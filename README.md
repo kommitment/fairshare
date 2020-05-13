@@ -1,14 +1,12 @@
 # FairShare - einfach "fairteilen"
 
+## https://kommitment.github.io/fairshare/
+
 Bei FairShare geht es um die faire Verteilung der Anteile eines Unternehmens.
 
 <img src="docs/img/fairshare-pie.png" width="250"/>
 
-[https://kommitment.github.io/fairshare/](https://kommitment.github.io/fairshare/)
-
-<img src="docs/img/fairshare-qrcode.jpg" width="100"/>
-
-## Lizenz 
+### Lizenz 
 
 [FairShare](https://github.com/kommitment/fairshare) von [kommitment GmbH & Co. KG](https://kommitment.works) ist lizenziert unter der [Creative Commons 4.0 International Lizenz](http://creativecommons.org/licenses/by-sa/4.0/) (Weitergabe unter gleichen Bedingungen).
 
