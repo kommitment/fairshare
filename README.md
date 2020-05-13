@@ -13,7 +13,7 @@ FairShare entsteht aus der Idee, eine Simulation zur Verteilung der Anteile eine
 Bei FairShare geht es um die Verteilung der Anteile eines Unternehmens. Wie am Jahresende Gewinne verteilt werden, beantwortet Fairshare nicht. Das gehört in einen Gesellschaftervertrag.
 
 # Demo
-[See how it works in the demo](https://kommitment.github.io/fairshare/fairshare.html)
+[See how it works in the demo](https://kommitment.github.io/fairshare/demo.html)
 
 # Regeln
 
@@ -46,11 +46,11 @@ Anteile am Jahresende gesamt: 3 (aus 2016) + 4,5 aus 2017 ergibt 7,5 Anteile. Di
 
 
 # Getting started
-FairShare ist ein Programm, dass komplett im Browser läuft. Einfach auschecken und fairshare.html öffnen.
+FairShare ist ein Programm, dass komplett im Browser läuft. Einfach auschecken und demo.html öffnen.
 
 # Der Input
 
-Auf der Webseite (fairshare.html) im Formular:
+Auf der Webseite (demo.html) im Formular:
 
 founderShares [%] shares(6,5?):
 Das ist der Prozentsatz der Anteile, den die Gründer der ersten Periode behalten und nicht in die Verteilung geben.
@@ -107,7 +107,7 @@ var data = [
 ```
 
 #  Der Output
-Beispiel hier: https://kommitment.github.io/fairshare/fairshare.html?vestingDuration=3&companyValueFactor=5&foundersShares=7&switch=develop&dataFile=szenario04.js#
+Beispiel hier: https://kommitment.github.io/fairshare/demo.html?vestingDuration=3&companyValueFactor=5&foundersShares=7&switch=develop&dataFile=szenario04.js#
 
 Das Programm gibt folgende Daten aus:
 
