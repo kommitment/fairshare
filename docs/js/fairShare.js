@@ -324,11 +324,5 @@ function renderFilters(error, data, filters) {
 }
 
 // ****************
-function round100 (value) {
-    return Math.round (100.0*value)/100;
-}
-
-function pad(num, size) {
-    var s = "000000000" + num;
-    return s.substr(s.length-size);
-}
+let round100 = value => Math.round (100.0*value)/100
+let pad = (num, size) => {s = "000000000" + num; return s.substr(s.length-size)}

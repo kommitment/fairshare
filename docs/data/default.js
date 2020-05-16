@@ -39,8 +39,8 @@ var data = [
 		Abrechenzeitpunkt: "2021",
 		kommanditisten: [
 			{ Name: "Anke N.", Arbeit: "100%" },
-			{ Name: "N1. N.", Arbeit: "100%" },
-			{ Name: "N2. N.", Arbeit: "100%" },
+			{ Name: "Michael", Arbeit: "100%" },
+			{ Name: "Jost", Arbeit: "100%" },
 			{ Name: "Sven R.", Arbeit: "100%" },
 			{ Name: "Ben W.", Arbeit: "100%" },
 			{ Name: "Johannes M.", Arbeit: "100%" }]
