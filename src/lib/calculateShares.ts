@@ -25,11 +25,12 @@ const calculateShares = (
   initialFoundersShare: number
 ): any =>
   pipe(
-    addInitialFounderShare(initialFoundersShare),
+    addInitialFoundersShare(initialFoundersShare),
+    // @todo addFoundersShareToPartners: all new partners have 0 foundersShare, needs to consider returnedFairShares
     addSumOfWork,
-    addAccumulatedWork,
-    addAccumulatedWorkToPartners,
-    addSharesInDistribution,
+    addAccumulatedWork, // @todo needs to consider returnedFairShares
+    addAccumulatedWorkToPartners, // @todo needs to consider returnedFairShares
+    addSharesInDistribution, // @todo needs to consider returnedFairShares
     addShareToPartners(initialFoundersShare)
   )(historyArr)
 
@@ -63,7 +64,7 @@ const addAccumulatedWork = (historyArr: history[]): history[] =>
 /**
  *
  */
-const addInitialFounderShare = (foundersShare: number) => (
+const addInitialFoundersShare = (foundersShare: number) => (
   historyArr: history[]
 ): history[] =>
   pipe(
@@ -134,6 +135,9 @@ const addSharesInDistribution = (historyArr: history[]): history[] =>
     (res: [any, history[]]) => res[1]
   )(historyArr)
 
+/**
+ *
+ */
 const accumSharesInDistribution = (
   acc: number,
   history: history
@@ -174,6 +178,9 @@ const addShareToPartners = (foundersShare: number) => (
       )
   )(historyArr)
 
+/**
+ *
+ */
 const setShareInPartners = (
   foundersShare: number,
   sharesInDistribution: number,
@@ -187,6 +194,9 @@ const setShareInPartners = (
     assoc('partners', __, history)
   )(history)
 
+/**
+ *
+ */
 const setShareInPartner = (
   foundersShare: number,
   sharesInDistribution: number,
