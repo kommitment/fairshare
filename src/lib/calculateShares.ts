@@ -16,6 +16,8 @@ import {
   subtract,
   reject,
   isNil,
+  curry,
+  tap,
 } from 'ramda'
 
 const calculateShares = (
@@ -27,7 +29,8 @@ const calculateShares = (
     addSumOfWork,
     addAccumulatedWork,
     addAccumulatedWorkToPartners,
-    addSharesInDistribution
+    addSharesInDistribution,
+    addShareToPartners(initialFoundersShare)
   )(historyArr)
 
 /**
@@ -158,13 +161,56 @@ const getSharesInDistribution = (
 /**
  *
  */
-const calcShare = (
-  foundersShares: number,
+const addShareToPartners = (foundersShare: number) => (
+  historyArr: history[]
+): history[] =>
+  map(
+    (history: history): history =>
+      setShareInPartners(
+        foundersShare,
+        history.sharesInDistribution!,
+        history.accumWork!,
+        history
+      )
+  )(historyArr)
+
+const setShareInPartners = (
+  foundersShare: number,
   sharesInDistribution: number,
-  accumWorkPartner: number,
+  accumWorkAll: number,
+  history: history
+): history =>
+  pipe(
+    // @ts-ignore
+    prop('partners'),
+    map(setShareInPartner(foundersShare, sharesInDistribution, accumWorkAll)),
+    assoc('partners', __, history)
+  )(history)
+
+const setShareInPartner = (
+  foundersShare: number,
+  sharesInDistribution: number,
   accumWorkAll: number
-): number =>
-  foundersShares + sharesInDistribution * (accumWorkPartner / accumWorkAll)
+) => (partner: historyPartner): history =>
+  pipe(
+    // @ts-ignore
+    prop('accumWork'),
+    calcShare(foundersShare, sharesInDistribution, accumWorkAll),
+    assoc('shares', __, partner)
+  )(partner)
+
+/**
+ *
+ */
+const calcShare = curry(
+  (
+    foundersShares: number,
+    sharesInDistribution: number,
+    accumWorkAll: number,
+    accumWorkPartner: number
+  ): number =>
+    foundersShares + sharesInDistribution * (accumWorkPartner / accumWorkAll)
+)
 
 export { calcShare }
 export default calculateShares
