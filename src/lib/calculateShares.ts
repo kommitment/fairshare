@@ -118,4 +118,16 @@ const setAccumulatedWorkToPartners = (
     )
   )(partners)
 
+/**
+ *
+ */
+const calcShare = (
+  foundersShares: number,
+  sharesInDistribution: number,
+  accumWorkPartner: number,
+  accumWorkAll: number
+): number =>
+  foundersShares + sharesInDistribution * (accumWorkPartner / accumWorkAll)
+
+export { calcShare }
 export default calculateShares
