@@ -13,6 +13,9 @@ import {
   fromPairs,
   mergeWith,
   add,
+  subtract,
+  reject,
+  isNil,
 } from 'ramda'
 
 const calculateShares = (
@@ -20,10 +23,11 @@ const calculateShares = (
   initialFoundersShare: number
 ): any =>
   pipe(
+    addInitialFounderShare(initialFoundersShare),
     addSumOfWork,
     addAccumulatedWork,
-    addInitialFounderShare(initialFoundersShare),
-    addAccumulatedWorkToPartners
+    addAccumulatedWorkToPartners,
+    addSharesInDistribution
   )(historyArr)
 
 /**
@@ -116,6 +120,39 @@ const setAccumulatedWorkToPartners = (
       (p: historyPartner): historyPartner =>
         assoc('accumWork', defaultTo(0, prop(p.name, acc)), p)
     )
+  )(partners)
+
+/**
+ *
+ */
+const addSharesInDistribution = (historyArr: history[]): history[] =>
+  pipe(
+    mapAccum(accumSharesInDistribution, 1),
+    (res: [any, history[]]) => res[1]
+  )(historyArr)
+
+const accumSharesInDistribution = (
+  acc: number,
+  history: history
+): [number, history] => {
+  acc = getSharesInDistribution(acc, history.partners)
+  return [acc, assoc('sharesInDistribution', acc, history)]
+}
+
+/**
+ *
+ */
+const getSharesInDistribution = (
+  sharesInDistribution: number,
+  partners: historyPartner[]
+): number =>
+  pipe(
+    // @ts-ignore
+    map(prop('foundersShare')),
+    // @ts-ignore
+    reject(isNil),
+    reduce((acc: number, num: number): number => add(acc, num), 0),
+    subtract(sharesInDistribution)
   )(partners)
 
 /**

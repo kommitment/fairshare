@@ -4,4 +4,5 @@ interface historyPartner {
   returnedFairShares?: number
   foundersShare?: number
   accumWork?: number
+  shares?: number
 }
