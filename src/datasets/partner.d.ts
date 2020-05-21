@@ -1,4 +1,4 @@
-interface historyPartner {
+interface Partner {
   name: string
   work: number
   returnedFairShares?: number

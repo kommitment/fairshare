@@ -1,4 +1,4 @@
-const history: history[] = [
+const history: Period[] = [
   {
     date: '2016-12-31',
     partners: [

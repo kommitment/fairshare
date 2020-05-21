@@ -21,7 +21,7 @@ import {
 } from 'ramda'
 
 const calculateShares = (
-  historyArr: history[],
+  periods: Period[],
   initialFoundersShare: number
 ): any =>
   pipe(
@@ -32,82 +32,79 @@ const calculateShares = (
     addAccumulatedWorkToPartners, // @todo needs to consider returnedFairShares
     addSharesInDistribution, // @todo needs to consider returnedFairShares
     addShareToPartners(initialFoundersShare)
-  )(historyArr)
+  )(periods)
 
 /**
  *
  */
-const addSumOfWork = (historyArr: history[]): history[] =>
+const addSumOfWork = (periods: Period[]): Period[] =>
   map(
-    (history: history) =>
+    (period: Period) =>
       pipe(
-        (h: history) => h.partners,
-        reduce((sum: number, partner: historyPartner) => sum + partner.work, 0),
-        assoc('sumWork', __, history)
-      )(history),
-    historyArr
+        (p: Period) => p.partners,
+        reduce((sum: number, partner: Partner) => sum + partner.work, 0),
+        assoc('sumWork', __, period)
+      )(period),
+    periods
   )
 
 /**
  *
  */
-const addAccumulatedWork = (historyArr: history[]): history[] =>
+const addAccumulatedWork = (periods: Period[]): Period[] =>
   pipe(
-    mapAccum((accumWork: number, history: history) => {
-      accumWork += history.sumWork!
-      history.accumWork = accumWork
-      return [accumWork, history]
+    mapAccum((accumWork: number, period: Period) => {
+      accumWork += period.sumWork!
+      period.accumWork = accumWork
+      return [accumWork, period]
     }, 0),
-    (res: [number, history[]]) => res[1]
-  )(historyArr)
+    (res: [number, Period[]]) => res[1]
+  )(periods)
 
 /**
  *
  */
 const addInitialFoundersShare = (foundersShare: number) => (
-  historyArr: history[]
-): history[] =>
+  periods: Period[]
+): Period[] =>
   pipe(
     head,
-    addInitialFounderShareToHistory(foundersShare),
-    (h: history): history[] => [h, ...tail(historyArr)]
-  )(historyArr)
+    addInitialFounderShareToperiod(foundersShare),
+    (p: Period): Period[] => [p, ...tail(periods)]
+  )(periods)
 
 /**
  *
  */
-const addInitialFounderShareToHistory = (foundersShare: number) => (
-  history: history
-): history =>
+const addInitialFounderShareToperiod = (foundersShare: number) => (
+  period: Period
+): Period =>
   pipe(
-    (h: history) => h.partners,
-    map(
-      (p: historyPartner): historyPartner =>
-        assoc('foundersShare', foundersShare, p)
-    ),
-    assoc('partners', __, history)
-  )(history)
+    (p: Period) => p.partners,
+    map((p: Partner): Partner => assoc('foundersShare', foundersShare, p)),
+    assoc('partners', __, period)
+  )(period)
 
 /**
  *
  */
-const addAccumulatedWorkToPartners = (historyArr: history[]): history[] =>
+const addAccumulatedWorkToPartners = (periods: Period[]): Period[] =>
   pipe(
-    mapAccum((acc: Record<string, number>, history: history) => {
-      acc = accumulateWorkOfPartners(acc, history.partners)
-      const partners = setAccumulatedWorkToPartners(acc, history.partners)
-      history = assoc('partners', partners, history)
-      return [acc, history]
+    mapAccum((acc: Record<string, number>, period: Period) => {
+      acc = accumulateWorkOfPartners(acc, period.partners)
+      const partners = setAccumulatedWorkToPartners(acc, period.partners)
+      period = assoc('partners', partners, period)
+      return [acc, period]
     }, {}),
-    (res: [any, history[]]) => res[1]
-  )(historyArr)
+    (res: [any, Period[]]) => res[1]
+  )(periods)
 
 /**
  *
  */
 const accumulateWorkOfPartners = (
   acc: Record<string, number>,
-  partners: historyPartner[]
+  partners: Partner[]
 ): Record<string, number> =>
   // @ts-ignore
   pipe(map(props(['name', 'work'])), fromPairs, mergeWith(add, acc))(partners)
@@ -117,11 +114,11 @@ const accumulateWorkOfPartners = (
  */
 const setAccumulatedWorkToPartners = (
   acc: Record<string, number>,
-  partners: historyPartner[]
-): historyPartner[] =>
+  partners: Partner[]
+): Partner[] =>
   pipe(
     map(
-      (p: historyPartner): historyPartner =>
+      (p: Partner): Partner =>
         assoc('accumWork', defaultTo(0, prop(p.name, acc)), p)
     )
   )(partners)
@@ -129,21 +126,21 @@ const setAccumulatedWorkToPartners = (
 /**
  *
  */
-const addSharesInDistribution = (historyArr: history[]): history[] =>
+const addSharesInDistribution = (periods: Period[]): Period[] =>
   pipe(
     mapAccum(accumSharesInDistribution, 1),
-    (res: [any, history[]]) => res[1]
-  )(historyArr)
+    (res: [any, Period[]]) => res[1]
+  )(periods)
 
 /**
  *
  */
 const accumSharesInDistribution = (
   acc: number,
-  history: history
-): [number, history] => {
-  acc = getSharesInDistribution(acc, history.partners)
-  return [acc, assoc('sharesInDistribution', acc, history)]
+  period: Period
+): [number, Period] => {
+  acc = getSharesInDistribution(acc, period.partners)
+  return [acc, assoc('sharesInDistribution', acc, period)]
 }
 
 /**
@@ -151,7 +148,7 @@ const accumSharesInDistribution = (
  */
 const getSharesInDistribution = (
   sharesInDistribution: number,
-  partners: historyPartner[]
+  partners: Partner[]
 ): number =>
   pipe(
     // @ts-ignore
@@ -166,17 +163,17 @@ const getSharesInDistribution = (
  *
  */
 const addShareToPartners = (foundersShare: number) => (
-  historyArr: history[]
-): history[] =>
+  periods: Period[]
+): Period[] =>
   map(
-    (history: history): history =>
+    (period: Period): Period =>
       setShareInPartners(
         foundersShare,
-        history.sharesInDistribution!,
-        history.accumWork!,
-        history
+        period.sharesInDistribution!,
+        period.accumWork!,
+        period
       )
-  )(historyArr)
+  )(periods)
 
 /**
  *
@@ -185,14 +182,14 @@ const setShareInPartners = (
   foundersShare: number,
   sharesInDistribution: number,
   accumWorkAll: number,
-  history: history
-): history =>
+  period: Period
+): Period =>
   pipe(
     // @ts-ignore
     prop('partners'),
     map(setShareInPartner(foundersShare, sharesInDistribution, accumWorkAll)),
-    assoc('partners', __, history)
-  )(history)
+    assoc('partners', __, period)
+  )(period)
 
 /**
  *
@@ -201,7 +198,7 @@ const setShareInPartner = (
   foundersShare: number,
   sharesInDistribution: number,
   accumWorkAll: number
-) => (partner: historyPartner): history =>
+) => (partner: Partner): Period =>
   pipe(
     // @ts-ignore
     prop('accumWork'),

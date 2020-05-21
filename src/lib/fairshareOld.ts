@@ -1,8 +1,8 @@
 import { reduce } from 'ramda'
 
-const getSumWork = (historyPartner: historyPartner[]): number =>
+const getSumWork = (historyPartner: Partner[]): number =>
   reduce(
-    (sum: number, partner: historyPartner) => sum + partner.work,
+    (sum: number, partner: Partner) => sum + partner.work,
     0,
     historyPartner
   )
@@ -33,7 +33,7 @@ const getSumWork = (historyPartner: historyPartner[]): number =>
       - in first period give each found initalFounderSharePercent
       - sum up sharesInDistribution
 */
-const fairshare = (input: history[], initialFoundersShare: number): any => {
+const fairshare = (input: Period[], initialFoundersShare: number): any => {
   const result: any[] = []
   const shares: { [key: string]: { [key: string]: any } } = {}
 
