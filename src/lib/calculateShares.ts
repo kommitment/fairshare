@@ -1,7 +1,7 @@
 import { pipe } from 'ramda'
 import addInitialFoundersShare from './addInitialFoundersShare'
-import addSumOfWork from './addSumOfWork'
-import addAccumulatedWork from './addAccumulatedWork'
+import addSumOfWorkToPeriods from './addSumOfWorkToPeriods'
+import addAccumulatedWorkToPeriods from './addAccumulatedWorkToPeriods'
 import addAccumulatedWorkToPartners from './addAccumulatedWorkToPartners'
 import addShareToPartners from './addShareToPartners'
 import addSharesInDistribution from './addSharesInDistribution'
@@ -13,9 +13,9 @@ const calculateShares = (
   pipe(
     addInitialFoundersShare(initialFoundersShare),
     // @todo addFoundersShareToPartners: all new partners have 0 foundersShare, needs to consider returnedFairShares
-    addSumOfWork,
+    addSumOfWorkToPeriods,
     addSharesInDistribution,
-    addAccumulatedWork, // @todo needs to consider returnedFairShares
+    addAccumulatedWorkToPeriods, // @todo needs to consider returnedFairShares
     addAccumulatedWorkToPartners, // @todo needs to consider returnedFairShares
     addShareToPartners(initialFoundersShare)
   )(periods)
