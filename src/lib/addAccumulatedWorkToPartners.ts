@@ -5,10 +5,9 @@ import {
   mapAccum,
   defaultTo,
   prop,
-  props,
-  fromPairs,
   mergeWith,
   add,
+  reduce,
 } from 'ramda'
 
 export default (periods: Period[]): Period[] =>
@@ -29,8 +28,14 @@ const accumulateWorkOfPartners = (
   acc: Record<string, number>,
   partners: Partner[]
 ): Record<string, number> =>
-  // @ts-ignore
-  pipe(map(props(['name', 'work'])), fromPairs, mergeWith(add, acc))(partners)
+  pipe(
+    reduce(
+      (acc: Record<string, number>, p: Partner): Record<string, number> =>
+        assoc(p.name, p.work, acc),
+      {}
+    ),
+    mergeWith(add, acc)
+  )(partners)
 
 /**
  *
@@ -39,9 +44,7 @@ const setAccumulatedWorkToPartners = (
   acc: Record<string, number>,
   partners: Partner[]
 ): Partner[] =>
-  pipe(
-    map(
-      (p: Partner): Partner =>
-        assoc('accumWork', defaultTo(0, prop(p.name, acc)), p)
-    )
+  map(
+    (p: Partner): Partner =>
+      assoc('accumWork', defaultTo(0, prop(p.name, acc)), p)
   )(partners)
