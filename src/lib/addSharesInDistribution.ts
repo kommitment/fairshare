@@ -9,12 +9,13 @@ import {
   tail,
   add,
   subtract,
-  reject,
-  isNil,
   pluck,
   sum,
   path,
+  multiply,
+  prop,
 } from 'ramda'
+import getPartnerNameToFounderShareRecord from './getPartnerNameToFounderShareRecord'
 
 /**
  *
@@ -52,7 +53,7 @@ const increaseSharesInDistributionWithReturnedFoundersShare = (
     // use it in subsequent
     tail,
     mapAccum(
-      accumSharesInDistribution,
+      accumSharesInDistribution(getPartnerNameToFounderShareRecord(periods)),
       getInitialSharesInDistribution(periods)
     ),
     (res: [any, Period[]]) => res[1],
@@ -60,6 +61,9 @@ const increaseSharesInDistributionWithReturnedFoundersShare = (
     (t: Period[]): Period[] => [head(periods), ...t]
   )(periods)
 
+/**
+ *
+ */
 const getInitialSharesInDistribution = (periods: Period[]): number =>
   defaultTo(1, path([0, 'sharesInDistribution'], periods))
 
@@ -67,20 +71,26 @@ const getInitialSharesInDistribution = (periods: Period[]): number =>
  *
  */
 const accumSharesInDistribution = (
-  acc: number,
-  period: Period
-): [number, Period] => {
-  acc += getSumOfReturnedFairShares(period.partners)
+  foundersShareRecord: Record<string, number>
+) => (acc: number, period: Period): [number, Period] => {
+  acc += getReturnedFairShares(foundersShareRecord, period.partners)
   return [acc, assoc('sharesInDistribution', acc, period)]
 }
 
 /**
  *
  */
-const getSumOfReturnedFairShares = (partners: Partner[]): number =>
-  pipe(
-    pluck('returnedFairShares'),
-    // @ts-ignore
-    reject(isNil),
-    reduce((acc: number, num: number): number => add(acc, num), 0)
+const getReturnedFairShares = (
+  foundersShareRecord: Record<string, number>,
+  partners: Partner[]
+): number =>
+  reduce(
+    (acc: number, partner: Partner): number =>
+      pipe(
+        (p: Partner): string => prop('name', p),
+        (n: string): number => defaultTo(0, prop(n, foundersShareRecord)),
+        multiply(defaultTo(0, partner.returnedFairShares)),
+        add(acc)
+      )(partner),
+    0
   )(partners)
