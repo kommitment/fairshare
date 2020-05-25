@@ -1,5 +1,5 @@
 import { pipe, map, assoc, __, prop } from 'ramda'
-import calcShare from './calcShare'
+import calcShare from './calculateFairShare'
 
 export default (foundersShare: number) => (periods: Period[]): Period[] =>
   map(
