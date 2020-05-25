@@ -1,6 +1,6 @@
-import calcShare from '../calcShare'
+import calculateFairShare from '../calculateFairShare'
 
-describe('calcShare', () => {
+describe('calculateFairShare', () => {
   test.each([
     [0, 0, 100, 50, 0],
     [0, 1, 100, 100, 1],
@@ -8,7 +8,7 @@ describe('calcShare', () => {
     [0.065, 1 - 3 * 0.065, 3, 1, 0.3333333333333333],
     [0.065, 1 - 3 * 0.065, 12, 3, 0.26625],
   ])(
-    'calcShare(%d, %d, %d, %d) makes %d',
+    'calculateFairShare(%d, %d, %d, %d) makes %d',
     (
       foundersShares: number,
       sharesInDistribution: number,
@@ -17,7 +17,7 @@ describe('calcShare', () => {
       expected: number
     ) => {
       expect(
-        calcShare(
+        calculateFairShare(
           foundersShares,
           sharesInDistribution,
           accumWorkAll,
