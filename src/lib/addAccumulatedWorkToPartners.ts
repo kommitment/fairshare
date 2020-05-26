@@ -14,6 +14,7 @@ import {
  * Accumulates the work for each partner in each period and add the value as
  * property in the partner objects.
  */
+// @todo needs to consider returnedFairShares
 export default (periods: Period[]): Period[] =>
   pipe(
     mapAccum((acc: Record<string, number>, period: Period) => {

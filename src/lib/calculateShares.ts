@@ -14,8 +14,8 @@ const calculateShares = (
     addInitialFoundersShare(initialFoundersShare),
     addSumOfWorkToPeriods,
     addSharesInDistribution,
-    addAccumulatedWorkToPeriods, // @todo needs to consider returnedFairShares
-    addAccumulatedWorkToPartners, // @todo needs to consider returnedFairShares
+    addAccumulatedWorkToPeriods,
+    addAccumulatedWorkToPartners,
     addShareToPartners(initialFoundersShare)
   )(periods)
 

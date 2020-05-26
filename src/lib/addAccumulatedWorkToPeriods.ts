@@ -3,6 +3,7 @@ import { pipe, mapAccum, defaultTo, add, lensProp, view, set } from 'ramda'
 /**
  * Accumulates the work and adds the value to each period
  */
+// @todo needs to consider returnedFairShares
 export default (periods: Period[]): Period[] =>
   pipe(
     mapAccum((acc: number, period: Period) => {
