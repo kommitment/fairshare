@@ -1,6 +1,9 @@
-import { pipe, map, assoc, __, prop } from 'ramda'
+import { pipe, map, assoc, __, defaultTo } from 'ramda'
 import calcShare from './calculateFairShare'
 
+/**
+ * Add calculated shares to each partner in each period
+ */
 export default (foundersShare: number) => (periods: Period[]): Period[] =>
   map(
     (period: Period): Period =>
@@ -22,8 +25,7 @@ const setShareInPartners = (
   period: Period
 ): Period =>
   pipe(
-    // @ts-ignore
-    prop('partners'),
+    (p: Period) => p.partners,
     map(setShareInPartner(foundersShare, sharesInDistribution, accumWorkAll)),
     assoc('partners', __, period)
   )(period)
@@ -35,10 +37,9 @@ const setShareInPartner = (
   foundersShare: number,
   sharesInDistribution: number,
   accumWorkAll: number
-) => (partner: Partner): Period =>
+) => (partner: Partner): Partner =>
   pipe(
-    // @ts-ignore
-    prop('accumWork'),
+    (p: Partner) => defaultTo(0, p.accumWork),
     calcShare(foundersShare, sharesInDistribution, accumWorkAll),
     assoc('shares', __, partner)
   )(partner)

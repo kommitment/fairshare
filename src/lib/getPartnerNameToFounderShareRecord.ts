@@ -1,7 +1,7 @@
 import { assoc, pipe, reduce, head } from 'ramda'
 
 /**
- *
+ * Returns a record with partner names as keys and foundersShare as values.
  */
 export default (periods: Period[]): Record<string, number> =>
   pipe(

@@ -12,7 +12,6 @@ const calculateShares = (
 ): any =>
   pipe(
     addInitialFoundersShare(initialFoundersShare),
-    // @todo addFoundersShareToPartners: all new partners have 0 foundersShare, needs to consider returnedFairShares
     addSumOfWorkToPeriods,
     addSharesInDistribution,
     addAccumulatedWorkToPeriods, // @todo needs to consider returnedFairShares

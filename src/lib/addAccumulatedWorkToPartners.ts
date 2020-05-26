@@ -10,13 +10,20 @@ import {
   reduce,
 } from 'ramda'
 
+/**
+ * Accumulates the work for each partner in each period and add the value as
+ * property in the partner objects.
+ */
 export default (periods: Period[]): Period[] =>
   pipe(
     mapAccum((acc: Record<string, number>, period: Period) => {
-      acc = accumulateWorkOfPartners(acc, period.partners)
-      const partners = setAccumulatedWorkToPartners(acc, period.partners)
-      period = assoc('partners', partners, period)
-      return [acc, period]
+      const newAcc = accumulateWorkOfPartners(acc, period.partners)
+      const newPeriod = assoc(
+        'partners',
+        addAccumulatedWorkToPartners(newAcc, period.partners),
+        period
+      )
+      return [newAcc, newPeriod]
     }, {}),
     (res: [any, Period[]]) => res[1]
   )(periods)
@@ -40,7 +47,7 @@ const accumulateWorkOfPartners = (
 /**
  *
  */
-const setAccumulatedWorkToPartners = (
+const addAccumulatedWorkToPartners = (
   acc: Record<string, number>,
   partners: Partner[]
 ): Partner[] =>
