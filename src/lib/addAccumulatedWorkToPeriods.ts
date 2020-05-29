@@ -3,7 +3,9 @@ import { pipe, mapAccum, defaultTo, add, lensProp, view, set } from 'ramda'
 /**
  * Accumulates the work and adds the value to each period
  */
-// @todo needs to consider returnedFairShares
+// @todo needs to consider returnedFairShares. ReturnedFairShares is a factor to be applied to the accumulated work of a partner
+// totalSumFairShares -= kShare[kommanditist].sumOfFairShares * returnedFairShares
+// period.accumWork -= partner.accumWork * returnedFairShares
 export default (periods: Period[]): Period[] =>
   pipe(
     mapAccum((acc: number, period: Period) => {
