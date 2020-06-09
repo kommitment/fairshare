@@ -5,7 +5,10 @@ export default curry(
     foundersShares: number,
     sharesInDistribution: number,
     accumWorkAll: number,
-    accumWorkPartner: number
+    accumWorkPartner: number,
+    returnedFounderShares: number = 0
   ): number =>
-    foundersShares + sharesInDistribution * (accumWorkPartner / accumWorkAll)
+    foundersShares +
+    sharesInDistribution *
+      ((accumWorkPartner * (1.0 - returnedFounderShares)) / accumWorkAll)
 )

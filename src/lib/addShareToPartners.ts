@@ -39,7 +39,13 @@ const setShareInPartner = (
   accumWorkAll: number
 ) => (partner: Partner): Partner =>
   pipe(
-    (p: Partner) => defaultTo(0, p.accumWork),
-    calcShare(foundersShare, sharesInDistribution, accumWorkAll),
+    (p: Partner) =>
+      calcShare(
+        foundersShare,
+        sharesInDistribution,
+        accumWorkAll,
+        defaultTo(0, p.accumWork),
+        defaultTo(0, p.returnedFairShares)
+      ),
     assoc('shares', __, partner)
   )(partner)

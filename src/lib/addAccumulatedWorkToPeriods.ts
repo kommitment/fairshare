@@ -1,22 +1,30 @@
-import { pipe, mapAccum, defaultTo, add, lensProp, view, set } from 'ramda'
+import { pipe, mapAccum, defaultTo, add, assoc, reduce } from 'ramda'
 
 /**
- * Accumulates the work and adds the value to each period
+ * Accumulates the work and adds the value to each period. Returned fair shares
+ * decrease the accumulated work.
  */
-// @todo needs to consider returnedFairShares. ReturnedFairShares is a factor to be applied to the accumulated work of a partner
-// totalSumFairShares -= kShare[kommanditist].sumOfFairShares * returnedFairShares
-// period.accumWork -= partner.accumWork * returnedFairShares
 export default (periods: Period[]): Period[] =>
   pipe(
     mapAccum((acc: number, period: Period) => {
-      const newAcc = add(acc, defaultTo(0, getSumWork(period)))
-      const newPeriod = setAccumWork(newAcc, period)
+      const newAcc = accumulateWork(acc, period)
+      const newPeriod = assoc('accumWork', newAcc, period)
       return [newAcc, newPeriod]
     }, 0),
     (res: [number, Period[]]) => res[1]
   )(periods)
 
-const accumWorkLens = lensProp('accumWork')
-const setAccumWork = set(accumWorkLens)
-const sumWorkLens = lensProp('sumWork')
-const getSumWork = (p: Period): number => view(sumWorkLens, p)
+const accumulateWork = (acc: number, period: Period): number =>
+  pipe(
+    (period: Period) => defaultTo(0, period.sumWork),
+    add(acc),
+    (acc: number) =>
+      reduce(decreaseWithReturnedFairShares, acc, period.partners)
+  )(period)
+
+const decreaseWithReturnedFairShares = (
+  acc: number,
+  partner: Partner
+): number =>
+  acc -
+  defaultTo(0, partner.accumWork) * defaultTo(0, partner.returnedFairShares)

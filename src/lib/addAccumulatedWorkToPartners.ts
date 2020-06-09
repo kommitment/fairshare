@@ -5,11 +5,9 @@ import {
   mapAccum,
   defaultTo,
   prop,
+  mergeWith,
+  add,
   reduce,
-  mergeWithKey,
-  find,
-  propEq,
-  ifElse,
 } from 'ramda'
 
 /**
@@ -43,54 +41,7 @@ const accumulateWorkOfPartners = (
         assoc(p.name, p.work, acc),
       {}
     ),
-    mergeWithKey(withPartnerNameMerger(getReturnedFairShares(partners)), acc)
-  )(partners)
-
-/**
- *
- */
-const withPartnerNameMerger = (
-  returnedFairSharesResolver: (name: string) => number
-) => (partnerName: string, l: any, r: any): any =>
-  pipe(
-    returnedFairSharesResolver,
-    ifElse(
-      (rfs: number) => rfs > 0,
-      (rfs: number) => mergeWithReturnedFairShares(rfs, l, r),
-      (rfs: number) => mergeWithoutReturnedFairShares(rfs, l, r)
-    )
-  )(partnerName)
-
-/**
- *
- */
-const mergeWithReturnedFairShares = (
-  rfs: number,
-  l: number,
-  _r: number
-): number => l * (1.0 - rfs)
-
-/**
- *
- */
-const mergeWithoutReturnedFairShares = (
-  _rfs: number,
-  l: number,
-  r: number
-): number => l + r
-
-/**
- *
- */
-const getReturnedFairShares = (partners: Partner[]) => (
-  partnerName: string
-): number =>
-  pipe(
-    find(propEq('name', partnerName)),
-    defaultTo({}),
-    // @ts-ignore
-    prop('returnedFairShares'),
-    defaultTo(0)
+    mergeWith(add, acc)
   )(partners)
 
 /**
