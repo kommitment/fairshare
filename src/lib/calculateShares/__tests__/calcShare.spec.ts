@@ -1,6 +1,6 @@
 import util from 'util'
-import calculateShares from '../calculateShares'
-import dataset from '../../datasets/default'
+import calculateShares from '../'
+import dataset from '../../../datasets/default'
 
 describe('calculateFairShare', () => {
   test('calculateShares', () => {
