@@ -14,7 +14,7 @@
               .form-group
                 label Founders keep shares:&nbsp;
                   span {{foundersShares}}%
-                input.slider(type="range" min="0" max="50" step="0.1" v-model="foundersShares")
+                input.slider(type="range" min="0" :max="maxFoundersShares" step="0.1" v-model="foundersShares")
     .row
       .col
         .p-3
@@ -37,12 +37,19 @@
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import dataset from '@/datasets/default'
+import calculateShares from '@/lib/calculateShares/'
 
 @Component({})
 export default class Demo extends Vue {
   foundersShares: number = 6.5
+
+  get maxFoundersShares() {
+    const numberOfPartners = dataset[0].partners.length
+    return Math.floor(100 / numberOfPartners)
+  }
+
   get dataset() {
-    return dataset
+    return calculateShares(dataset, this.foundersShares / 100)
   }
 }
 </script>
