@@ -9,7 +9,7 @@ import addSharesInDistribution from './addSharesInDistribution'
 const calculateShares = (
   periods: Period[],
   initialFoundersShare: number
-): any =>
+): Period[] =>
   pipe(
     addInitialFoundersShare(initialFoundersShare),
     addSumOfWorkToPeriods,
@@ -20,3 +20,6 @@ const calculateShares = (
   )(periods)
 
 export default calculateShares
+
+// @todo Können wir einen einfachen Text hierfür schreiben?
+// @todo Etwa: bei  100% FounderShares kommen am Ende auch 100% Foundershares raus...
