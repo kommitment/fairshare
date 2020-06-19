@@ -10,7 +10,7 @@
 
       p Periods
       template(v-for="(period, idx) in periods")
-        b-card.mb-2(:title="period.date")
+        b-card.mb-2(:title="period.date" :sub-title="idx === 0 ? 'Founding Phase' : ''")
           b-card-group.mb-4
             template(v-for="(p, idx) in sortByPartnerName(period.partners)")
               b-card(:title="p.name" :sub-title="isFounder(p.name) ? 'founder' : 'partner'")
