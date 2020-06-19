@@ -1,6 +1,6 @@
 const history: Period[] = [
   {
-    date: '2016-12-31',
+    date: '2016',
     partners: [
       { name: 'Anke', work: 1 },
       { name: 'Ralf', work: 1 },
@@ -8,7 +8,7 @@ const history: Period[] = [
     ],
   },
   {
-    date: '2017-12-31',
+    date: '2017',
     partners: [
       { name: 'Anke', work: 1 },
       { name: 'Ralf', work: 1 },
