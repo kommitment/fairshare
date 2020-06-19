@@ -1,4 +1,4 @@
-import { reduce, pipe, map, assoc, __, add, defaultTo } from 'ramda'
+import { reduce, pipe, map, assoc, __, add } from 'ramda'
 
 /**
  * Calculates the sum of work of pertners in a period. Adds the result as
@@ -15,5 +15,4 @@ export default (periods: Period[]): Period[] =>
     periods
   )
 
-const sumWorkReducer = (sum: number, partner: Partner) =>
-  add(sum, defaultTo(0, partner.work))
+const sumWorkReducer = (sum: number, partner: Partner) => add(sum, partner.work)
