@@ -1,4 +1,4 @@
-import { curry } from 'ramda'
+import { curry, ifElse, equals } from 'ramda'
 
 export default curry(
   (
@@ -6,9 +6,14 @@ export default curry(
     sharesInDistribution: number,
     accumWorkAll: number,
     accumWorkPartner: number,
-    returnedFounderShares: number = 0
+    returnedFairShares: number = 0
   ): number =>
-    foundersShares +
-    sharesInDistribution *
-      ((accumWorkPartner * (1.0 - returnedFounderShares)) / accumWorkAll)
+    ifElse(
+      () => equals(0, accumWorkAll),
+      () => foundersShares,
+      () =>
+        foundersShares +
+        sharesInDistribution *
+          ((accumWorkPartner * (1.0 - returnedFairShares)) / accumWorkAll)
+    )(0)
 )
