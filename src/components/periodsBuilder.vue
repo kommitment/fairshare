@@ -12,7 +12,7 @@
             b-card-text
               b-link(@click="onClickType(p)") {{isFounder(p) ? 'founder' : 'partner'}}
 
-      p Periods
+      h5 Periods
       template(v-for="(period, periodsIndex) in periods")
         b-card.mb-2(:title="period.date" :sub-title="periodsIndex === 0 ? 'Founding Phase' : ''")
           b-card-group.mb-4
