@@ -1,6 +1,6 @@
 <template lang="pug">
   b-card
-    persons(:partnerNames="partnerNames" :founderNames="founderNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson")
+    persons(:partnerNames="partnerNames" :founderNames="founderNames" :periodNames="periodNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson" @addPartnerToPeriod="onAddPartnerToPeriod")
     periods-component(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod" @removePartner="onRemovePartner")
     b-button.mt-4(@click="onClick") Emit Test Data
 </template>
@@ -9,7 +9,7 @@
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Watch, Provide } from 'vue-property-decorator'
-import { includes, uniq } from 'ramda'
+import { includes, uniq, pluck } from 'ramda'
 import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
@@ -28,6 +28,7 @@ export default class PeriodsBuilder extends Vue {
   partnerNames: string[] = []
   founderNames: string[] = []
   @Provide() isPartnerFounder = this.isFounder
+  @Provide() isPartnerInPeriod = this.isPartnerNameInPeriod
 
   $refs!: {
     periods: PeriodsComponent
@@ -43,12 +44,28 @@ export default class PeriodsBuilder extends Vue {
     this.founderNames = extractFounderNames(dataset).sort()
   }
 
+  get periodNames(): string[] {
+    return pluck('date', this.periods)
+  }
+
   onClick() {
     this.$emit('update', this.periods)
   }
 
   isFounder(partner: string): boolean {
     return includes(partner, this.founderNames)
+  }
+
+  isPartnerNameInPeriod(partnerName: string, periodName: string): boolean {
+    const period = this.periods.find(
+      (p: Period): boolean => p.date === periodName
+    )
+    if (!period) return false
+    const partner = period!.partners.find(
+      (p: Partner) => p.name === partnerName
+    )
+    if (!partner) return false
+    return true
   }
 
   onChangeWork(periodsIndex: number, partnersIndex: number, work: number) {
@@ -71,7 +88,6 @@ export default class PeriodsBuilder extends Vue {
       this.founderNames = uniq([...this.founderNames, name])
     }
     this.partnerNames = uniq([...this.partnerNames, name])
-    this.partnerNames.sort()
   }
 
   onChangedFounders(founders: string[]) {
@@ -88,6 +104,14 @@ export default class PeriodsBuilder extends Vue {
 
   onRemovePartner(periodIndex: number, partnerIndex: number) {
     this.periods[periodIndex].partners.splice(partnerIndex, 1)
+  }
+
+  onAddPartnerToPeriod(partnerName: string, periodName: string) {
+    const period = this.periods.find(
+      (p: Period): boolean => p.date === periodName
+    )
+    if (!period) return false
+    period.partners.push({ name: partnerName, work: 1 })
   }
 }
 </script>
