@@ -3,20 +3,20 @@
     b-form
       p Persons
       b-card-group.mb-4
-        template(v-for="(p, idx) in sort(partnerNames)" deck)
+        template(v-for="(p, idx) in partnerNames" deck)
           b-card(:title="p")
             b-card-text
               b-link(@click="onClickType(p)") {{isFounder(p) ? 'founder' : 'partner'}}
 
       p Periods
-      template(v-for="(period, idx) in periods")
-        b-card.mb-2(:title="period.date" :sub-title="idx === 0 ? 'Founding Phase' : ''")
+      template(v-for="(period, periodsIndex) in periods")
+        b-card.mb-2(:title="period.date" :sub-title="periodsIndex === 0 ? 'Founding Phase' : ''")
           b-card-group.mb-4
-            template(v-for="(p, idx) in sortByPartnerName(period.partners)")
+            template(v-for="(p, partnersIndex) in sortByPartnerName(period.partners)")
               b-card(:title="p.name" :sub-title="isFounder(p.name) ? 'founder' : 'partner'")
                 b-card-text
                   div() Contribution {{p.work * 100}}%
-                    b-form-input(type="range" min="0" max="1" step="0.05")
+                    b-form-input(type="range" min="0" max="1" step="0.05" :value="p.work" @input="onChangeWork(periodsIndex, partnersIndex, $event)")
                   div(v-if="p.returnedFairShares") Returned FairShares {{p.returnedFairShares * 100}}%
 
       b-button.mt-4(@click="onClick") Emit Test Data
@@ -26,27 +26,14 @@
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Watch } from 'vue-property-decorator'
-import {
-  includes,
-  prop,
-  without,
-  ascend,
-  sort,
-  sortBy,
-  identity,
-  concat,
-  map,
-} from 'ramda'
+import { includes, prop, without, sortBy, concat, map } from 'ramda'
 import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
 
-@Component({
-  methods: {
-    sort: sort(ascend(identity)),
-    sortByPartnerName: sortBy(prop('name')),
-  },
-})
+const sortByPartnerName = sortBy(prop('name'))
+
+@Component({})
 export default class PeriodsBuilder extends Vue {
   periods: Period[] = []
   partnerNames: string[] = []
@@ -58,8 +45,12 @@ export default class PeriodsBuilder extends Vue {
 
   load() {
     this.periods = dataset
-    this.partnerNames = extractPartnerNames(dataset)
-    this.founderNames = extractFounderNames(dataset)
+    this.partnerNames = extractPartnerNames(dataset).sort()
+    this.founderNames = extractFounderNames(dataset).sort()
+  }
+
+  sortByPartnerName(partners: Partner[]): Partner[] {
+    return sortByPartnerName(partners)
   }
 
   onClick() {
@@ -78,6 +69,10 @@ export default class PeriodsBuilder extends Vue {
     this.founderNames = this.isFounder(partnerName)
       ? without([partnerName], this.founderNames)
       : concat([partnerName], this.founderNames)
+  }
+
+  onChangeWork(periodsIndex: number, partnersIndex: number, work: number) {
+    this.periods[periodsIndex].partners[partnersIndex].work = work
   }
 
   @Watch('founderNames')
