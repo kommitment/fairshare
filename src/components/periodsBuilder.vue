@@ -9,7 +9,7 @@
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Watch, Provide } from 'vue-property-decorator'
-import { includes, uniq, pluck } from 'ramda'
+import { includes, uniq, pluck, clone, uniqBy, prop, sortBy } from 'ramda'
 import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
@@ -35,7 +35,7 @@ export default class PeriodsBuilder extends Vue {
   }
 
   mounted() {
-    // this.load()
+    this.load()
   }
 
   load() {
@@ -85,13 +85,13 @@ export default class PeriodsBuilder extends Vue {
   onAddPerson(name: string) {
     // first person is founder
     if (this.partnerNames.length <= 0) {
-      this.founderNames = uniq([...this.founderNames, name])
+      this.founderNames = clone(uniq([...this.founderNames, name]).sort())
     }
-    this.partnerNames = uniq([...this.partnerNames, name])
+    this.partnerNames = clone(uniq([...this.partnerNames, name]).sort())
   }
 
   onChangedFounders(founders: string[]) {
-    this.founderNames = founders
+    this.founderNames = clone(founders.sort())
   }
 
   onAddPeriod(period: Period) {
@@ -107,11 +107,19 @@ export default class PeriodsBuilder extends Vue {
   }
 
   onAddPartnerToPeriod(partnerName: string, periodName: string) {
-    const period = this.periods.find(
-      (p: Period): boolean => p.date === periodName
-    )
+    let index: number = -1
+    const period = this.periods.find((p: Period, i: number): boolean => {
+      index = i
+      return p.date === periodName
+    })
     if (!period) return false
-    period.partners.push({ name: partnerName, work: 1 })
+
+    let newPartners = clone(period.partners)
+    newPartners.push({ name: partnerName, work: 1 })
+    newPartners = uniqBy(prop('name'), newPartners)
+    newPartners = sortBy(prop('name'), newPartners)
+
+    this.periods[index].partners = newPartners
   }
 }
 </script>

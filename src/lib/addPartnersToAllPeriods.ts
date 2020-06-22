@@ -1,4 +1,4 @@
-import { map, pipe, __, concat, assoc, prop, uniqBy } from 'ramda'
+import { map, pipe, __, concat, assoc, prop, uniqBy, sortBy } from 'ramda'
 
 export default (names: string[], periods: Period[]): Period[] =>
   pipe(makePartners, mergePartnersIntoPeriods(periods))(names)
@@ -15,6 +15,7 @@ const mergePartnersIntoPeriods = (periods: Period[]) => (
         (p: Period) => prop('partners', p),
         concat(partners),
         uniqBy(prop('name')),
+        sortBy(prop('name')),
         assoc('partners', __, period)
       )(period),
     periods
