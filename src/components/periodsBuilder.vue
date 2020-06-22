@@ -45,7 +45,7 @@ export default class PeriodsBuilder extends Vue {
   }
 
   get periodNames(): string[] {
-    return pluck('date', this.periods)
+    return pluck('name', this.periods)
   }
 
   onClick() {
@@ -58,7 +58,7 @@ export default class PeriodsBuilder extends Vue {
 
   isPartnerNameInPeriod(partnerName: string, periodName: string): boolean {
     const period = this.periods.find(
-      (p: Period): boolean => p.date === periodName
+      (p: Period): boolean => p.name === periodName
     )
     if (!period) return false
     const partner = period!.partners.find(
@@ -110,7 +110,7 @@ export default class PeriodsBuilder extends Vue {
     let index: number = -1
     const period = this.periods.find((p: Period, i: number): boolean => {
       index = i
-      return p.date === periodName
+      return p.name === periodName
     })
     if (!period) return false
 

@@ -12,7 +12,7 @@
           b-icon(icon="plus")
           | &nbsp;button or add a founder.
       template(v-for="(period, periodsIndex) in periods")
-        b-card.mb-2(:title="period.date" :sub-title="periodsIndex === 0 ? 'Founding Phase' : ''")
+        b-card.mb-2(:title="period.name" :sub-title="periodsIndex === 0 ? 'Founding Phase' : ''")
           b-card-text
             b-link(v-if="isRemovePeriodPossible(periodsIndex)" @click="onClickRemovePeriod") remove
           b-card-group.mb-4
@@ -70,9 +70,9 @@ export default class Periods extends Vue {
   }
 
   addPeriod() {
-    const date = `Year ${this.periods.length + 1}`
+    const name = `Year ${this.periods.length + 1}`
     const partners: Partner[] = getPartnersFromLatestPeriod(this.periods)
-    this.$emit('addPeriod', { date, partners })
+    this.$emit('addPeriod', { name, partners })
   }
 }
 </script>

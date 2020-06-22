@@ -4,7 +4,7 @@ describe('getPartnerNameToFounderShareRecord', () => {
   test('Returns record', () => {
     const periods: Period[] = [
       {
-        date: '2020',
+        name: '2020',
         partners: [
           { name: 'A', work: 1, foundersShare: 0.2 },
           { name: 'B', work: 1, foundersShare: 0.4 },

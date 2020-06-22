@@ -10,7 +10,7 @@ describe('getPartnersFromLatestPeriod', () => {
       { name: 'Hugo', work: 1 },
       { name: 'Kati', work: 1 },
     ]
-    const periods = [{ date: '1', partners }]
+    const periods = [{ name: 'Year 1', partners }]
     expect(getPartnersFromLatestPeriod(periods)).toStrictEqual(partners)
   })
 })

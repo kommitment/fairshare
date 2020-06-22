@@ -1,5 +1,5 @@
 interface Period {
-  date: string
+  name: string
   sumWork?: number
   accumWork?: number
   sharesInDistribution?: number
