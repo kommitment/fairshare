@@ -33,7 +33,7 @@ const config: Configuration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/bootstrap'],
 
   /*
    ** Nuxt.js dev-modules

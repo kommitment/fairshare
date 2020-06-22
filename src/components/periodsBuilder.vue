@@ -7,7 +7,9 @@
         b-col.col-auto
           new-person-form(@submit="onSubmitNewPersonForm")
       b-card(v-if="!partnerNames.length")
-        b-card-text.text-center No persons yet. Use the "+" button.
+        b-card-text.text-center No persons yet. Use the&nbsp;
+          b-icon(icon="plus")
+          | &nbsp;button.
       b-card-group.mb-4
         template(v-for="(p, idx) in partnerNames" deck)
           b-card(:title="p")
@@ -18,7 +20,12 @@
         b-col
           h5 Periods
         b-col.col-auto
-          b-btn(@click="onClickAddPeriod") +
+          b-btn(@click="onClickAddPeriod")
+            b-icon(icon="plus" aria-hidden="true")
+      b-card(v-if="!partnerNames.length")
+        b-card-text.text-center No periods yet. Use the&nbsp;
+          b-icon(icon="plus")
+          | &nbsp;button or add a founder.
       template(v-for="(period, periodsIndex) in periods")
         b-card.mb-2(:title="period.date" :sub-title="periodsIndex === 0 ? 'Founding Phase' : ''")
           b-card-group.mb-4
@@ -36,7 +43,7 @@
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Watch } from 'vue-property-decorator'
-import { includes, prop, without, sortBy, concat } from 'ramda'
+import { includes, prop, without, sortBy, concat, uniq } from 'ramda'
 import newPersonForm from '@/components/newPersonFom.vue'
 import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
@@ -112,9 +119,9 @@ export default class PeriodsBuilder extends Vue {
   onSubmitNewPersonForm(name: string) {
     // first person is founder
     if (this.partnerNames.length <= 0) {
-      this.founderNames.push(name)
+      this.founderNames = uniq([...this.founderNames, name])
     }
-    this.partnerNames.push(name)
+    this.partnerNames = uniq([...this.partnerNames, name])
     this.partnerNames.sort()
   }
 

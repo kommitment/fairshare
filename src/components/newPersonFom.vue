@@ -6,7 +6,8 @@
           b-btn(@click="onSubmit" variant="success" :disabled="name.length <= 0") OK
           b-btn(@click="onClickCancel" variant="outline-danger") Cancle
     div(v-if="!showForm")
-      b-btn(@click="showForm=true") +
+      b-btn(@click="showForm=true")
+        b-icon(icon="plus" aria-hidden="true")
 </template>
 
 <script lang="ts">
