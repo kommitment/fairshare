@@ -13,6 +13,8 @@
           | &nbsp;button or add a founder.
       template(v-for="(period, periodsIndex) in periods")
         b-card.mb-2(:title="period.date" :sub-title="periodsIndex === 0 ? 'Founding Phase' : ''")
+          b-card-text
+            b-link(v-if="isRemovePossible(periodsIndex)" @click="onClickRemove") remove
           b-card-group.mb-4
             template(v-for="(p, partnersIndex) in sortByPartnerName(period.partners)")
               b-card(:title="p.name" :sub-title="isPartnerFounder(p.name) ? 'founder' : 'partner'")
@@ -46,6 +48,14 @@ export default class Periods extends Vue {
 
   onClickAddPeriod() {
     this.addPeriod()
+  }
+
+  onClickRemove() {
+    this.$emit('removePeriod')
+  }
+
+  isRemovePossible(periodsIndex: number): boolean {
+    return this.periods.length > 1 && periodsIndex === this.periods.length - 1
   }
 
   addPeriod() {

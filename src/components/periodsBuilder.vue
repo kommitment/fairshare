@@ -1,7 +1,7 @@
 <template lang="pug">
   b-card
     persons(:partnerNames="partnerNames" :founderNames="founderNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson")
-    periods-component(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork")
+    periods-component(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod")
     b-button.mt-4(@click="onClick") Emit Test Data
 </template>
 
@@ -80,6 +80,10 @@ export default class PeriodsBuilder extends Vue {
 
   onAddPeriod(period: Period) {
     this.periods.push(period)
+  }
+
+  onRemovePeriod() {
+    this.periods = this.periods.slice(0, -1)
   }
 }
 </script>
