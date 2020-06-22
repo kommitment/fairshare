@@ -1,7 +1,11 @@
 <template lang="pug">
   b-card
     b-form
-      p Persons
+      b-row.mb-3
+        b-col
+          h5 Persons
+        b-col.col-auto
+          new-person-form(@submit="onSubmitNewPersonForm")
       b-card-group.mb-4
         template(v-for="(p, idx) in partnerNames" deck)
           b-card(:title="p")
@@ -27,17 +31,24 @@ import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Watch } from 'vue-property-decorator'
 import { includes, prop, without, sortBy, concat, map } from 'ramda'
+import newPersonForm from '@/components/newPersonFom.vue'
 import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
 
 const sortByPartnerName = sortBy(prop('name'))
 
-@Component({})
+@Component({
+  components: {
+    newPersonForm,
+  },
+})
 export default class PeriodsBuilder extends Vue {
   periods: Period[] = []
   partnerNames: string[] = []
   founderNames: string[] = []
+  showNewEmptyPerson: boolean = false
+  newPersonName: string = ''
 
   mounted() {
     this.load()
@@ -84,6 +95,11 @@ export default class PeriodsBuilder extends Vue {
       this.founderNames
     )
     this.periods[0].partners = partners
+  }
+
+  onSubmitNewPersonForm(name: string) {
+    this.partnerNames.push(name)
+    this.partnerNames.sort()
   }
 }
 </script>
