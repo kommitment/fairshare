@@ -1,7 +1,7 @@
 <template lang="pug">
   b-card
     persons(:partnerNames="partnerNames" :founderNames="founderNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson")
-    periods-component(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod")
+    periods-component(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod" @removePartner="onRemovePartner")
     b-button.mt-4(@click="onClick") Emit Test Data
 </template>
 
@@ -13,7 +13,7 @@ import { includes, uniq } from 'ramda'
 import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
-import addFoundersToAllPeriods from '@/lib/addFoundersToAllPeriods'
+import addPartnersToAllPeriods from '@/lib/addPartnersToAllPeriods'
 import Persons from '@/components/persons.vue'
 import PeriodsComponent from '@/components/periods.vue'
 
@@ -62,7 +62,7 @@ export default class PeriodsBuilder extends Vue {
       this.$refs.periods.addPeriod()
     }
 
-    this.periods = addFoundersToAllPeriods(this.founderNames, this.periods)
+    this.periods = addPartnersToAllPeriods(this.founderNames, this.periods)
   }
 
   onAddPerson(name: string) {
@@ -84,6 +84,10 @@ export default class PeriodsBuilder extends Vue {
 
   onRemovePeriod() {
     this.periods = this.periods.slice(0, -1)
+  }
+
+  onRemovePartner(periodIndex: number, partnerIndex: number) {
+    this.periods[periodIndex].partners.splice(partnerIndex, 1)
   }
 }
 </script>

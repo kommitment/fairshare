@@ -20,7 +20,7 @@
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Prop } from 'vue-property-decorator'
-import { includes, prop, without, sortBy, concat, uniq } from 'ramda'
+import { includes, prop, without, sortBy, concat } from 'ramda'
 import newPersonForm from '@/components/newPersonFom.vue'
 
 const sortByPartnerName = sortBy(prop('name'))

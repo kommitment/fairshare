@@ -14,11 +14,12 @@
       template(v-for="(period, periodsIndex) in periods")
         b-card.mb-2(:title="period.date" :sub-title="periodsIndex === 0 ? 'Founding Phase' : ''")
           b-card-text
-            b-link(v-if="isRemovePossible(periodsIndex)" @click="onClickRemove") remove
+            b-link(v-if="isRemovePeriodPossible(periodsIndex)" @click="onClickRemovePeriod") remove
           b-card-group.mb-4
             template(v-for="(p, partnersIndex) in sortByPartnerName(period.partners)")
               b-card(:title="p.name" :sub-title="isPartnerFounder(p.name) ? 'founder' : 'partner'")
                 b-card-text
+                  b-link(v-if="isRemovePartnerPossible(periodsIndex, isPartnerFounder(p.name))" @click="onClickRemovePartner(periodsIndex, partnersIndex)") remove
                   div() Contribution {{p.work * 100}}%
                     b-form-input(type="range" min="0" max="1" step="0.05" :value="p.work" @input="onChangeWork(periodsIndex, partnersIndex, $event)")
                   div(v-if="p.returnedFairShares") Returned FairShares {{p.returnedFairShares * 100}}%
@@ -50,12 +51,20 @@ export default class Periods extends Vue {
     this.addPeriod()
   }
 
-  onClickRemove() {
+  onClickRemovePeriod() {
     this.$emit('removePeriod')
   }
 
-  isRemovePossible(periodsIndex: number): boolean {
+  onClickRemovePartner(periodsIndex: number, partnersIndex: number) {
+    this.$emit('removePartner', periodsIndex, partnersIndex)
+  }
+
+  isRemovePeriodPossible(periodsIndex: number): boolean {
     return this.periods.length > 1 && periodsIndex === this.periods.length - 1
+  }
+
+  isRemovePartnerPossible(_periodsIndex: number, isFounder: boolean): boolean {
+    return !isFounder
   }
 
   addPeriod() {
