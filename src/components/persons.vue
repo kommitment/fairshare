@@ -5,18 +5,17 @@
         h5 Persons
       b-col.col-auto
         new-person-form(@submit="onSubmitNewPersonForm")
-    b-card(v-if="!partnerNames.length")
-      b-card-text.text-center No persons yet. Use the&nbsp;
+    card(v-if="!partnerNames.length").w-100
+      div.text-center No persons yet. Use the&nbsp;
         b-icon(icon="plus")
         | &nbsp;button.
-    b-card-group.mb-4
+    card-group.mb-4
       template(v-for="(p, idx) in partnerNames")
-        b-card(:title="p")
-          b-card-text
+        card
+          h5 {{p}}
+          div
             b-link(@click="onClickType(p)") {{isFounder(p) ? 'founder' : 'partner'}}<br/>
-            template(v-for="period in periodNames")
-              b-link(v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}
-              | &nbsp;
+            b-link(v-for="period in periodNames" v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}<br/>
 </template>
 
 <script lang="ts">
@@ -24,13 +23,17 @@ import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Prop, Inject } from 'vue-property-decorator'
 import { includes, prop, without, sortBy, concat } from 'ramda'
-import newPersonForm from '@/components/newPersonFom.vue'
+import NewPersonForm from '@/components/newPersonFom.vue'
+import Card from '@/components/card.vue'
+import CardGroup from '@/components/cardGroup.vue'
 
 const sortByPartnerName = sortBy(prop('name'))
 
 @Component({
   components: {
-    newPersonForm,
+    NewPersonForm,
+    Card,
+    CardGroup,
   },
 })
 export default class Persons extends Vue {

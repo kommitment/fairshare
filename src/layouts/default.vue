@@ -1,5 +1,5 @@
 <template lang="pug">
-  b-container
+  div
     b-navbar(toggleable="lg" type="dark" variant="info")
       b-navbar-brand FairShare
 
@@ -13,7 +13,7 @@
         b-navbar-nav.ml-auto
           b-nav-item(href="https://github.com/kommitment/fairshare") GitHub
 
-    b-container.mt-4
+    b-container(fluid).mt-4
       .row
         .col
           h3.my-2 FairShare - einfach "fairteilen"
