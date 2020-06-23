@@ -10,7 +10,7 @@
         b-icon(icon="plus")
         | &nbsp;button.
     b-card-group.mb-4
-      template(v-for="(p, idx) in partnerNames" deck)
+      template(v-for="(p, idx) in partnerNames")
         b-card(:title="p")
           b-card-text
             b-link(@click="onClickType(p)") {{isFounder(p) ? 'founder' : 'partner'}}<br/>

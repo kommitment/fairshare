@@ -1,5 +1,5 @@
 <template lang="pug">
-  b-card
+  div
     persons(:partnerNames="partnerNames" :founderNames="founderNames" :periodNames="periodNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson" @addPartnerToPeriod="onAddPartnerToPeriod")
     periods-component(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod" @removePartner="onRemovePartner")
     b-button.mt-4(@click="onClick") Emit Test Data
