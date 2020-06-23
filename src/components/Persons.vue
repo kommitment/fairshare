@@ -3,19 +3,19 @@
     b-row.mb-3
       b-col
         h5 Persons
-      b-col.col-auto
-        new-person-form(@submit="onSubmitNewPersonForm")
-    card(v-if="!partnerNames.length").w-100
-      div.text-center No persons yet. Use the&nbsp;
-        b-icon(icon="plus")
-        | &nbsp;button.
+    div(v-if="!partnerNames.length")
+      p None yet. Add a founder:
+      card
+        new-person-form(@submit="onSubmitNewPersonForm" :showForm="true")
     card-group.mb-4
       template(v-for="(p, idx) in partnerNames")
         card
           h5 {{p}}
           div
             b-link(@click="onClickType(p)") {{isFounder(p) ? 'founder' : 'partner'}}<br/>
-            b-link(v-for="period in periodNames" v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}<br/>
+            b-link(v-for="(period, i) in periodNames" :key="i" v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}<br/>
+      div
+        new-person-form(@submit="onSubmitNewPersonForm")
 </template>
 
 <script lang="ts">

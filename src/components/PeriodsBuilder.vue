@@ -2,7 +2,7 @@
   div
     persons(:partnerNames="partnerNames" :founderNames="founderNames" :periodNames="periodNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson" @addPartnerToPeriod="onAddPartnerToPeriod")
     periods(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod" @removePartner="onRemovePartner")
-    b-button.mt-4(@click="onClick") Emit Test Data
+    b-button.mt-4(variant="success" @click="onClick") Emit Test Data
 </template>
 
 <script lang="ts">

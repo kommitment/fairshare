@@ -1,21 +1,20 @@
 <template lang="pug">
-  div
+  div(v-if="periods.length")
     b-row.mb-3
       b-col
         h5 Periods
-      b-col.col-auto
-        b-btn(@click="onClickAddPeriod")
-          b-icon(icon="plus" aria-hidden="true")
-    card.w-100(v-if="!periods.length")
-      div.text-center No periods yet. Use the&nbsp;
-        b-icon(icon="plus")
-        | &nbsp;button or add a founder.
     template(v-for="(period, periodsIndex) in periods")
       card.mb-2.w-100
-        h5 {{period.name}}
-        p(v-if="periodsIndex === 0") Founding Phase
-        div
-          b-link(v-if="isRemovePeriodPossible(periodsIndex)" @click="onClickRemovePeriod") remove
+        b-row.mb-2
+          b-col.col-auto
+            h5 {{period.name}}
+            p(v-if="periodsIndex === 0") Founding Phase
+          b-col(v-if="periodsIndex === periods.length-1")
+            b-btn-group
+              b-btn(variant="outline-secondary" @click="onClickAddPeriod")
+                b-icon(icon="subtract" aria-hidden="true")
+              b-btn(variant="outline-danger" v-if="isRemovePeriodPossible(periodsIndex)" @click="onClickRemovePeriod")
+                b-icon(icon="trash-fill" aria-hidden="true")
         card-group.mb-4
           template(v-for="(p, partnersIndex) in period.partners")
             card
