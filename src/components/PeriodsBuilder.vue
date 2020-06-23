@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     persons(:partnerNames="partnerNames" :founderNames="founderNames" :periodNames="periodNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson" @addPartnerToPeriod="onAddPartnerToPeriod")
-    periods-component(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod" @removePartner="onRemovePartner")
+    periods(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod" @removePartner="onRemovePartner")
     b-button.mt-4(@click="onClick") Emit Test Data
 </template>
 
@@ -14,13 +14,13 @@ import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
 import addPartnersToAllPeriods from '@/lib/addPartnersToAllPeriods'
-import Persons from '@/components/persons.vue'
-import PeriodsComponent from '@/components/periods.vue'
+import Persons from '@/components/Persons.vue'
+import Periods from '@/components/Periods.vue'
 
 @Component({
   components: {
     Persons,
-    PeriodsComponent,
+    Periods,
   },
 })
 export default class PeriodsBuilder extends Vue {
@@ -31,7 +31,7 @@ export default class PeriodsBuilder extends Vue {
   @Provide() isPartnerInPeriod = this.isPartnerNameInPeriod
 
   $refs!: {
-    periods: PeriodsComponent
+    periods: Periods
   }
 
   mounted() {

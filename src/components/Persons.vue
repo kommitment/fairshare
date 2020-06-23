@@ -24,8 +24,8 @@ import Component from 'nuxt-class-component'
 import { Prop, Inject } from 'vue-property-decorator'
 import { includes, prop, without, sortBy, concat } from 'ramda'
 import NewPersonForm from '@/components/newPersonFom.vue'
-import Card from '@/components/card.vue'
-import CardGroup from '@/components/cardGroup.vue'
+import Card from '@/components/Card.vue'
+import CardGroup from '@/components/CardGroup.vue'
 
 const sortByPartnerName = sortBy(prop('name'))
 

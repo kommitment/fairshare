@@ -39,7 +39,7 @@
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import calculateShares from '@/lib/calculateShares/'
-import PeriodsBuilder from '@/components/periodsBuilder.vue'
+import PeriodsBuilder from '@/components/PeriodsBuilder.vue'
 
 @Component({
   components: {

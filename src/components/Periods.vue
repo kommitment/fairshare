@@ -36,8 +36,8 @@ import Component from 'nuxt-class-component'
 import { Prop, Inject } from 'vue-property-decorator'
 import { prop, sortBy } from 'ramda'
 import getPartnersFromLatestPeriod from '@/lib/getPartnersFromLatestPeriod'
-import Card from '@/components/card.vue'
-import CardGroup from '@/components/cardGroup.vue'
+import Card from '@/components/Card.vue'
+import CardGroup from '@/components/CardGroup.vue'
 
 const sortByPartnerName = sortBy(prop('name'))
 
