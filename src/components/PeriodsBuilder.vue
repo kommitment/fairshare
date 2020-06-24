@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    persons(:partnerNames="partnerNames" :founderNames="founderNames" :periodNames="periodNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson" @addPartnerToPeriod="onAddPartnerToPeriod")
+    persons(:partnerNames="partnerNames" :founderNames="founderNames" :periodNames="periodNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson" @removePerson="onRemovePerson" @addPartnerToPeriod="onAddPartnerToPeriod")
     periods(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod" @removePartner="onRemovePartner")
     b-button.mt-4(variant="success" @click="onClick") Emit Test Data
 </template>
@@ -14,6 +14,7 @@ import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
 import addPartnersToAllPeriods from '@/lib/addPartnersToAllPeriods'
+import removePartnerFromAllPeriods from '@/lib/removePartnerFromAllPeriods'
 import Persons from '@/components/Persons.vue'
 import Periods from '@/components/Periods.vue'
 
@@ -104,6 +105,16 @@ export default class PeriodsBuilder extends Vue {
 
   onRemovePartner(periodIndex: number, partnerIndex: number) {
     this.periods[periodIndex].partners.splice(partnerIndex, 1)
+  }
+
+  onRemovePerson(partnerName: string) {
+    this.partnerNames = this.partnerNames.filter(
+      (name: string): boolean => name !== partnerName
+    )
+    this.founderNames = this.founderNames.filter(
+      (name: string): boolean => name !== partnerName
+    )
+    this.periods = removePartnerFromAllPeriods(partnerName, this.periods)
   }
 
   onAddPartnerToPeriod(partnerName: string, periodName: string) {

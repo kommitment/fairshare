@@ -19,7 +19,7 @@
             b-link(v-for="(period, i) in periodNames" :key="i" v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}<br/>
           div.mt-auto
             b-btn-group.mt-3
-              b-btn(variant="outline-danger")
+              b-btn(variant="outline-danger" @click="onClickRemovePerson(p)")
                 b-icon(icon="person-dash")
       div
         new-person-form(@submit="onSubmitNewPersonForm")
@@ -80,6 +80,10 @@ export default class Persons extends Vue {
 
   onAddPartnerToPeriod(partnerName: string, periodName: string) {
     this.$emit('addPartnerToPeriod', partnerName, periodName)
+  }
+
+  onClickRemovePerson(partnerName: string) {
+    this.$emit('removePerson', partnerName)
   }
 }
 </script>
