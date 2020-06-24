@@ -7,13 +7,20 @@
       p None yet. Add a founder:
       card
         new-person-form(@submit="onSubmitNewPersonForm" :showForm="true")
-    card-group.mb-4
+    card-group(v-else).mb-4
       template(v-for="(p, idx) in partnerNames")
-        card
-          h5 {{p}}
+        card.d-flex.flex-column.align-items-start
+          h5
+            b-icon(icon="person")
+            span &nbsp; {{p}}
           div
-            b-link(@click="onClickType(p)") {{isFounder(p) ? 'founder' : 'partner'}}<br/>
+            b-badge(@click="onClickType(p)" href="#" variant="primary") {{isFounder(p) ? 'founder' : 'partner'}}<br/>
+          div
             b-link(v-for="(period, i) in periodNames" :key="i" v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}<br/>
+          div.mt-auto
+            b-btn-group.mt-3
+              b-btn(variant="outline-danger")
+                b-icon(icon="person-dash")
       div
         new-person-form(@submit="onSubmitNewPersonForm")
 </template>

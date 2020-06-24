@@ -8,7 +8,8 @@
         b-row.mb-2
           b-col.col-auto
             h5 {{period.name}}
-            p(v-if="periodsIndex === 0") Founding Phase
+              span(v-if="periodsIndex === 0") &nbsp;
+                b-badge(variant="light" pill) Founding Phase
           b-col(v-if="periodsIndex === periods.length-1")
             b-btn-group
               b-btn(variant="outline-secondary" @click="onClickAddPeriod")
@@ -18,8 +19,10 @@
         card-group.mb-4
           template(v-for="(p, partnersIndex) in period.partners")
             card
-              h5 {{p.name}}
-              div {{isPartnerFounder(p.name) ? 'founder' : 'partner'}}
+              h5
+                b-icon(icon="person")
+                span &nbsp; {{p.name}}
+              b-badge {{isPartnerFounder(p.name) ? 'founder' : 'partner'}}
               div
                 b-link
                   span(v-if="isRemovePartnerPossible(periodsIndex, isPartnerFounder(p.name))" @click="onClickRemovePartner(periodsIndex, partnersIndex)") remove

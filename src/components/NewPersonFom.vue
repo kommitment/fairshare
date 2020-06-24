@@ -7,7 +7,7 @@
           b-btn(@click="onClickCancel" variant="outline-danger") Cancle
     div(v-if="!isFormVisible")
       b-btn(variant="outline-secondary" @click="isFormVisible=true")
-        b-icon(icon="plus" aria-hidden="true")
+        b-icon(icon="person-plus" aria-hidden="true")
 </template>
 
 <script lang="ts">
