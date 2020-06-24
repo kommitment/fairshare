@@ -1,6 +1,6 @@
 const history: Period[] = [
   {
-    name: '2016',
+    name: 'Year 1',
     partners: [
       { name: 'Anke', work: 1 },
       { name: 'Ralf', work: 1 },
@@ -8,7 +8,7 @@ const history: Period[] = [
     ],
   },
   {
-    name: '2017',
+    name: 'Year 2',
     partners: [
       { name: 'Anke', work: 1 },
       { name: 'Ralf', work: 1 },
@@ -16,7 +16,7 @@ const history: Period[] = [
     ],
   },
   {
-    name: '2018',
+    name: 'Year 3',
     partners: [
       { name: 'Anke', work: 1 },
       { name: 'Ralf', work: 0, returnedFairShares: 1 },
@@ -25,7 +25,7 @@ const history: Period[] = [
     ],
   },
   {
-    name: '2019',
+    name: 'Year 4',
     partners: [
       { name: 'Anke', work: 1 },
       { name: 'Ben', work: 1 },
@@ -33,7 +33,7 @@ const history: Period[] = [
     ],
   },
   {
-    name: '2020',
+    name: 'Year 5',
     partners: [
       { name: 'Anke', work: 1 },
       { name: 'Ben', work: 1 },
@@ -41,7 +41,7 @@ const history: Period[] = [
     ],
   },
   {
-    name: '2021',
+    name: 'Year 6',
     partners: [
       { name: 'Anke', work: 1 },
       { name: 'Jost', work: 1 },
@@ -52,7 +52,7 @@ const history: Period[] = [
     ],
   },
   {
-    name: '2022',
+    name: 'Year 7',
     partners: [
       { name: 'Anke', work: 1 },
       { name: 'Jost', work: 0.5 },
