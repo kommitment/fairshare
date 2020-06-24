@@ -15,8 +15,9 @@
             span &nbsp; {{p}}
           div
             b-badge(@click="onClickType(p)" href="#" variant="primary") {{isFounder(p) ? 'founder' : 'partner'}}<br/>
-          div
-            b-link(v-for="(period, i) in periodNames" :key="i" v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}<br/>
+          div.mt-3
+            b-dropdown(text="Starts in" size="sm" variant="outline-secondary")
+              b-dropdown-item(v-for="(period, i) in periodNames" :key="i" v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}
           div.mt-auto
             b-btn-group.mt-3
               b-btn(variant="outline-danger" @click="onClickRemovePerson(p)")

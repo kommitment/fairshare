@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    persons(:partnerNames="partnerNames" :founderNames="founderNames" :periodNames="periodNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson" @removePerson="onRemovePerson" @addPartnerToPeriod="onAddPartnerToPeriod")
+    persons(:partnerNames="partnerNames" :founderNames="founderNames" :periodNames="periodNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson" @removePerson="onRemovePerson" @addPartnerToPeriod="onAddPartnerToPeriods")
     periods(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod" @removePartner="onRemovePartner")
     b-button.mt-4(variant="success" @click="onClick") Emit Test Data
 </template>
@@ -14,6 +14,7 @@ import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
 import addPartnersToAllPeriods from '@/lib/addPartnersToAllPeriods'
+import addPartnerToPeriods from '@/lib/addPartnerToPeriods'
 import removePartnerFromAllPeriods from '@/lib/removePartnerFromAllPeriods'
 import Persons from '@/components/Persons.vue'
 import Periods from '@/components/Periods.vue'
@@ -117,20 +118,8 @@ export default class PeriodsBuilder extends Vue {
     this.periods = removePartnerFromAllPeriods(partnerName, this.periods)
   }
 
-  onAddPartnerToPeriod(partnerName: string, periodName: string) {
-    let index: number = -1
-    const period = this.periods.find((p: Period, i: number): boolean => {
-      index = i
-      return p.name === periodName
-    })
-    if (!period) return false
-
-    let newPartners = clone(period.partners)
-    newPartners.push({ name: partnerName, work: 1 })
-    newPartners = uniqBy(prop('name'), newPartners)
-    newPartners = sortBy(prop('name'), newPartners)
-
-    this.periods[index].partners = newPartners
+  onAddPartnerToPeriods(partnerName: string, periodName: string) {
+    this.periods = addPartnerToPeriods(partnerName, periodName, this.periods)
   }
 }
 </script>

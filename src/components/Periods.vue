@@ -27,7 +27,7 @@
                 b-link
                   span(v-if="isRemovePartnerPossible(periodsIndex, isPartnerFounder(p.name))" @click="onClickRemovePartner(periodsIndex, partnersIndex)") remove
                   span(v-else) &nbsp;
-                div Contribution {{p.work * 100}}%
+                div Contribution {{Math.round(p.work * 100)}}%
                   b-form-input(type="range" min="0" max="1" step="0.05" :value="p.work" @input="onChangeWork(periodsIndex, partnersIndex, $event)")
                 div(v-if="p.returnedFairShares") Returned FairShares {{p.returnedFairShares * 100}}%
 </template>
