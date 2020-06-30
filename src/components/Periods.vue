@@ -25,7 +25,7 @@
               b-badge {{isPartnerFounder(p.name) ? 'founder' : 'partner'}}
               div
                 b-link
-                  span(v-if="isRemovePartnerPossible(periodsIndex, isPartnerFounder(p.name))" @click="onClickRemovePartner(periodsIndex, partnersIndex)") remove
+                  span(v-if="isRemovePartnerPossible(periodsIndex, p.name)" @click="onClickRemovePartner(periodsIndex, partnersIndex)") remove
                   span(v-else) &nbsp;
                 div Contribution {{Math.round(p.work * 100)}}%
                   b-form-input(type="range" min="0" max="1" step="0.05" :value="p.work" @input="onChangeWork(periodsIndex, partnersIndex, $event)")
@@ -38,6 +38,7 @@ import Component from 'nuxt-class-component'
 import { Prop, Inject } from 'vue-property-decorator'
 import { prop, sortBy } from 'ramda'
 import getPartnersFromLatestPeriod from '@/lib/getPartnersFromLatestPeriod'
+import findIndexOfFirstPeriodInWhichPersonIsPartner from '@/lib/findIndexOfFirstPeriodInWhichPersonIsPartner'
 import Card from '@/components/Card.vue'
 import CardGroup from '@/components/CardGroup.vue'
 
@@ -77,8 +78,12 @@ export default class Periods extends Vue {
     return this.periods.length > 1 && periodsIndex === this.periods.length - 1
   }
 
-  isRemovePartnerPossible(_periodsIndex: number, isFounder: boolean): boolean {
-    return !isFounder
+  isRemovePartnerPossible(periodsIndex: number, name: string): boolean {
+    return (
+      !this.isPartnerFounder(name) &&
+      periodsIndex ===
+        findIndexOfFirstPeriodInWhichPersonIsPartner(name, this.periods)
+    )
   }
 
   addPeriod() {
