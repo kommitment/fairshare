@@ -136,13 +136,11 @@ export default class PeriodsBuilder extends Vue {
   onLeave(periodIndex: number, partnerIndex: number) {
     const p = clone(this.periods)
     p[periodIndex].partners[partnerIndex].returnedFairShares = 1
-    console.log(require('util').inspect(p, { depth: 4 }))
     this.periods = removePartnerFromPeriodsBeginningWithIndex(
       periodIndex + 1,
       p[periodIndex].partners[partnerIndex].name,
       p
     )
-    console.log(require('util').inspect(clone(p), { depth: 4 }))
   }
 }
 </script>
