@@ -39,13 +39,10 @@
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Prop, Inject } from 'vue-property-decorator'
-import { prop, sortBy } from 'ramda'
 import getPartnersFromLatestPeriod from '@/lib/getPartnersFromLatestPeriod'
 import findIndexOfFirstPeriodInWhichPersonIsPartner from '@/lib/findIndexOfFirstPeriodInWhichPersonIsPartner'
 import Card from '@/components/Card.vue'
 import CardGroup from '@/components/CardGroup.vue'
-
-const sortByPartnerName = sortBy(prop('name'))
 
 @Component({
   components: {
@@ -56,10 +53,6 @@ const sortByPartnerName = sortBy(prop('name'))
 export default class Periods extends Vue {
   @Prop({ type: Array, default: [] }) periods!: Period[]
   @Inject() isPartnerFounder!: (partner: string) => boolean
-
-  sortByPartnerName(partners: Partner[]): Partner[] {
-    return sortByPartnerName(partners)
-  }
 
   onChangeWork(periodsIndex: number, partnersIndex: number, work: number) {
     this.$emit('changeWork', periodsIndex, partnersIndex, work)

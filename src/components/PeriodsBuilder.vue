@@ -24,12 +24,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
-import { Watch, Provide } from 'vue-property-decorator'
+import { Provide } from 'vue-property-decorator'
 import { includes, uniq, pluck, clone } from 'ramda'
-import dataset from '@/datasets/default'
+import dataset from '@/datasets/simple'
+import sortPartnersInPeriods from '@/lib/sortPartnersInPeriods'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
-import addPartnersToAllPeriods from '@/lib/addPartnersToAllPeriods'
 import addPartnerToPeriods from '@/lib/addPartnerToPeriods'
 import removePartnerFromAllPeriods from '@/lib/removePartnerFromAllPeriods'
 import removePartnerFromPeriodsBeginningWithIndex from '@/lib/removePartnerFromPeriodsBeginningWithIndex'
@@ -58,7 +58,7 @@ export default class PeriodsBuilder extends Vue {
   }
 
   load() {
-    this.periods = dataset
+    this.periods = sortPartnersInPeriods(dataset)
     this.partnerNames = extractPartnerNames(dataset).sort()
     this.founderNames = extractFounderNames(dataset).sort()
   }
@@ -91,22 +91,12 @@ export default class PeriodsBuilder extends Vue {
     this.periods[periodsIndex].partners[partnersIndex].work = work
   }
 
-  @Watch('founderNames')
-  watchFounderNames() {
-    // add a period if there are none yet
-    if (!this.periods.length) {
-      this.$refs.periods.addPeriod()
-    }
-
-    this.periods = addPartnersToAllPeriods(this.founderNames, this.periods)
-  }
-
   onAddPerson(name: string) {
     // first person is founder
     if (this.partnerNames.length <= 0) {
-      this.founderNames = clone(uniq([...this.founderNames, name]).sort())
+      this.founderNames = uniq([...clone(this.founderNames), name]).sort()
     }
-    this.partnerNames = clone(uniq([...this.partnerNames, name]).sort())
+    this.partnerNames = uniq([...clone(this.partnerNames), name]).sort()
   }
 
   onChangedFounders(founders: string[]) {

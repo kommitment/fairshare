@@ -30,12 +30,10 @@
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Prop, Inject } from 'vue-property-decorator'
-import { includes, prop, without, sortBy, concat } from 'ramda'
+import { includes, without, concat } from 'ramda'
 import NewPersonForm from '@/components/newPersonFom.vue'
 import Card from '@/components/Card.vue'
 import CardGroup from '@/components/CardGroup.vue'
-
-const sortByPartnerName = sortBy(prop('name'))
 
 @Component({
   components: {
@@ -52,10 +50,6 @@ export default class Persons extends Vue {
 
   showNewEmptyPerson: boolean = false
   newPersonName: string = ''
-
-  sortByPartnerName(partners: Partner[]): Partner[] {
-    return sortByPartnerName(partners)
-  }
 
   isFounder(partner: string): boolean {
     return includes(partner, this.founderNames)
