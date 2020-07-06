@@ -1,18 +1,5 @@
-import { map, differenceWith, eqBy, assoc, pipe } from 'ramda'
+import { map } from 'ramda'
+import removePartnerFromPeriod from '@/lib/removePartnerFromPeriod'
 
 export default (partnerName: string, periods: Period[]): Period[] =>
   map(removePartnerFromPeriod(partnerName), periods)
-
-const removePartnerFromPeriod = (partnerName: string) => (
-  period: Period
-): Period =>
-  pipe(
-    (p: Period) => p.partners,
-    (p: Partner[]) => excludePartner(partnerName)(p),
-    (p: Partner[]) => assoc('partners', p, period)
-  )(period)
-
-const excludePartner = (partnerName: string) => (partners: Partner[]) =>
-  differenceWith(equalByName, partners, [{ name: partnerName, work: 1 }])
-
-const equalByName = eqBy((p: Partner) => p.name)
