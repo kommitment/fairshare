@@ -122,25 +122,27 @@ export default class PeriodsBuilder extends Vue {
     this.founderNames = clone(
       this.founderNames.filter((name: string): boolean => name !== partnerName)
     )
-    this.periods = clone(
-      removePartnerFromAllPeriods(partnerName, clone(this.periods))
-    )
+    this.periods = removePartnerFromAllPeriods(partnerName, clone(this.periods))
   }
 
   onAddPartnerToPeriods(partnerName: string, periodName: string) {
-    this.periods = clone(
-      addPartnerToPeriods(partnerName, periodName, this.periods)
+    this.periods = addPartnerToPeriods(
+      partnerName,
+      periodName,
+      clone(this.periods)
     )
   }
 
   onLeave(periodIndex: number, partnerIndex: number) {
     const p = clone(this.periods)
     p[periodIndex].partners[partnerIndex].returnedFairShares = 1
+    console.log(require('util').inspect(p, { depth: 4 }))
     this.periods = removePartnerFromPeriodsBeginningWithIndex(
       periodIndex + 1,
       p[periodIndex].partners[partnerIndex].name,
       p
     )
+    console.log(require('util').inspect(clone(p), { depth: 4 }))
   }
 }
 </script>
