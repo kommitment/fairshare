@@ -1,7 +1,23 @@
 <template lang="pug">
   div
-    persons(:partnerNames="partnerNames" :founderNames="founderNames" :periodNames="periodNames" @changedFounders="onChangedFounders" @addPerson="onAddPerson" @removePerson="onRemovePerson" @addPartnerToPeriod="onAddPartnerToPeriods")
-    periods(ref="periods" :periods="periods" @addPeriod="onAddPeriod" @changeWork="onChangeWork" @removePeriod="onRemovePeriod" @removePartner="onRemovePartner")
+    persons(
+      :partnerNames="partnerNames"
+      :founderNames="founderNames"
+      :periodNames="periodNames"
+      @changedFounders="onChangedFounders"
+      @addPerson="onAddPerson"
+      @removePerson="onRemovePerson"
+      @addPartnerToPeriod="onAddPartnerToPeriods"
+    )
+    periods(
+      ref="periods"
+      :periods="periods"
+      @addPeriod="onAddPeriod"
+      @changeWork="onChangeWork"
+      @removePeriod="onRemovePeriod"
+      @removePartner="onRemovePartner"
+      @leave="onLeave"
+    )
     b-button.mt-4(variant="success" @click="onClick") Emit Test Data
 </template>
 
@@ -10,11 +26,13 @@ import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Watch, Provide } from 'vue-property-decorator'
 import { includes, uniq, pluck, clone } from 'ramda'
+import dataset from '@/datasets/default'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
 import addPartnersToAllPeriods from '@/lib/addPartnersToAllPeriods'
 import addPartnerToPeriods from '@/lib/addPartnerToPeriods'
 import removePartnerFromAllPeriods from '@/lib/removePartnerFromAllPeriods'
+import removePartnerFromPeriodsBeginningWithIndex from '@/lib/removePartnerFromPeriodsBeginningWithIndex'
 import Persons from '@/components/Persons.vue'
 import Periods from '@/components/Periods.vue'
 
@@ -108,17 +126,31 @@ export default class PeriodsBuilder extends Vue {
   }
 
   onRemovePerson(partnerName: string) {
-    this.partnerNames = this.partnerNames.filter(
-      (name: string): boolean => name !== partnerName
+    this.partnerNames = clone(
+      this.partnerNames.filter((name: string): boolean => name !== partnerName)
     )
-    this.founderNames = this.founderNames.filter(
-      (name: string): boolean => name !== partnerName
+    this.founderNames = clone(
+      this.founderNames.filter((name: string): boolean => name !== partnerName)
     )
-    this.periods = removePartnerFromAllPeriods(partnerName, this.periods)
+    this.periods = clone(
+      removePartnerFromAllPeriods(partnerName, clone(this.periods))
+    )
   }
 
   onAddPartnerToPeriods(partnerName: string, periodName: string) {
-    this.periods = addPartnerToPeriods(partnerName, periodName, this.periods)
+    this.periods = clone(
+      addPartnerToPeriods(partnerName, periodName, this.periods)
+    )
+  }
+
+  onLeave(periodIndex: number, partnerIndex: number) {
+    const p = clone(this.periods)
+    p[periodIndex].partners[partnerIndex].returnedFairShares = 1
+    this.periods = removePartnerFromPeriodsBeginningWithIndex(
+      periodIndex + 1,
+      p[periodIndex].partners[partnerIndex].name,
+      p
+    )
   }
 }
 </script>

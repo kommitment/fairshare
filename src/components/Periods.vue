@@ -27,6 +27,9 @@
                 b-link
                   span(v-if="isRemovePartnerPossible(periodsIndex, p.name)" @click="onClickRemovePartner(periodsIndex, partnersIndex)") remove
                   span(v-else) &nbsp;
+                b-link
+                  span(v-if="isLeavePossible(periodsIndex, p.name)" @click="onClickLeave(periodsIndex, partnersIndex)") leave
+                  span(v-else) &nbsp;
                 div Contribution {{Math.round(p.work * 100)}}%
                   b-form-input(type="range" min="0" max="1" step="0.05" :value="p.work" @input="onChangeWork(periodsIndex, partnersIndex, $event)")
                 div(v-if="p.returnedFairShares") Returned FairShares {{p.returnedFairShares * 100}}%
@@ -74,6 +77,10 @@ export default class Periods extends Vue {
     this.$emit('removePartner', periodsIndex, partnersIndex)
   }
 
+  onClickLeave(periodsIndex: number, partnersIndex: number) {
+    this.$emit('leave', periodsIndex, partnersIndex)
+  }
+
   isRemovePeriodPossible(periodsIndex: number): boolean {
     return this.periods.length > 1 && periodsIndex === this.periods.length - 1
   }
@@ -83,6 +90,13 @@ export default class Periods extends Vue {
       !this.isPartnerFounder(name) &&
       periodsIndex ===
         findIndexOfFirstPeriodInWhichPersonIsPartner(name, this.periods)
+    )
+  }
+
+  isLeavePossible(periodsIndex: number, name: string): boolean {
+    return (
+      periodsIndex >
+      findIndexOfFirstPeriodInWhichPersonIsPartner(name, this.periods)
     )
   }
 
