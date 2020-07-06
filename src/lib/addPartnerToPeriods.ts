@@ -1,4 +1,4 @@
-import { pipe, concat, uniqBy, prop, sortBy, assoc } from 'ramda'
+import { pipe, concat, uniqBy, prop, sortBy, assoc, clone } from 'ramda'
 import applyAfterFirstMatchingPeriod from '@/lib/applyAfterFirstMatchingPeriod'
 
 export default (
@@ -7,7 +7,7 @@ export default (
   periods: Period[]
 ): Period[] =>
   applyAfterFirstMatchingPeriod(
-    addPartnerToPeriod({ name: partnerName, work: 1 }),
+    addPartnerToPeriod(partnerName),
     matchPeriodName(periodName),
     periods
   )
@@ -15,10 +15,10 @@ export default (
 const matchPeriodName = (name: string) => (period: Period): boolean =>
   name === period.name
 
-const addPartnerToPeriod = (partner: Partner) => (period: Period): Period =>
+const addPartnerToPeriod = (partnerName: string) => (period: Period): Period =>
   pipe(
     (p: Period) => prop('partners', p),
-    concat([partner]),
+    concat([{ name: partnerName, work: 1 }]),
     uniqBy(prop('name')),
     sortBy(prop('name')),
     (p: Partner[]) => assoc('partners', p, period)
