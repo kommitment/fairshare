@@ -1,32 +1,36 @@
-import { pipe, mapAccum, ifElse } from 'ramda'
+import { pipe, mapAccum, ifElse, addIndex } from 'ramda'
 
 export default (
-  applyFn: (period: Period) => Period,
-  matcherFn: (period: Period) => boolean,
+  applyFn: (period: Period, idx: number) => Period,
+  matcherFn: (period: Period, idx: number) => boolean,
   periods: Period[]
 ): Period[] =>
   pipe(
-    (periods: Period[]) =>
-      mapAccum(applyAfterFirstMatch(applyFn, matcherFn), false, periods),
+    (periods: Period[]): [boolean, Period[]] =>
+      // @ts-ignore
+      mapAccumIndexed(applyAfterFirstMatch(applyFn, matcherFn), false, periods),
     (res: [boolean, Period[]]) => res[1]
   )(periods)
 
+const mapAccumIndexed = addIndex(mapAccum)
+
 const applyAfterFirstMatch = (
-  applyFn: (period: Period) => Period,
-  matcherFn: (period: Period) => boolean
-) => (found: boolean, period: Period): [boolean, Period] => {
-  const newFound = found || matcherFn(period)
-  const newPeriod = maybeApplyToPeriod(applyFn, newFound, period)
+  applyFn: (period: Period, idx: number) => Period,
+  matcherFn: (period: Period, idx: number) => boolean
+) => (found: boolean, period: Period, idx: number): [boolean, Period] => {
+  const newFound: boolean = found || matcherFn(period, idx)
+  const newPeriod: Period = maybeApplyToPeriod(applyFn, newFound, period, idx)
   return [newFound, newPeriod]
 }
 
 const maybeApplyToPeriod = (
-  fn: (period: Period) => Period,
+  fn: (period: Period, idx: number) => Period,
   sure: boolean,
-  period: Period
+  period: Period,
+  idx: number
 ): Period =>
   ifElse(
     () => sure,
-    () => fn(period),
+    () => fn(period, idx),
     () => period
   )('')
