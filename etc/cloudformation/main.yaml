@@ -1,0 +1,142 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: FairShare - S3 Static site with CloudFront and ACM Certificate
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: Domain
+        Parameters:
+          - SubDomain
+          - DomainName
+          - HostedZoneId
+
+Parameters:
+  SubDomain:
+    Description: The part of a website address before your DomainName - e.g. www or img
+    Type: String
+    Default: www
+    AllowedPattern: ^[^.]*$
+  DomainName:
+    Description: The part of a website address after your SubDomain - e.g. example.com
+    Type: String
+  HostedZoneId:
+    Description: ID of the Route 53 hosted zone - e.g. ZZZHHHHWWWWAAA
+    Type: String
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      Tags:
+        - Key: Project
+          Value: FairShare
+
+  CloudFrontOriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: !Sub 'CloudFront OAI for ${SubDomain}.${DomainName}'
+
+  S3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref 'S3Bucket'
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Action:
+              - s3:GetObject
+            Effect: Allow
+            Resource: !Join
+              - ''
+              -
+                - 'arn:aws:s3:::'
+                - !Ref 'S3Bucket'
+                - '/*'
+            Principal:
+              CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId
+
+  Certificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: !Sub '${SubDomain}.${DomainName}'
+      ValidationMethod: DNS
+      DomainValidationOptions:
+        - DomainName: !Ref DomainName
+          HostedZoneId: !Ref HostedZoneId
+      Tags:
+        - Key: Project
+          Value: FairShare
+
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+          - !Sub '${SubDomain}.${DomainName}'
+        DefaultCacheBehavior:
+          Compress: true
+          DefaultTTL: 86400
+          ForwardedValues:
+            QueryString: true
+          MaxTTL: 31536000
+          TargetOriginId: !Sub 'S3-${AWS::StackName}-root'
+          ViewerProtocolPolicy: 'redirect-to-https'
+        CustomErrorResponses:
+          - ErrorCachingMinTTL: 60
+            ErrorCode: 404
+            ResponseCode: 404
+            ResponsePagePath: '/error.html'
+        Enabled: true
+        HttpVersion: 'http2'
+        DefaultRootObject: 'index.html'
+        IPV6Enabled: true
+        Origins:
+          - DomainName: !GetAtt 'S3Bucket.DomainName'
+            Id: !Sub 'S3-${AWS::StackName}-root'
+            S3OriginConfig:
+              OriginAccessIdentity:
+                !Join ['', ['origin-access-identity/cloudfront/', !Ref CloudFrontOriginAccessIdentity]]
+        PriceClass: 'PriceClass_All'
+        ViewerCertificate:
+          AcmCertificateArn: !Ref 'Certificate'
+          MinimumProtocolVersion: 'TLSv1.1_2016'
+          SslSupportMethod: 'sni-only'
+      Tags:
+        - Key: Project
+          Value: FairShare
+
+  Route53RecordSetGroup:
+    Type: AWS::Route53::RecordSetGroup
+    Properties:
+      HostedZoneName: !Sub '${DomainName}.'
+      RecordSets:
+      - Name: !Sub '${SubDomain}.${DomainName}'
+        Type: 'A'
+        AliasTarget:
+          DNSName: !GetAtt 'CloudFrontDistribution.DomainName'
+          EvaluateTargetHealth: false
+          # The  following HosteZoneId is always used for alias records pointing to CF.
+          HostedZoneId: 'Z2FDTNDATAQYW2'
+
+Outputs:
+  S3Bucket:
+    Description: Website bucket
+    Value: !GetAtt S3Bucket.Arn
+  S3BucketName:
+    Description: Website bucket name
+    Value: !Ref S3Bucket
+  CertificateArn:
+    Description: Issued certificate
+    Value: !Ref Certificate
+  CloudFrontDistributionName:
+    Description: CloudFront distribution
+    Value: !Ref CloudFrontDistribution
+  CloudFrontDomainName:
+    Description: Website address
+    Value: !GetAtt CloudFrontDistribution.DomainName

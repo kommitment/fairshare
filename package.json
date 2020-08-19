@@ -10,7 +10,11 @@
     "generate": "nuxt-ts generate",
     "start": "nuxt-ts start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "test": "jest"
+    "test": "jest",
+    "aws-stack-create": "cd etc/cloudformation; sh create.sh",
+    "aws-stack-update": "cd etc/cloudformation; sh update.sh",
+    "aws-stack-delete": "cd etc/cloudformation; sh delete.sh",
+    "aws-upload": "cd etc/cloudformation; sh upload.sh"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.0",
