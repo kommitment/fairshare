@@ -5,11 +5,11 @@
         h5 Persons
     div(v-if="!partnerNames.length")
       p None yet. Add a founder:
-      card
+      card.bg-white
         new-person-form(@submit="onSubmitNewPersonForm" :showForm="true")
     card-group(v-else).mb-4
       template(v-for="(p, idx) in partnerNames")
-        card.d-flex.flex-column.align-items-start
+        card.d-flex.flex-column.align-items-start.bg-white
           h5
             b-icon(icon="person")
             span &nbsp; {{p}}
@@ -31,7 +31,7 @@ import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import { Prop, Inject } from 'vue-property-decorator'
 import { includes, without, concat } from 'ramda'
-import NewPersonForm from '@/components/newPersonFom.vue'
+import NewPersonForm from '@/components/NewPersonForm.vue'
 import Card from '@/components/Card.vue'
 import CardGroup from '@/components/CardGroup.vue'
 

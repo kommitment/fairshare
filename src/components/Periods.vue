@@ -11,14 +11,14 @@
               span(v-if="periodsIndex === 0") &nbsp;
                 b-badge(variant="light" pill) Founding Phase
           b-col(v-if="periodsIndex === periods.length-1")
-            b-btn-group
+            b-btn-group.bg-white
               b-btn(variant="outline-secondary" @click="onClickAddPeriod")
                 b-icon(icon="subtract" aria-hidden="true")
               b-btn(variant="outline-danger" v-if="isRemovePeriodPossible(periodsIndex)" @click="onClickRemovePeriod")
                 b-icon(icon="trash-fill" aria-hidden="true")
         card-group.mb-4
           template(v-for="(p, partnersIndex) in period.partners")
-            card
+            card.bg-white
               h5
                 b-icon(icon="person")
                 span &nbsp; {{p.name}}

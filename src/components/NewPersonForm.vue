@@ -2,11 +2,11 @@
   b-form(@submit="onSubmit")
     div(v-show="isFormVisible")
         b-form-input.mr-2.mb-2(ref="name" v-model="name" placeholder="Name")
-        b-btn-group
+        b-btn-group.bg-white
           b-btn(@click="onSubmit" variant="outline-success" :disabled="name.length <= 0") OK
           b-btn(@click="onClickCancel" variant="outline-danger") Cancle
     div(v-if="!isFormVisible")
-      b-btn(variant="outline-secondary" @click="isFormVisible=true")
+      b-btn.bg-white(variant="outline-secondary" @click="isFormVisible=true")
         b-icon(icon="person-plus" aria-hidden="true")
 </template>
 

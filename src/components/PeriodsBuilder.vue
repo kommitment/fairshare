@@ -1,5 +1,11 @@
 <template lang="pug">
   div
+
+    founders-shares-control(
+      v-model="foundersShares"
+      :max="maxFoundersShares"
+    )
+
     persons(
       :partnerNames="partnerNames"
       :founderNames="founderNames"
@@ -18,31 +24,34 @@
       @removePartner="onRemovePartner"
       @leave="onLeave"
     )
-    b-button.mt-4(variant="success" @click="onClick") Emit Test Data
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'nuxt-class-component'
-import { Provide } from 'vue-property-decorator'
+import { Provide, Watch } from 'vue-property-decorator'
 import { includes, uniq, pluck, clone } from 'ramda'
-import dataset from '@/datasets/simple'
+import dataset from '@/datasets/default'
 import sortPartnersInPeriods from '@/lib/sortPartnersInPeriods'
 import extractPartnerNames from '@/lib/extractPartnerNames'
 import extractFounderNames from '@/lib/extractFounderNames'
 import addPartnerToPeriods from '@/lib/addPartnerToPeriods'
 import removePartnerFromAllPeriods from '@/lib/removePartnerFromAllPeriods'
 import removePartnerFromPeriodsBeginningWithIndex from '@/lib/removePartnerFromPeriodsBeginningWithIndex'
+import FoundersSharesControl from '@/components/FoundersSharesControl.vue'
 import Persons from '@/components/Persons.vue'
 import Periods from '@/components/Periods.vue'
+import calculateShares from '@/lib/calculateShares/'
 
 @Component({
   components: {
+    FoundersSharesControl,
     Persons,
     Periods,
   },
 })
 export default class PeriodsBuilder extends Vue {
+  foundersShares: number = 6.5
   periods: Period[] = []
   partnerNames: string[] = []
   founderNames: string[] = []
@@ -67,8 +76,14 @@ export default class PeriodsBuilder extends Vue {
     return pluck('name', this.periods)
   }
 
-  onClick() {
-    this.$emit('update', this.periods)
+  @Watch('periods')
+  @Watch('foundersShares')
+  onWatch() {
+    const calculatedPeriods = calculateShares(
+      this.periods,
+      this.foundersShares / 100
+    )
+    this.$emit('update', calculatedPeriods)
   }
 
   isFounder(partner: string): boolean {
@@ -85,6 +100,12 @@ export default class PeriodsBuilder extends Vue {
     )
     if (!partner) return false
     return true
+  }
+
+  get maxFoundersShares() {
+    if (!this.periods.length) return 0
+    const numberOfPartners = this.founderNames.length
+    return Math.floor(100 / numberOfPartners)
   }
 
   onChangeWork(periodsIndex: number, partnersIndex: number, work: number) {
