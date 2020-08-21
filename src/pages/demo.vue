@@ -2,7 +2,8 @@
   div
     .row
       b-col(cols="12" lg="6")
-        periods-chart(:periods="periods").position-fixed
+        div.sticky-top
+          periods-chart(:periods="periods")
 
       b-col(cols="12" lg="6").bg-light
         periods-builder(@update="onUpdate")
