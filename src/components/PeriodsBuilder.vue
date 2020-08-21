@@ -78,7 +78,7 @@ export default class PeriodsBuilder extends Vue {
 
   @Watch('periods')
   @Watch('foundersShares')
-  onWatch() {
+  emitCalculatedPeriods() {
     const calculatedPeriods = calculateShares(
       this.periods,
       this.foundersShares / 100
@@ -110,6 +110,7 @@ export default class PeriodsBuilder extends Vue {
 
   onChangeWork(periodsIndex: number, partnersIndex: number, work: number) {
     this.periods[periodsIndex].partners[partnersIndex].work = work
+    this.emitCalculatedPeriods()
   }
 
   onAddPerson(name: string) {
@@ -152,6 +153,7 @@ export default class PeriodsBuilder extends Vue {
       periodName,
       clone(this.periods)
     )
+    this.emitCalculatedPeriods()
   }
 
   onLeave(periodIndex: number, partnerIndex: number) {
