@@ -50,6 +50,7 @@ const calculateInitialSharesInDistribution = (partners: Partner[]): number =>
     pluck('foundersShare'),
     sum,
     subtract(1)
+    // @ts-ignore
   )(partners)
 
 /**
