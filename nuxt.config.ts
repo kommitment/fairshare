@@ -47,6 +47,14 @@ const config: Configuration = {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
   ],
+
+  build: {
+    extend(config: any, ctx: any) {
+      if (ctx.isDev && ctx.isClient) {
+        config.devtool = 'source-map'
+      }
+    },
+  },
 }
 
 export default config
