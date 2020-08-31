@@ -15,5 +15,5 @@ export default curry(
         foundersShares +
         sharesInDistribution *
           ((accumWorkPartner * (1.0 - returnedFairShares)) / accumWorkAll)
-    )(0)
+    )(undefined)
 )
