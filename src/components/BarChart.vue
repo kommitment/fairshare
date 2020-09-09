@@ -1,11 +1,11 @@
 <script lang="ts">
-import { Bar, mixins } from 'vue-chartjs'
+import { Line, mixins } from 'vue-chartjs'
 import { Component, Mixins } from 'vue-property-decorator'
 
 const { reactiveProp } = mixins
 
 @Component
-export default class BarChart extends Mixins(Bar, reactiveProp) {
+export default class BarChart extends Mixins(Line, reactiveProp) {
   // @Prop({ type: Object, default: {} }) options!: {}
 
   mounted() {
