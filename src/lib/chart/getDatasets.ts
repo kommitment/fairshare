@@ -9,6 +9,7 @@ import {
   defaultTo,
   mapObjIndexed,
   values,
+  curry,
 } from 'ramda'
 import extractPartnerNames from '../extractPartnerNames'
 
@@ -37,13 +38,13 @@ const getSeriesForPartners = (getSeries: (partnerName: string) => number[]) => (
 export const getPartnerToSeriesRecords = (field: string, periods: Period[]) =>
   pipe(
     extractPartnerNames,
-    //
     getSeriesForPartners(getSeries(field)(periods))
   )(periods)
 
-export default (field: string, periods: Period[]) =>
+export default curry((field: string, periods: Period[]) =>
   pipe(
     () => getPartnerToSeriesRecords(field, periods),
     mapObjIndexed((data, label) => ({ label, data })),
     values
   )()
+)

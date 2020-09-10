@@ -6,9 +6,13 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Component, Prop } from 'vue-property-decorator'
-import { pluck, clone } from 'ramda'
+import { pluck, clone, pipe } from 'ramda'
 import BarChart from '@/components/BarChart.vue'
 import getDatasets from '@/lib/chart/getDatasets'
+import addBorderWidth from '@/lib/chart/addBorderWidth'
+import addBorderColors from '@/lib/chart/addBorderColors'
+import addBackgroundColors from '@/lib/chart/addBackgroundColors'
+import { getBorderColors, getBackgroundColors } from '@/lib/chart/colors'
 
 @Component({
   components: { BarChart },
@@ -21,9 +25,16 @@ export default class PeriodsChart extends Vue {
   }
 
   get chartData() {
+    const datasets = pipe(
+      getDatasets('shares'),
+      addBorderWidth(1),
+      addBorderColors(getBorderColors()),
+      addBackgroundColors(getBackgroundColors())
+    )(clone(this.periods))
+
     return {
       labels: this.labels,
-      datasets: getDatasets('shares', this.periods),
+      datasets,
     }
   }
 }
