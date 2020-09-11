@@ -1,7 +1,7 @@
 {
   "name": "FairShare",
   "version": "1.0.0",
-  "description": "FairShare is a model of fair share distributions in companies.",
+  "description": "FairShare ist ein Modell zur fairen Verteilung der Anteile eines Unternehmens.",
   "author": "kommitment GmbH &amp; Co KG",
   "private": true,
   "scripts": {

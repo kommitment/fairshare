@@ -2,13 +2,12 @@
   div
     b-row
       b-col
-        h5 Founders Shares
+        h5 Gründerinnen-Anteile
     b-row
       b-col
         b-form(inline).mt-2.mb-4
           b-input.w-25.mr-2(type="range" min="0" :max="max" step="0.1" v-model.number="val")
-          div {{val}}% kept by founders
-          //b-form-group(:label="val + '% kept by founders'")
+          div {{val}}% behalten die Gründerinnen
 </template>
 
 <script lang="ts">

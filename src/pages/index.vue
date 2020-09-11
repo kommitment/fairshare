@@ -9,7 +9,7 @@
       li Die Firma überlebt möglichst lange.
       li Unternehmergeist lohnt sich.
       li Gründen und Aufbauen lohnt sich.
-      li auch für Späteinsteiger lohnt sich der Einstieg.
+      li Auch für Späteinsteiger lohnt sich der Einstieg.
 
     p Bei FairShare geht es um die Verteilung der Anteile eines Unternehmens. Wie am Jahresende Gewinne verteilt werden, beantwortet Fairshare nicht. Das gehört in einen Gesellschaftervertrag.
 

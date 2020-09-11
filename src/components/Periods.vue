@@ -2,14 +2,14 @@
   div(v-if="periods.length")
     b-row.mb-3
       b-col
-        h5 Periods
+        h5 Perioden
     template(v-for="(period, periodsIndex) in periods")
       card.mb-2.w-100
         b-row.mb-2
           b-col.col-auto
             h5 {{period.name}}
               span(v-if="periodsIndex === 0") &nbsp;
-                b-badge(variant="light" pill) Founding Phase
+                b-badge(variant="light" pill) Gründungsphase
           b-col(v-if="periodsIndex === periods.length-1")
             b-btn-group.bg-white
               b-btn(variant="outline-secondary" @click="onClickAddPeriod")
@@ -22,17 +22,17 @@
               h5
                 b-icon(icon="person")
                 span &nbsp; {{p.name}}
-              b-badge {{isPartnerFounder(p.name) ? 'founder' : 'partner'}}
+              b-badge {{isPartnerFounder(p.name) ? 'Gründerin' : 'Partnerin'}}
               div
                 b-link
-                  span(v-if="isRemovePartnerPossible(periodsIndex, p.name)" @click="onClickRemovePartner(periodsIndex, partnersIndex)") remove
+                  span(v-if="isRemovePartnerPossible(periodsIndex, p.name)" @click="onClickRemovePartner(periodsIndex, partnersIndex)") Entfernen
                   span(v-else) &nbsp;
                 b-link
-                  span(v-if="isLeavePossible(periodsIndex, p.name)" @click="onClickLeave(periodsIndex, partnersIndex)") leave
+                  span(v-if="isLeavePossible(periodsIndex, p.name)" @click="onClickLeave(periodsIndex, partnersIndex)") Aussteigen
                   span(v-else) &nbsp;
-                div Contribution {{Math.round(p.work * 100)}}%
+                div Voll-/Teilzeit {{Math.round(p.work * 100)}}%
                   b-form-input(type="range" min="0" max="1" step="0.05" :value="p.work" @input="onChangeWork(periodsIndex, partnersIndex, $event)")
-                div(v-if="p.returnedFairShares") Returned FairShares {{p.returnedFairShares * 100}}%
+                div(v-if="p.returnedFairShares") Zurückgegebene FairShares {{p.returnedFairShares * 100}}%
 </template>
 
 <script lang="ts">
@@ -94,7 +94,7 @@ export default class Periods extends Vue {
   }
 
   addPeriod() {
-    const name = `Year ${this.periods.length + 1}`
+    const name = `Jahr ${this.periods.length + 1}`
     const partners: Partner[] = getPartnersFromLatestPeriod(this.periods)
     this.$emit('addPeriod', { name, partners })
   }

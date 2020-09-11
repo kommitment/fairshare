@@ -2,9 +2,9 @@
   div
     b-row.mb-3
       b-col
-        h5 Persons
+        h5 Personen
     div(v-if="!partnerNames.length")
-      p None yet. Add a founder:
+      p Gründerin hinzufügen:
       card.bg-white
         new-person-form(@submit="onSubmitNewPersonForm" :showForm="true")
     card-group(v-else).mb-4
@@ -14,9 +14,9 @@
             b-icon(icon="person")
             span &nbsp; {{p}}
           div
-            b-badge(@click="onClickType(p)" href="#" variant="primary") {{isFounder(p) ? 'founder' : 'partner'}}<br/>
+            b-badge(@click="onClickType(p)" href="#" variant="primary") {{isFounder(p) ? 'Gründerin' : 'Partnerin'}}<br/>
           div.mt-3
-            b-dropdown(text="Starts in" size="sm" variant="outline-secondary")
+            b-dropdown(text="Startet in" size="sm" variant="outline-secondary")
               b-dropdown-item(v-for="(period, i) in periodNames" :key="i" v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}
           div.mt-auto
             b-btn-group.mt-3
