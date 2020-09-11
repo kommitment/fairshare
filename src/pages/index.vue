@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    img.mb-4(src="/img/fairshare-pie.png" width="250")
+    img.mb-4(src="~assets/img/fairshare-pie.png" width="250")
 
     p FairShare entsteht aus der Idee, eine Simulation zur Verteilung der Anteile einer Firma (im weiteren *die Firma* genannt) mit möglichst einfachen Regeln zu haben. Dabei sollen folgende Ziele erreicht werden:
 

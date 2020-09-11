@@ -24,6 +24,10 @@ const config: Configuration = {
 
   srcDir: 'src',
 
+  router: {
+    base: '/fairshare',
+  },
+
   /*
    ** Customize the progress-bar color
    */
