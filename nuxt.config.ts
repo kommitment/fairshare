@@ -1,5 +1,8 @@
 import { Configuration } from '@nuxt/types'
 
+// https://nuxtjs.org/guides/configuration-glossary/configuration-build#publicpath
+const publicPath = 'https://kommitment.github.io/fairshare/'
+
 const config: Configuration = {
   mode: 'spa',
   /*
@@ -49,6 +52,7 @@ const config: Configuration = {
   ],
 
   build: {
+    publicPath,
     extend(config: any, ctx: any) {
       if (ctx.isDev && ctx.isClient) {
         config.devtool = 'source-map'
