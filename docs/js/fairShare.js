@@ -131,6 +131,7 @@ function calculateShares(input, theForm) {
                 +"= "+Math.round(kShare[kommanditist].sumOfFairShares)+ " incl. "
                 +kShare[kommanditist].foundersSharesPercent+ "% FS</span><br>";
             // return founderShares to sharesInDistribution...
+            // should'nt it be: sharesInDistribution += kShare[kommanditist].foundersSharesPercent * returnedFairShares;??
             sharesInDistribution += kShare[kommanditist].foundersSharesPercent;
             // reset shares of kommanditist
             kShare[kommanditist].sumOfFairShares *= reduceBy;

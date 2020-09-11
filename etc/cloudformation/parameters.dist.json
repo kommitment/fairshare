@@ -1,0 +1,14 @@
+[
+  {
+      "ParameterKey": "SubDomain",
+      "ParameterValue": "fairshare"
+  },
+  {
+      "ParameterKey": "DomainName",
+      "ParameterValue": "example.com"
+  },
+  {
+      "ParameterKey": "HostedZoneId",
+      "ParameterValue": "ZZZHHHHWWWWAAA"
+  }
+]
