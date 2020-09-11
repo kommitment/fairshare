@@ -5,6 +5,7 @@ const publicPath = 'https://kommitment.github.io/fairshare/'
 
 const config: Configuration = {
   mode: 'spa',
+  target: 'static',
   /*
    ** Headers of the page
    */
