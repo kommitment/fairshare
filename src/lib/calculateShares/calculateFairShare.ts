@@ -12,8 +12,8 @@ export default curry(
       () => equals(0, accumWorkAll),
       () => foundersShares,
       () =>
-        foundersShares +
-        sharesInDistribution *
-          ((accumWorkPartner * (1.0 - returnedFairShares)) / accumWorkAll)
+        (1.0 - returnedFairShares) *
+        (foundersShares +
+          sharesInDistribution * (accumWorkPartner / accumWorkAll))
     )(undefined)
 )
