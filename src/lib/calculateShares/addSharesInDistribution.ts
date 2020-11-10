@@ -83,7 +83,7 @@ const accumSharesInDistribution = (
     acc,
     getReturnedFoundersSharesFromPartners(foundersShareRecord, period.partners)
   )
-  const newPeriod = assoc('sharesInDistribution', acc, period)
+  const newPeriod = assoc('sharesInDistribution', newAcc, period)
   return [newAcc, newPeriod]
 }
 
