@@ -16,7 +16,7 @@ const calculateShares = (
     addSharesInDistribution,
     addAccumulatedWorkToPartners,
     addAccumulatedWorkToPeriods,
-    addShareToPartners(initialFoundersShare)
+    addShareToPartners
   )(periods)
 
 export default calculateShares
