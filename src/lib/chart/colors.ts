@@ -25,7 +25,7 @@ const colors = [
 ]
 
 export const getBackgroundColors = () =>
-  map((color: string) => Color(color).alpha(0.1).rgb().string(), colors)
+  map((color: string) => Color(color).alpha(0.2).rgb().string(), colors)
 
 export const getBorderColors = () =>
   map((color: string) => Color(color).rgb().string(), colors)
