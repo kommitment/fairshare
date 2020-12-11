@@ -1,11 +1,11 @@
 <template lang="pug">
   div
     .row
-      b-col(cols="12" lg="6")
+      b-col.mb-2(cols="12" md="6" lg="5")
         div.sticky-top
           periods-chart(:periods="periods")
 
-      b-col(cols="12" lg="6").bg-light
+      b-col.pt-4(cols="12" md="6" lg="7").bg-light
         periods-builder(@update="onUpdate")
 </template>
 

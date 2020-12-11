@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div.periods-builder
 
     founders-shares-control(
       v-model="foundersShares"
@@ -167,3 +167,17 @@ export default class PeriodsBuilder extends Vue {
   }
 }
 </script>
+
+<style lang="scss">
+.periods-builder {
+  font-size: 0.8em;
+  h5 {
+    font-size: 1.25em;
+  }
+  .dropdown-menu,
+  .btn,
+  input {
+    font-size: 1em;
+  }
+}
+</style>
