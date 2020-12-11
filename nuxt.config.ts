@@ -4,7 +4,7 @@ import { Configuration } from '@nuxt/types'
 const publicPath = 'https://kommitment.github.io/fairshare/'
 
 const config: Configuration = {
-  mode: 'spa',
+  ssr: false,
   target: 'static',
   /*
    ** Headers of the page

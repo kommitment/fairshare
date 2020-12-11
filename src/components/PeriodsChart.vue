@@ -26,11 +26,12 @@ export default class PeriodsChart extends Vue {
 
   get chartData() {
     const datasets = pipe(
+      () => clone(this.periods),
       getDatasets('shares'),
       addBorderWidth(1),
       addBorderColors(getBorderColors()),
       addBackgroundColors(getBackgroundColors())
-    )(clone(this.periods))
+    )()
 
     return {
       labels: this.labels,
