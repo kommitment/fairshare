@@ -14,10 +14,7 @@
           b-nav-item(href="https://github.com/kommitment/fairshare") GitHub
 
     b-container(fluid).mt-4
-      .row
-        .col
-          h3.my-2 FairShare - einfach "fairteilen"
-      .row
-        .col
+      b-row
+        b-col
           nuxt
 </template>

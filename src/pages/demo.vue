@@ -1,6 +1,9 @@
 <template lang="pug">
   div
-    .row
+    b-row
+      b-col
+        h3.mb-4 Demo: FairShare - einfach "fairteilen"
+    b-row
       b-col.mb-2(cols="12" md="6" lg="5")
         div.sticky-top
           periods-chart(:periods="periods")
