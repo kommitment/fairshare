@@ -3,7 +3,7 @@ import { Bar, mixins } from 'vue-chartjs'
 import { Component, Mixins } from 'vue-property-decorator'
 
 const { reactiveProp } = mixins
-const toPercent = (val: any, precision: number = 4): string =>
+const toPercent = (val: any, precision: number = 7): string =>
   new Intl.NumberFormat('de-DE', {
     maximumSignificantDigits: precision,
   }).format(val * 100)

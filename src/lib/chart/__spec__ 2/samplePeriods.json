@@ -1,0 +1,230 @@
+[
+  {
+    "name": "Year 1",
+    "partners": [
+      {
+        "name": "Anke",
+        "work": 1,
+        "foundersShare": 0.065,
+        "accumWork": 1,
+        "shares": 0.3333333333333333
+      },
+      {
+        "name": "Johannes",
+        "work": 1,
+        "foundersShare": 0.065,
+        "accumWork": 1,
+        "shares": 0.3333333333333333
+      },
+      {
+        "name": "Ralf",
+        "work": 1,
+        "foundersShare": 0.065,
+        "accumWork": 1,
+        "shares": 0.3333333333333333
+      }
+    ],
+    "sumWork": 3,
+    "sharesInDistribution": 0.8049999999999999,
+    "accumWork": 3
+  },
+  {
+    "name": "Year 2",
+    "partners": [
+      {
+        "name": "Anke",
+        "work": 1,
+        "accumWork": 2,
+        "shares": 0.3333333333333333
+      },
+      {
+        "name": "Johannes",
+        "work": 1,
+        "accumWork": 2,
+        "shares": 0.3333333333333333
+      },
+      {
+        "name": "Ralf",
+        "work": 1,
+        "accumWork": 2,
+        "shares": 0.3333333333333333
+      }
+    ],
+    "sumWork": 3,
+    "sharesInDistribution": 0.8049999999999999,
+    "accumWork": 6
+  },
+  {
+    "name": "Year 3",
+    "partners": [
+      {
+        "name": "Anke",
+        "work": 1,
+        "accumWork": 3,
+        "shares": 0.41
+      },
+      {
+        "name": "Ben",
+        "work": 1,
+        "accumWork": 1,
+        "shares": 0.18
+      },
+      {
+        "name": "Johannes",
+        "work": 1,
+        "accumWork": 3,
+        "shares": 0.41
+      },
+      {
+        "name": "Ralf",
+        "work": 0,
+        "returnedFairShares": 1,
+        "accumWork": 2,
+        "shares": 0.065
+      }
+    ],
+    "sumWork": 3,
+    "sharesInDistribution": 0.8049999999999999,
+    "accumWork": 7
+  },
+  {
+    "name": "Year 4",
+    "partners": [
+      {
+        "name": "Anke",
+        "work": 1,
+        "accumWork": 4,
+        "shares": 0.413
+      },
+      {
+        "name": "Ben",
+        "work": 1,
+        "accumWork": 2,
+        "shares": 0.239
+      },
+      {
+        "name": "Johannes",
+        "work": 1,
+        "accumWork": 4,
+        "shares": 0.413
+      }
+    ],
+    "sumWork": 3,
+    "sharesInDistribution": 0.8699999999999999,
+    "accumWork": 10
+  },
+  {
+    "name": "Year 5",
+    "partners": [
+      {
+        "name": "Anke",
+        "work": 1,
+        "accumWork": 5,
+        "shares": 0.3996153846153846
+      },
+      {
+        "name": "Ben",
+        "work": 1,
+        "accumWork": 3,
+        "shares": 0.26576923076923076
+      },
+      {
+        "name": "Johannes",
+        "work": 1,
+        "accumWork": 5,
+        "shares": 0.3996153846153846
+      }
+    ],
+    "sumWork": 3,
+    "sharesInDistribution": 0.8699999999999999,
+    "accumWork": 13
+  },
+  {
+    "name": "Year 6",
+    "partners": [
+      {
+        "name": "Anke",
+        "work": 1,
+        "accumWork": 6,
+        "shares": 0.3397368421052631
+      },
+      {
+        "name": "Ben",
+        "work": 1,
+        "accumWork": 4,
+        "shares": 0.24815789473684208
+      },
+      {
+        "name": "Johannes",
+        "work": 1,
+        "accumWork": 6,
+        "shares": 0.3397368421052631
+      },
+      {
+        "name": "Jost",
+        "work": 1,
+        "accumWork": 1,
+        "shares": 0.11078947368421052
+      },
+      {
+        "name": "Michael",
+        "work": 1,
+        "accumWork": 1,
+        "shares": 0.11078947368421052
+      },
+      {
+        "name": "Sven",
+        "work": 1,
+        "accumWork": 1,
+        "shares": 0.11078947368421052
+      }
+    ],
+    "sumWork": 6,
+    "sharesInDistribution": 0.8699999999999999,
+    "accumWork": 19
+  },
+  {
+    "name": "Year 7",
+    "partners": [
+      {
+        "name": "Anke",
+        "work": 1,
+        "accumWork": 7,
+        "shares": 0.3135714285714285
+      },
+      {
+        "name": "Ben",
+        "work": 1,
+        "accumWork": 5,
+        "shares": 0.24255102040816326
+      },
+      {
+        "name": "Johannes",
+        "work": 1,
+        "accumWork": 7,
+        "shares": 0.3135714285714285
+      },
+      {
+        "name": "Jost",
+        "work": 0.5,
+        "accumWork": 1.5,
+        "shares": 0.11826530612244898
+      },
+      {
+        "name": "Michael",
+        "work": 1,
+        "accumWork": 2,
+        "shares": 0.1360204081632653
+      },
+      {
+        "name": "Sven",
+        "work": 1,
+        "accumWork": 2,
+        "shares": 0.1360204081632653
+      }
+    ],
+    "sumWork": 5.5,
+    "sharesInDistribution": 0.8699999999999999,
+    "accumWork": 24.5
+  }
+]
