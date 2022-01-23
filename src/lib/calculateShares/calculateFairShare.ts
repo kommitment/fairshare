@@ -17,5 +17,5 @@ export default curry(
           sharesInDistribution * (accumWorkPartner / accumWorkAll)
       ),
       multiply(1.0 - returnedFairShares)
-    )(undefined)
+    )()
 )

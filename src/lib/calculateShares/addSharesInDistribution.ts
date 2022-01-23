@@ -12,6 +12,7 @@ import {
   pluck,
   sum,
   path,
+  prepend,
   multiply,
   prop,
 } from 'ramda'
@@ -33,10 +34,12 @@ export default (periods: Period[]): Period[] =>
 const initializeSharesInDistributionWithFoundersShare = (
   periods: Period[]
 ): Period[] =>
+  // @ts-ignore: 
   pipe(
     head,
     (p: Period) => p.partners,
     calculateInitialSharesInDistribution,
+    // @ts-ignore: y
     assoc('sharesInDistribution', __, head(periods)),
     (h: Period) => [h, ...tail(periods)]
   )(periods)
@@ -45,12 +48,12 @@ const initializeSharesInDistributionWithFoundersShare = (
  *
  */
 const calculateInitialSharesInDistribution = (partners: Partner[]): number =>
+  // @ts-ignore:   
   pipe(
-    // @ts-ignore
+    // @ts-ignore: 
     pluck('foundersShare'),
     sum,
-    subtract(1)
-    // @ts-ignore
+    subtract(1),
   )(partners)
 
 /**

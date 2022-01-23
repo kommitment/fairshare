@@ -4,7 +4,7 @@
       b-col
         h5 Personen
     div(v-if="!partnerNames.length")
-      p Gründerin hinzufügen:
+      p Gründer:in hinzufügen:
       card.bg-white
         new-person-form(@submit="onSubmitNewPersonForm" :showForm="true")
     card-group(v-else).mb-4
@@ -14,7 +14,7 @@
             b-icon(icon="person")
             span &nbsp; {{p}}
           div
-            b-badge(@click="onClickType(p)" href="#" variant="primary") {{isFounder(p) ? 'Gründerin' : 'Partnerin'}}<br/>
+            b-badge(@click="onClickType(p)" href="#" variant="primary") {{isFounder(p) ? 'Gründer:in' : 'Partner:in'}}<br/>
           div.mt-3
             b-dropdown(text="Startet in" size="sm" variant="outline-secondary")
               b-dropdown-item(v-for="(period, i) in periodNames" :key="i" v-if="!isPartnerInPeriod(p, period)" @click="onAddPartnerToPeriod(p, period)") {{period}}
@@ -80,5 +80,6 @@ export default class Persons extends Vue {
   onClickRemovePerson(partnerName: string) {
     this.$emit('removePerson', partnerName)
   }
+
 }
 </script>

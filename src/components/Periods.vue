@@ -19,7 +19,7 @@
         card-group.mb-4
           template(v-for="(p, partnersIndex) in period.partners")
             card.bg-white
-              h5
+              h5 
                 b-icon(icon="person")
                 span &nbsp; {{p.name}}
               b-badge {{isPartnerFounder(p.name) ? 'Gründerin' : 'Partnerin'}}

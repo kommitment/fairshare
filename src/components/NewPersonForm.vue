@@ -4,7 +4,7 @@
         b-form-input.mr-2.mb-2(ref="name" v-model="name" placeholder="Name")
         b-btn-group.bg-white
           b-btn(@click="onSubmit" variant="outline-success" :disabled="name.length <= 0") OK
-          b-btn(@click="onClickCancel" variant="outline-danger") Cancle
+          b-btn(@click="onClickCancel" variant="outline-danger") cancel
     div(v-if="!isFormVisible")
       b-btn.bg-white(variant="outline-secondary" @click="isFormVisible=true")
         b-icon(icon="person-plus" aria-hidden="true")

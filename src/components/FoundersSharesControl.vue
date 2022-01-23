@@ -2,7 +2,7 @@
   div
     b-row
       b-col
-        h5 Gründerinnen-Anteile
+        h5 Gründer:innen-Anteile
     b-row
       b-col
         b-form(inline).mt-2.mb-4

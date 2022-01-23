@@ -33,4 +33,4 @@ const maybeApplyToPeriod = (
     () => sure,
     () => fn(period, idx),
     () => period
-  )('')
+  )()

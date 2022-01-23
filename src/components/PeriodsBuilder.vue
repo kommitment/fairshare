@@ -4,7 +4,7 @@
     founders-shares-control(
       v-model="foundersShares"
       :max="maxFoundersShares"
-    )
+    ) 
 
     persons(
       :partnerNames="partnerNames"
@@ -83,6 +83,7 @@ export default class PeriodsBuilder extends Vue {
       this.periods,
       this.foundersShares / 100
     )
+    this.founderNames = extractFounderNames(dataset).sort()
     this.$emit('update', calculatedPeriods)
   }
 
