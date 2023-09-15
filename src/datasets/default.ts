@@ -70,9 +70,18 @@ const history: Period[] = [
       { name: 'S1', work: 1 },
       { name: 'B1', work: 1 },
       { name: 'J1', work: 1 },
-      { name: 'M2', work: 1 },
+      { name: 'M2', work: 0.844444 },
       { name: 'T1', work: 1 },
-      { name: 'F!', work: 1 },
+      { name: 'F1', work: 1 },
+    ],
+  },
+  {
+    name: '2024',
+    partners: [
+      { name: 'A1', work: 1 },
+      { name: 'S1', work: 1 },
+      { name: 'J1', work: 1 },
+      { name: 'T1', work: 1 },
     ],
   },
 ]
