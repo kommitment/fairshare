@@ -1,4 +1,4 @@
-# FairShare - einfach "fairteilen"
+# FairShare - einfach "fairteilen" 
 
 ## https://kommitment.github.io/fairshare/
 
