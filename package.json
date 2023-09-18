@@ -5,7 +5,7 @@
   "author": "kommitment GmbH &amp; Co KG",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --openssl-legacy-provider",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt --openssl-legacy-provider start",
