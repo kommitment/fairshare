@@ -1,5 +1,5 @@
 # FairShare - einfach "fairteilen" 
-
+ 
 ## https://kommitment.github.io/fairshare/
 
 Bei FairShare geht es um die faire Verteilung der Anteile eines Unternehmens.
